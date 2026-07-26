@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日盘后持仓分析报告 · 2026-07-27</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f4f3ee; color: #2c2c2a; line-height: 1.6; font-size: 14px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 60px; }
+  h1 { font-size: 22px; font-weight: 600; color: #26215c; margin-bottom: 4px; }
+  .sub { color: #888780; font-size: 13px; margin-bottom: 18px; }
+  .card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .card h2 { font-size: 16px; font-weight: 600; color: #3c3489; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #ece9df; }
+  .tldr { background: linear-gradient(135deg, #534ab7 0%, #3c3489 100%); color: #fff; border-radius: 12px; padding: 22px; margin-bottom: 18px; }
+  .tldr h2 { color: #fff; border: none; margin-bottom: 10px; font-size: 15px; }
+  .tldr p { font-size: 13.5px; line-height: 1.8; opacity: 0.95; }
+  .tldr .hl { color: #ffd479; font-weight: 600; }
+  .up { color: #e24b4a; font-weight: 600; }
+  .down { color: #1d9e75; font-weight: 600; }
+  .warn { color: #d85a30; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: #f1efe8; color: #444441; font-weight: 600; text-align: left; padding: 9px 10px; border-bottom: 2px solid #d3d1c7; }
+  td { padding: 9px 10px; border-bottom: 1px solid #ece9df; color: #444441; }
+  tr:hover td { background: #faf9f4; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .stat { background: #f7f6f1; border-radius: 8px; padding: 14px; text-align: center; }
+  .stat .v { font-size: 20px; font-weight: 600; }
+  .stat .l { font-size: 12px; color: #888780; margin-top: 4px; }
+  .stock-card { border: 1px solid #ece9df; border-radius: 10px; padding: 16px; margin-bottom: 14px; background: #fff; }
+  .stock-card .hd { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #f1efe8; }
+  .stock-card .name { font-size: 16px; font-weight: 600; color: #26215c; }
+  .stock-card .code { font-size: 12px; color: #888780; margin-left: 8px; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-left: 6px; }
+  .tag-pcb { background: #e6f1fb; color: #185fa5; }
+  .tag-auto { background: #faeeda; color: #854f0b; }
+  .tag-metal { background: #e1f5ee; color: #0f6e56; }
+  .stopbar { background: #fef5f3; border-left: 3px solid #e24b4a; padding: 10px 12px; border-radius: 4px; margin: 10px 0; font-size: 13px; }
+  .stopbar .lbl { color: #888780; font-size: 12px; }
+  .mini-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+  .mini { background: #f7f6f1; padding: 8px; border-radius: 6px; text-align: center; }
+  .mini .v { font-size: 14px; font-weight: 600; }
+  .mini .l { font-size: 11px; color: #888780; }
+  .chart { width: 100%; height: 360px; }
+  .sec-title { font-size: 14px; font-weight: 600; color: #3c3489; margin: 16px 0 10px; }
+  .risk-row td { background: #fef5f3; }
+  .footer { text-align: center; color: #888780; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ece9df; }
+  .acc-tab { display: inline-block; padding: 6px 14px; border-radius: 6px 6px 0 0; background: #f1efe8; color: #888780; font-size: 13px; cursor: default; margin-right: 4px; }
+  .acc-tab.active { background: #534ab7; color: #fff; }
+  .databanner { background: #fff8e6; border: 1px solid #f0d98a; border-left: 4px solid #d9a520; border-radius: 8px; padding: 12px 14px; margin-bottom: 18px; font-size: 13px; color: #7a5c10; }
+  .databanner strong { color: #8a5a00; }
+  .ok { color: #1d9e75; font-weight: 600; }
+  @media (max-width: 768px) { .grid2, .grid3, .mini-grid { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>每日盘后持仓分析报告</h1>
+  <div class="sub">生成时间：2026-07-27 盘后 · 数据日期：2026-07-24（最新可用收盘）· 策略：波段操作（1-2月周期）· 涨红跌绿</div>
+
+  <div class="databanner">
+    <strong>⚠️ 数据状态说明：</strong>行情数据源最新交易日为 <strong>2026-07-24（周五收盘）</strong>。当前为 07-27（周一）凌晨，本周尚无新交易日收盘数据，因此本报告各项行情、技术、资金指标与上一份报告一致，反映的是最近一个完整交易日（07-24）的盘后状态。次日盯盘计划针对 <strong>07-27（周一）</strong> 开盘。
+  </div>
+
+  <!-- 今日重点关注 · 盘后核对 + 次日盯盘 -->
+  <div class="card" style="border-left:4px solid #d85a30; background:#fff5f3;">
+    <h2 style="color:#d85a30;">⏰ 盘后核对 · 关键价位监控（次日必看）</h2>
+    <div style="margin-bottom:16px;">
+      <div style="font-size:13px;font-weight:600;color:#444;margin-bottom:8px;">止损/止盈触发核对（按紧急程度排序，基于 07-24 收盘）</div>
+      <table>
+        <thead><tr><th>优先级</th><th>股票</th><th>监控位</th><th>收盘价</th><th>距离</th><th>当日是否触发</th><th>触发动作</th></tr></thead>
+        <tbody>
+          <tr style="background:#fdebe7;"><td>🔴 最高</td><td>东山精密</td><td><strong>止损 195.00</strong></td><td>199.18</td><td class="warn">-2.1%</td><td class="ok">未触发</td><td>次日跌破195收盘即止损减仓</td></tr>
+          <tr style="background:#fdebe7;"><td>🔴 最高</td><td>北特科技</td><td><strong>止损 38.00</strong></td><td>38.99</td><td class="warn">-2.5%</td><td class="ok">未触发</td><td>次日跌破38收盘即止损减仓</td></tr>
+          <tr><td>🟠 高</td><td>生益科技</td><td><strong>止损 115.00</strong></td><td>118.71</td><td class="warn">-3.1%</td><td class="ok">未触发</td><td>次日跌破115收盘即止损</td></tr>
+          <tr><td>🟡 中</td><td>沪电股份</td><td>止损 104.00</td><td>112.22</td><td>-7.3%</td><td class="ok">未触发</td><td>暂安全，持续观察</td></tr>
+          <tr><td>🟢 机会</td><td>洛阳钼业</td><td><strong>止盈一 20.50</strong></td><td>19.04</td><td class="up">+7.7%</td><td>未触及</td><td>触及可分批止盈</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:600;color:#444;margin-bottom:8px;">次日（07-27 周一）盯盘时间表</div>
+      <table>
+        <thead><tr><th>时间段</th><th>关注事项</th></tr></thead>
+        <tbody>
+          <tr><td><strong>09:00-09:25</strong> 集合竞价</td><td>东山精密/北特科技是否低开逼近止损位（195/38）</td></tr>
+          <tr><td><strong>09:30-10:00</strong> 开盘半小时</td><td>PCB板块（生益/东山/沪电）经周末后能否企稳，看量能配合</td></tr>
+          <tr><td><strong>10:00-11:30</strong> 上午盘</td><td>缩量企稳=超跌反弹信号；放量续跌=执行止损</td></tr>
+          <tr><td><strong>13:00-14:30</strong> 下午盘</td><td>洛阳钼业能否挑战 20.5 止盈一</td></tr>
+          <tr><td><strong>14:50-15:00</strong> 收盘前</td><td>若盘中触及止损位，观察尾盘能否收回（收盘破位才正式触发）</td></tr>
+          <tr style="background:#fef0ed;"><td><strong>15:00 收盘</strong></td><td><strong>确认收盘价是否破位（收盘破位才正式触发止损）</strong></td></tr>
+          <tr><td><strong>15:30 盘后</strong></td><td>自动生成盘后分析报告并推送</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <h2>今日核心结论（盘后）</h2>
+    <p>最近交易日（07-24）组合总市值 <span class="hl">7.55 万元</span>，累计浮亏 <span class="hl">-1.91 万元（-20.19%）</span>，当日浮亏 <span class="hl">-3,263 元（-4.15%）</span>，仓位约 89.5%。<br>
+    5 只持仓中 <span class="hl">4 只（生益/东山/沪电/北特）技术面全面走弱</span>——均线空头排列、MACD 死叉绿柱放大、贴布林下轨超卖，主力资金持续净流出；仅 <span class="hl">洛阳钼业相对抗跌</span>，MACD 金叉、5日主力净流入 +25.1 亿。<br>
+    <span class="hl">当日无任何止损/止盈位被触发</span>，东山/北特距止损最近（-2.1%/-2.5%）。PCB 三剑客属板块性调整，短期超跌可能反弹但趋势未修复，<span class="hl">反弹是减仓而非追涨时机</span>。次日重点：守住止损纪律，东山+北特若低开破位优先减仓。</p>
+  </div>
+
+  <!-- 持仓总览 -->
+  <div class="card">
+    <h2>持仓总览（两账户合并）</h2>
+    <div class="grid3" style="margin-bottom:16px;">
+      <div class="stat"><div class="v down">¥75,450</div><div class="l">总市值</div></div>
+      <div class="stat"><div class="v down">-¥19,082</div><div class="l">累计浮亏 (-20.19%)</div></div>
+      <div class="stat"><div class="v">¥94,532</div><div class="l">总成本</div></div>
+      <div class="stat"><div class="v down">-¥3,263</div><div class="l">当日浮亏 (-4.15%)</div></div>
+      <div class="stat"><div class="v">89.5%</div><div class="l">仓位</div></div>
+      <div class="stat"><div class="v">5</div><div class="l">持仓只数</div></div>
+    </div>
+    <div class="grid2">
+      <div>
+        <div class="sec-title">市值分布</div>
+        <div id="pieChart" class="chart" style="height:300px;"></div>
+      </div>
+      <div>
+        <div class="sec-title">个股近20日归一化走势（首日=100）</div>
+        <div id="trendChart" class="chart" style="height:300px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 账户分组 -->
+  <div class="card">
+    <h2>账户分组明细</h2>
+    <div style="margin-bottom:10px;">
+      <span class="acc-tab active">平安证券 · 4只 · 市值¥65,930 · 浮亏-¥17,107</span>
+    </div>
+    <table>
+      <thead><tr><th>股票</th><th>持仓</th><th>成本价</th><th>现价</th><th>市值</th><th>浮盈亏</th><th>当日涨跌</th></tr></thead>
+      <tbody>
+        <tr><td>生益科技 600183 <span class="tag tag-pcb">PCB</span></td><td>100</td><td>137.36</td><td>118.71</td><td>¥11,871</td><td class="down">-¥1,865 (-13.58%)</td><td class="down">-5.11%</td></tr>
+        <tr><td>东山精密 002384 <span class="tag tag-pcb">PCB</span></td><td>100</td><td>286.30</td><td>199.18</td><td>¥19,918</td><td class="down">-¥8,712 (-30.43%)</td><td class="down">-3.61%</td></tr>
+        <tr><td>沪电股份 002463 <span class="tag tag-pcb">PCB</span></td><td>200</td><td>124.60</td><td>112.22</td><td>¥22,444</td><td class="down">-¥2,475 (-9.93%)</td><td class="down">-3.04%</td></tr>
+        <tr><td>北特科技 603009 <span class="tag tag-auto">汽车</span></td><td>300</td><td>52.51</td><td>38.99</td><td>¥11,697</td><td class="down">-¥4,054 (-25.74%)</td><td class="down">-5.48%</td></tr>
+      </tbody>
+    </table>
+    <div style="margin:14px 0 10px;">
+      <span class="acc-tab active">国投证券 · 1只 · 市值¥9,520 · 浮亏-¥1,975</span>
+    </div>
+    <table>
+      <thead><tr><th>股票</th><th>持仓</th><th>成本价</th><th>现价</th><th>市值</th><th>浮盈亏</th><th>当日涨跌</th></tr></thead>
+      <tbody>
+        <tr><td>洛阳钼业 603993 <span class="tag tag-metal">有色</span></td><td>500</td><td>22.99</td><td>19.04</td><td>¥9,520</td><td class="down">-¥1,975 (-17.18%)</td><td class="down">-4.94%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 个股卡片 -->
+  <div class="card">
+    <h2>个股四维分析卡片</h2>
+
+    <!-- 生益科技 -->
+    <div class="stock-card">
+      <div class="hd">
+        <div><span class="name">生益科技</span><span class="code">600183 · 平安证券</span><span class="tag tag-pcb">PCB概念</span></div>
+        <div>收盘 <span class="down">118.71</span> · 当日 <span class="down">-5.11%</span> · 浮亏 <span class="down">-13.58%</span></div>
+      </div>
+      <div class="mini-grid">
+        <div class="mini"><div class="v">73.4</div><div class="l">PE(TTM)</div></div>
+        <div class="mini"><div class="v">18.04</div><div class="l">PB</div></div>
+        <div class="mini"><div class="v">2883亿</div><div class="l">总市值</div></div>
+        <div class="mini"><div class="v down">-11.64亿</div><div class="l">主力净流(当日)</div></div>
+      </div>
+      <table>
+        <thead><tr><th>维度</th><th>指标</th><th>数值</th><th>信号</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>125.76 / 134.29 / 146.11 / 133.63</td><td class="down">空头排列，价在所有均线下</td></tr>
+          <tr><td>MACD (DIF/DEA/HIST)</td><td>-6.86 / -2.47 / -8.78</td><td class="down">死叉，绿柱放大</td></tr>
+          <tr><td>KDJ (K/D/J)</td><td>15.38 / 20.87 / 4.39</td><td class="warn">超卖区</td></tr>
+          <tr><td>BOLL / RSI6 / BIAS24</td><td>下轨115.15 / 30.33 / -21.58%</td><td class="warn">贴下轨，负乖离大</td></tr>
+          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td>-3.39亿 / -1.96亿</td><td class="down">持续流出</td></tr>
+          <tr><td>20日主力净流</td><td>-55.99亿</td><td class="down">中期资金撤离</td></tr>
+          <tr><td>基本面</td><td>2026Q1 营收/净利/EPS</td><td>81.4亿 / 11.58亿 / 0.48</td><td>PCB覆铜板龙头</td></tr>
+          <tr><td>消息面</td><td>近期公告</td><td colspan="2">7/24 临时股东会决议；7/16 限制性股票激励计划解禁上市</td></tr>
+        </tbody>
+      </table>
+      <div class="stopbar">
+        <span class="lbl">止损/止盈监控（波段1-2月）：</span>
+        <span class="warn">止损 115.00</span>（跌破布林下轨+7/21前低117.5，收盘确认）｜
+        <span class="up">止盈一 134.00</span>（MA10）｜
+        <span class="up">止盈二 146.00</span>（MA20/布林中轨，波段目标）｜
+        距止损 <span class="warn">-3.1%</span>｜<span class="ok">当日未触发</span>
+      </div>
+    </div>
+
+    <!-- 东山精密 -->
+    <div class="stock-card">
+      <div class="hd">
+        <div><span class="name">东山精密</span><span class="code">002384 · 平安证券</span><span class="tag tag-pcb">PCB概念</span></div>
+        <div>收盘 <span class="down">199.18</span> · 当日 <span class="down">-3.61%</span> · 浮亏 <span class="warn">-30.43%</span></div>
+      </div>
+      <div class="mini-grid">
+        <div class="mini"><div class="v">178.8</div><div class="l">PE(TTM)</div></div>
+        <div class="mini"><div class="v">16.12</div><div class="l">PB</div></div>
+        <div class="mini"><div class="v">3648亿</div><div class="l">总市值</div></div>
+        <div class="mini"><div class="v down">-5.94亿</div><div class="l">主力净流(当日)</div></div>
+      </div>
+      <table>
+        <thead><tr><th>维度</th><th>指标</th><th>数值</th><th>信号</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>214.41 / 234.23 / 237.88 / 228.19</td><td class="down">空头排列</td></tr>
+          <tr><td>MACD</td><td>-5.39 / 1.05 / -12.89</td><td class="down">死叉，绿柱急剧放大</td></tr>
+          <tr><td>KDJ</td><td>19.98 / 33.08 / -6.22</td><td class="warn">超卖，J值为负</td></tr>
+          <tr><td>BOLL / RSI6 / BIAS24</td><td>下轨199.74 / 28.58 / -17.66%</td><td class="warn">贴下轨超卖</td></tr>
+          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td>-98.33亿 / -92.71亿</td><td class="down">5日大幅流出</td></tr>
+          <tr><td>20日主力净流</td><td>-143.94亿</td><td class="down">资金踩踏</td></tr>
+          <tr><td>基本面</td><td>业务</td><td colspan="2">PCB + 苹果链精密制造双主线，FPC龙头</td></tr>
+          <tr><td>消息面</td><td>关注</td><td colspan="2">苹果新机备货周期；PCB板块整体回调</td></tr>
+        </tbody>
+      </table>
+      <div class="stopbar">
+        <span class="lbl">止损/止盈监控：</span>
+        <span class="warn">止损 195.00</span>（跌破7/21前低195.96，收盘确认，下看176.88）｜
+        <span class="up">止盈一 214.00</span>（MA5）｜
+        <span class="up">止盈二 228.00</span>（MA60）｜
+        距止损 <span class="warn">-2.1%</span>｜<span class="ok">当日未触发</span>｜<span class="warn">浮亏深，距止损最近，重点评估</span>
+      </div>
+    </div>
+
+    <!-- 沪电股份 -->
+    <div class="stock-card">
+      <div class="hd">
+        <div><span class="name">沪电股份</span><span class="code">002463 · 平安证券</span><span class="tag tag-pcb">PCB概念</span></div>
+        <div>收盘 <span class="down">112.22</span> · 当日 <span class="down">-3.04%</span> · 浮亏 <span class="down">-9.93%</span></div>
+      </div>
+      <div class="mini-grid">
+        <div class="mini"><div class="v">45.2</div><div class="l">PE(TTM)</div></div>
+        <div class="mini"><div class="v">13.64</div><div class="l">PB</div></div>
+        <div class="mini"><div class="v">2159亿</div><div class="l">总市值</div></div>
+        <div class="mini"><div class="v down">-4.78亿</div><div class="l">主力净流(当日)</div></div>
+      </div>
+      <table>
+        <thead><tr><th>维度</th><th>指标</th><th>数值</th><th>信号</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>115.96 / 124.34 / 130.08 / 126.01</td><td class="down">空头排列</td></tr>
+          <tr><td>MACD</td><td>-4.51 / -1.71 / -5.59</td><td class="down">死叉，绿柱放大</td></tr>
+          <tr><td>KDJ</td><td>27.92 / 32.29 / 19.17</td><td>偏弱</td></tr>
+          <tr><td>BOLL / RSI6 / BIAS24</td><td>下轨109.18 / 31.94 / -15.46%</td><td class="warn">贴下轨超卖</td></tr>
+          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td>-32.66亿 / -13.85亿</td><td class="down">5日流出加速</td></tr>
+          <tr><td>20日主力净流</td><td>-49.67亿</td><td class="down">中期流出</td></tr>
+          <tr><td>基本面</td><td>业务</td><td colspan="2">服务器/通信PCB龙头，AI算力链受益</td></tr>
+          <tr><td>消息面</td><td>关注</td><td colspan="2">AI服务器PCB订单；板块同步调整</td></tr>
+        </tbody>
+      </table>
+      <div class="stopbar">
+        <span class="lbl">止损/止盈监控：</span>
+        <span class="warn">止损 104.00</span>（跌破7/21前低104.20，收盘确认）｜
+        <span class="up">止盈一 116.00</span>（MA5）｜
+        <span class="up">止盈二 126.00</span>（MA60，近成本价124.60）｜
+        距止损 <span>-7.3%</span>｜<span class="ok">当日未触发（空间相对宽）</span>
+      </div>
+    </div>
+
+    <!-- 北特科技 -->
+    <div class="stock-card">
+      <div class="hd">
+        <div><span class="name">北特科技</span><span class="code">603009 · 平安证券</span><span class="tag tag-auto">汽车零部件</span></div>
+        <div>收盘 <span class="down">38.99</span> · 当日 <span class="down">-5.48%</span> · 浮亏 <span class="warn">-25.74%</span></div>
+      </div>
+      <div class="mini-grid">
+        <div class="mini"><div class="v">109.2</div><div class="l">PE(TTM)</div></div>
+        <div class="mini"><div class="v">6.73</div><div class="l">PB</div></div>
+        <div class="mini"><div class="v">135亿</div><div class="l">总市值</div></div>
+        <div class="mini"><div class="v down">-0.31亿</div><div class="l">主力净流(当日)</div></div>
+      </div>
+      <table>
+        <thead><tr><th>维度</th><th>指标</th><th>数值</th><th>信号</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>41.21 / 42.97 / 46.13 / 47.80</td><td class="down">空头排列，价远离所有均线</td></tr>
+          <tr><td>MACD</td><td>-1.80 / -1.08 / -1.44</td><td class="down">死叉</td></tr>
+          <tr><td>KDJ</td><td>13.50 / 16.48 / 7.55</td><td class="warn">严重超卖</td></tr>
+          <tr><td>BOLL / RSI6 / BIAS24</td><td>下轨38.32 / 20.27 / -14.77%</td><td class="warn">贴下轨，RSI极低</td></tr>
+          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td>-0.79亿 / -0.69亿</td><td class="down">持续小幅流出</td></tr>
+          <tr><td>20日主力净流</td><td>-0.85亿</td><td class="down">资金关注度低</td></tr>
+          <tr><td>基本面</td><td>业务</td><td colspan="2">汽车转向系统零部件，小市值</td></tr>
+          <tr><td>消息面</td><td>关注</td><td colspan="2">7/24收38.99，近20日低位徘徊，弱势未止</td></tr>
+        </tbody>
+      </table>
+      <div class="stopbar">
+        <span class="lbl">止损/止盈监控：</span>
+        <span class="warn">止损 38.00</span>（跌破布林下轨38.32，收盘确认）｜
+        <span class="up">止盈一 41.00</span>（MA5）｜
+        <span class="up">止盈二 46.00</span>（MA20/布林中轨）｜
+        距止损 <span class="warn">-2.5%</span>｜<span class="ok">当日未触发</span>｜<span class="warn">浮亏深+低位，警戒</span>
+      </div>
+    </div>
+
+    <!-- 洛阳钼业 -->
+    <div class="stock-card">
+      <div class="hd">
+        <div><span class="name">洛阳钼业</span><span class="code">603993 · 国投证券</span><span class="tag tag-metal">有色金属</span></div>
+        <div>收盘 <span class="down">19.04</span> · 当日 <span class="down">-4.94%</span> · 浮亏 <span class="down">-17.18%</span></div>
+      </div>
+      <div class="mini-grid">
+        <div class="mini"><div class="v">16.87</div><div class="l">PE(TTM)</div></div>
+        <div class="mini"><div class="v">4.92</div><div class="l">PB</div></div>
+        <div class="mini"><div class="v">4073亿</div><div class="l">总市值</div></div>
+        <div class="mini"><div class="v down">-1.29亿</div><div class="l">主力净流(当日)</div></div>
+      </div>
+      <table>
+        <thead><tr><th>维度</th><th>指标</th><th>数值</th><th>信号</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>19.07 / 18.39 / 18.11 / 18.65</td><td class="up">均线纠缠，相对最强</td></tr>
+          <tr><td>MACD</td><td>0.14 / -0.10 / 0.48</td><td class="up">金叉，红柱</td></tr>
+          <tr><td>KDJ</td><td>71.79 / 68.06 / 79.25</td><td>偏强</td></tr>
+          <tr><td>BOLL / RSI6 / BIAS24</td><td>中轨18.11上方 / 56.08 / +4.80%</td><td>中轨上方运行</td></tr>
+          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td>+25.11亿 / +33.44亿</td><td class="up">5日10日持续净流入</td></tr>
+          <tr><td>20日主力净流</td><td>+17.68亿</td><td class="up">资金面最强</td></tr>
+          <tr><td>基本面</td><td>业务</td><td colspan="2">铜钴双主业，刚果TFM/KFM矿，铜价受益</td></tr>
+          <tr><td>消息面</td><td>关注</td><td colspan="2">铜价走势；钴价企稳；6/11低点16.41已守住</td></tr>
+        </tbody>
+      </table>
+      <div class="stopbar">
+        <span class="lbl">止损/止盈监控：</span>
+        <span class="warn">止损 18.00</span>（跌破MA20/布林中轨18.11，收盘确认）｜
+        <span class="up">止盈一 20.50</span>（近20日高20.59）｜
+        <span class="up">止盈二 21.70</span>（60日高21.74）｜
+        <span class="up">止盈三 23.00</span>（回本位）｜距止损 <span>-5.5%</span>｜<span class="ok">当日未触发（技术面最强）</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 资金对比 -->
+  <div class="card">
+    <h2>主力资金 5日/10日 净流入对比（截至 07-24）</h2>
+    <div id="fundChart" class="chart"></div>
+    <p style="font-size:12px;color:#888780;margin-top:8px;">红=净流入，绿=净流出。洛阳钼业是唯一5日/10日均净流入的持仓（+25.1亿/+33.4亿），其余4只PCB/汽车链持续流出，东山精密5日净流出高达-98.3亿属资金踩踏。</p>
+  </div>
+
+  <!-- 板块联动 -->
+  <div class="card">
+    <h2>板块联动 · PCB概念</h2>
+    <p style="font-size:13px;margin-bottom:10px;">持仓中 <span class="up">生益科技/东山精密/沪电股份</span> 同属 PCB 概念板块，三者走势高度同步——7月中旬以来板块整体回调，三只股票近20日跌幅均在 -23% 至 -34% 之间，属<strong>板块性调整而非个股问题</strong>。</p>
+    <table>
+      <thead><tr><th>股票</th><th>近5日</th><th>近20日</th><th>近60日</th><th>52周高</th><th>52周低</th><th>当前位置</th></tr></thead>
+      <tbody>
+        <tr><td>生益科技</td><td class="down">-10.27%</td><td class="down">-33.50%</td><td class="up">+56.47%</td><td>191.88</td><td>36.30</td><td>高位回撤中</td></tr>
+        <tr><td>东山精密</td><td class="down">-17.67%</td><td class="down">-23.49%</td><td class="up">+6.68%</td><td>280.08</td><td>48.68</td><td>高位回撤中</td></tr>
+        <tr><td>沪电股份</td><td class="down">-12.19%</td><td class="down">-23.80%</td><td class="up">+7.44%</td><td>158.20</td><td>48.62</td><td>高位回撤中</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:#888780;margin-top:8px;">注：三只PCB股同涨同跌，反弹时需观察板块龙头能否率先企稳，再做加仓决定。洛阳钼业（有色）与北特科技（汽车）与PCB板块无联动，独立看待。</p>
+  </div>
+
+  <!-- 风险预警 -->
+  <div class="card">
+    <h2>风险预警汇总（按距止损远近排序）</h2>
+    <table>
+      <thead><tr><th>股票</th><th>收盘</th><th>止损价</th><th>距止损</th><th>止盈一</th><th>止盈二</th><th>当日触发</th><th>风险等级</th><th>建议关注</th></tr></thead>
+      <tbody>
+        <tr class="risk-row"><td>东山精密</td><td>199.18</td><td class="warn">195.00</td><td class="warn">-2.1%</td><td>214</td><td>228</td><td class="ok">未触发</td><td class="warn">高</td><td>浮亏30%+，距止损最近，重点盯</td></tr>
+        <tr class="risk-row"><td>北特科技</td><td>38.99</td><td class="warn">38.00</td><td class="warn">-2.5%</td><td>41</td><td>46</td><td class="ok">未触发</td><td class="warn">高</td><td>低位徘徊，弱势未止</td></tr>
+        <tr><td>生益科技</td><td>118.71</td><td class="warn">115.00</td><td class="warn">-3.1%</td><td>134</td><td>146</td><td class="ok">未触发</td><td>中高</td><td>超跌反弹待确认</td></tr>
+        <tr><td>洛阳钼业</td><td>19.04</td><td class="warn">18.00</td><td>-5.5%</td><td>20.5</td><td>21.7</td><td class="ok">未触发</td><td>低</td><td class="up">技术面最强，MACD金叉</td></tr>
+        <tr><td>沪电股份</td><td>112.22</td><td class="warn">104.00</td><td>-7.3%</td><td>116</td><td>126</td><td class="ok">未触发</td><td>中</td><td>浮亏较浅，空间相对宽</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px;padding:12px;background:#fef5f3;border-radius:8px;font-size:13px;">
+      <strong>次日操作建议（波段1-2月周期）：</strong>
+      <ul style="margin:8px 0 0 20px;line-height:1.9;">
+        <li><strong>先防守后进攻</strong>：4只弱势股反弹是减仓/换结构机会，不追涨；守住止损位是第一纪律</li>
+        <li><strong>东山精密 + 北特科技</strong>：距止损最近（-2.1%/-2.5%）且浮亏深，次日若低开跌破195/38且收盘确认，优先减仓，避免扩大亏损</li>
+        <li><strong>生益/沪电</strong>：暂未触发止损，超跌可能技术反弹，反弹到MA5/MA10附近视为减仓窗口而非加仓</li>
+        <li><strong>洛阳钼业</strong>：组合内唯一技术面偏强+资金净流入，可继续持有，突破20.59后看21.7-23，跌破18止损</li>
+        <li><strong>时间止损</strong>：1-2月波段周期，若持仓1.5个月仍无趋势修复，无论盈亏考虑降仓</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 近期事件日历 -->
+  <div class="card">
+    <h2>近期事件日历</h2>
+    <table>
+      <thead><tr><th>日期</th><th>事件</th><th>相关股票</th><th>影响</th></tr></thead>
+      <tbody>
+        <tr><td>2026-07-16</td><td>生益科技限制性股票激励计划解禁上市</td><td>生益科技</td><td>解禁压力，已部分反应</td></tr>
+        <tr><td>2026-07-24</td><td>生益科技临时股东会决议</td><td>生益科技</td><td>常规治理事项</td></tr>
+        <tr><td>待跟踪</td><td>PCB板块中报披露期（8月）</td><td>生益/东山/沪电</td><td>业绩验证窗口，关注订单/毛利</td></tr>
+        <tr><td>待跟踪</td><td>铜价/钴价走势</td><td>洛阳钼业</td><td>直接业绩驱动</td></tr>
+        <tr><td>待跟踪</td><td>苹果新机备货周期</td><td>东山精密</td><td>FPC订单催化</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    本报告由 WorkBuddy 持仓分析器自动生成（盘后）· 数据源：腾讯自选股（westock-data）· 数据日期 2026-07-24 · 仅供个人盯盘参考，不构成投资建议<br>
+    止损止盈位基于技术面分析（支撑压力+均线+布林带），波段1-2月周期 · 涨红跌绿（A股惯例）
+  </div>
+
+</div>
+
+<script>
+var portfolio = [
+  {name:'生益科技', value:11871},
+  {name:'东山精密', value:19918},
+  {name:'沪电股份', value:22444},
+  {name:'北特科技', value:11697},
+  {name:'洛阳钼业', value:9520}
+];
+
+var kline20 = {
+  dates: ['06-29','06-30','07-01','07-02','07-03','07-06','07-07','07-08','07-09','07-10','07-13','07-14','07-15','07-16','07-17','07-20','07-21','07-22','07-23','07-24'],
+  sh600183: [171.16,173.4,164.8,151.95,160.78,154.27,150.77,145.46,157.4,149.39,134.45,147.9,152.43,146.99,132.29,123.34,135.67,126.0,125.1,118.71],
+  sz002384: [249.59,262.35,246.31,221.68,232.73,224.46,236.87,237.56,261.32,242.3,236.7,260.37,262.49,268.8,241.92,217.73,231.0,217.5,206.65,199.18],
+  sz002463: [141.06,152.8,145.01,130.51,135.35,128.83,129.72,128.2,137.3,129.44,124.66,137.13,137.23,136.72,127.8,115.02,122.6,114.23,115.74,112.22],
+  sh603009: [46.9,47.97,49.65,50.5,53.34,52.9,50.57,46.65,46.38,48.15,46.0,45.2,45.78,44.61,42.02,41.28,42.36,42.19,41.25,38.99],
+  sh603993: [18.0,17.55,17.73,18.29,18.52,18.31,17.69,17.53,17.19,17.5,16.86,18.21,17.91,18.2,17.41,17.99,18.68,19.61,20.03,19.04]
+};
+
+function norm(arr){ var base=arr[0]; return arr.map(function(v){return Number((v/base*100).toFixed(2));}); }
+
+var UP='#e24b4a', DOWN='#1d9e75';
+
+echarts.init(document.getElementById('pieChart')).setOption({
+  tooltip:{trigger:'item', formatter:'{b}: ¥{c} ({d}%)'},
+  legend:{bottom:0, textStyle:{fontSize:12}},
+  series:[{
+    type:'pie', radius:['38%','68%'],
+    itemStyle:{borderColor:'#fff', borderWidth:2},
+    label:{formatter:'{b}\n{d}%', fontSize:11},
+    data: portfolio.map(function(s){return {name:s.name, value:s.value};})
+  }]
+});
+
+echarts.init(document.getElementById('trendChart')).setOption({
+  tooltip:{trigger:'axis'},
+  legend:{bottom:0, textStyle:{fontSize:11}},
+  grid:{left:'4%', right:'4%', bottom:'15%', containLabel:true},
+  xAxis:{type:'category', data:kline20.dates, axisLabel:{rotate:40, fontSize:10}},
+  yAxis:{type:'value', name:'归一化', nameTextStyle:{fontSize:11}},
+  series:[
+    {name:'生益科技', type:'line', data:norm(kline20.sh600183), smooth:true, lineStyle:{width:2}},
+    {name:'东山精密', type:'line', data:norm(kline20.sz002384), smooth:true, lineStyle:{width:2}},
+    {name:'沪电股份', type:'line', data:norm(kline20.sz002463), smooth:true, lineStyle:{width:2}},
+    {name:'北特科技', type:'line', data:norm(kline20.sh603009), smooth:true, lineStyle:{width:2}},
+    {name:'洛阳钼业', type:'line', data:norm(kline20.sh603993), smooth:true, lineStyle:{width:2}}
+  ]
+});
+
+echarts.init(document.getElementById('fundChart')).setOption({
+  tooltip:{trigger:'axis', axisPointer:{type:'shadow'}},
+  legend:{data:['5日主力净流','10日主力净流'], bottom:0},
+  grid:{left:'4%', right:'4%', bottom:'15%', containLabel:true},
+  xAxis:{type:'category', data:['生益科技','东山精密','沪电股份','北特科技','洛阳钼业'], axisLabel:{fontSize:11}},
+  yAxis:{type:'value', name:'亿元'},
+  series:[
+    {name:'5日主力净流', type:'bar', data:[
+      {value:-3.39, itemStyle:{color:DOWN}},
+      {value:-98.33, itemStyle:{color:DOWN}},
+      {value:-32.66, itemStyle:{color:DOWN}},
+      {value:-0.79, itemStyle:{color:DOWN}},
+      {value:25.11, itemStyle:{color:UP}}
+    ]},
+    {name:'10日主力净流', type:'bar', data:[
+      {value:-1.96, itemStyle:{color:DOWN, opacity:0.6}},
+      {value:-92.71, itemStyle:{color:DOWN, opacity:0.6}},
+      {value:-13.85, itemStyle:{color:DOWN, opacity:0.6}},
+      {value:-0.69, itemStyle:{color:DOWN, opacity:0.6}},
+      {value:33.44, itemStyle:{color:UP, opacity:0.6}}
+    ]}
+  ]
+});
+</script>
+</body>
+</html>
