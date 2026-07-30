@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>操作确认 + 弹药盘点 + 后续安排 2026-07-30</title>
+<title>午后反弹评估 + 操作确认 2026-07-30</title>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -36,8 +36,8 @@ li{margin:4px 0}
 </head>
 <body>
 <div class="header">
-<h1>✅ 操作确认 + 弹药盘点 + 后续安排</h1>
-<div class="time">2026-07-30 11:34 更新 | 创业板 -4.22% 大跌日</div>
+<h1>📊 午后反弹评估 + 操作确认</h1>
+<div class="time">2026-07-30 13:50 更新 | 创业板从3158低点弹至3266（+3.4%）</div>
 </div>
 
 <!-- 执行确认 -->
@@ -46,122 +46,84 @@ li{margin:4px 0}
 <div class="done-box">
 <strong>✅ 北特科技：36.00 卖出 200 股 — 已成交</strong><br>
 <span style="font-size:13px">
-• 回收资金：<strong>7,200 元</strong>（36.00 × 200）<br>
-• 实现亏损：<strong>-3,302 元</strong>（成本52.51 vs 卖出36.00）<br>
-• 剩余持仓：<strong>100 股</strong>，成本52.51，现价35.73，浮亏 <span class="red">-31.9%</span><br>
-• 风险敞口降低：<span class="green">67%</span>（300股→100股）
+• 回收资金：<strong>7,200 元</strong> • 实现亏损：-3,302 元 • 剩余：100股（浮亏-31.9%）<br>
+• 风险敞口降低：<span class="green">67%</span>
 </span>
 </div>
 <div class="info-box" style="margin-top:8px">
-<strong>其余4只：未动（符合预期）</strong>
-<ul style="margin-top:6px">
-<li>东山精密：封死跌停，<strong>想动也动不了</strong>，等明天</li>
-<li>生益科技 / 沪电股份 / 洛阳钼业：持有，逻辑成立</li>
-</ul>
+<strong>其余4只：未动</strong> — 东山（跌停锁死）、生益/沪电/洛阳（持有逻辑成立）
 </div>
 </div>
 
-<!-- 当前持仓全景 -->
+<!-- 午后反弹对比 -->
 <div class="card">
-<h2>📋 当前持仓全景（11:15 快照）</h2>
+<h2>📈 午后反弹：盘面 vs 你的持仓（13:50）</h2>
 <table>
-<tr><th>名称</th><th>持仓</th><th>成本</th><th>现价</th><th>今日</th><th>亏损%</th><th>状态</th></tr>
-<tr><td class="bold">东山精密</td><td>200股</td><td>242.75</td><td class="red bold">161.80</td><td class="red">-10%🔒跌停</td><td class="red">-33.4%</td><td><span class="tag tag-danger">明日必处理</span></td></tr>
-<tr><td class="bold">生益科技</td><td>100股</td><td>137.36</td><td class="red">98.52</td><td class="red">-8.93%</td><td class="red">-28.3%</td><td><span class="tag tag-hold">持有</span></td></tr>
-<tr><td class="bold">沪电股份</td><td>200股</td><td>124.60</td><td class="red">95.64</td><td class="red">≈-9.0%</td><td class="red">-23.2%</td><td><span class="tag tag-hold">持有/可选减</span></td></tr>
-<tr><td class="bold">北特科技</td><td><span class="green">100股</span>↓</td><td>52.51</td><td class="red">35.73</td><td class="red">-4.48%</td><td class="red">-31.9%</td><td><span class="tag tag-done">已减200</span></td></tr>
-<tr><td class="bold">洛阳钼业</td><td>500股</td><td>22.99</td><td class="red">18.68</td><td class="red">-2.10%</td><td class="red">-18.7%</td><td><span class="tag tag-safe">最抗跌</span></td></tr>
+<tr><th>标的</th><th>11:15</th><th>13:50</th><th>午后变化</th><th>今日累计</th></tr>
+<tr><td class="bold">生益科技</td><td>98.52</td><td class="green">100.15</td><td class="green">+1.7%</td><td class="red">-7.4%</td></tr>
+<tr><td class="bold">沪电股份</td><td>95.64</td><td class="green">98.26</td><td class="green">+2.7%</td><td class="red">≈-7.0%</td></tr>
+<tr><td class="bold">北特科技(100)</td><td>35.73</td><td>35.65</td><td class="red">-0.2%</td><td class="red">-4.4%</td></tr>
+<tr><td class="bold">洛阳钼业</td><td>18.68</td><td class="green">18.91</td><td class="green">+1.2%</td><td class="red">-0.9%</td></tr>
+<tr><td class="bold">东山精密</td><td>161.80</td><td class="red bold">161.80</td><td class="red">🔒 0%</td><td class="red">-10%跌停</td></tr>
 </table>
-</div>
-
-<!-- 弹药盘点（核心修正） -->
-<div class="card">
-<h2>💰 弹药盘点：7,200元到底能买什么</h2>
-<div class="info-box">
-<strong>你问得对——7,200元买不起高股价标的。</strong>以下是各标的买1手（100股）的资金门槛（按11:15现价）：
-</div>
 <table style="margin-top:10px">
-<tr><th>标的</th><th>现价</th><th>买1手需</th><th>7,200够吗</th><th>说明</th></tr>
-<tr><td>生益科技</td><td>98.52</td><td>9,852</td><td><span class="red">❌ 差2,652</span></td><td>买不起</td></tr>
-<tr><td>沪电股份</td><td>95.64</td><td>9,564</td><td><span class="red">❌ 差2,364</span></td><td>买不起</td></tr>
-<tr><td>东山精密</td><td>161.80</td><td>16,180</td><td><span class="red">❌ 差8,980</span></td><td>买不起</td></tr>
-<tr><td>北特科技</td><td>35.73</td><td>3,573</td><td><span class="green">✅ 够</span></td><td>但逻辑破坏，不买</td></tr>
-<tr><td>洛阳钼业</td><td>18.68</td><td>1,868</td><td><span class="green">✅ 够（买300股）</span></td><td>但仓位已最大，不加</td></tr>
+<tr><th>大盘</th><th>低点</th><th>现指</th><th>反弹幅度</th></tr>
+<tr><td class="bold">创业板</td><td>3158.14</td><td class="green">3266.59</td><td class="green">+3.4% 从低点</td></tr>
+<tr><td class="bold">上证</td><td>3767.50</td><td class="green">3807.07</td><td class="green">+1.1% 从低点</td></tr>
 </table>
-<div class="danger-box" style="margin-top:10px">
-<strong>🔴 核心问题暴露了：</strong>你的现金被高股价标的"锁死"了。<br>
-• 组合里生益/沪电/东山单价都近100-160元，1手就要1-1.6万<br>
-• 深套后现金枯竭（仅7,200），<strong>没有补仓的子弹，也没有调仓的灵活性</strong><br>
-• 这不是你操作的问题，是<strong>建仓时没留现金缓冲 + 高位满仓</strong>的结构性缺陷
+<div class="info-box" style="margin-top:10px">
+<strong>📌 反弹定性：</strong>这是<strong>大盘系统性反弹（beta）</strong>，不是个股独立利好。生益/沪电/洛阳跟涨1-3%，但都远未收复今日跌幅，更未触及成本线。属于"跌多了喘口气"，<strong>不改变深套结构</strong>。
 </div>
 </div>
 
-<!-- 修正后的现金策略 -->
-<div class="card">
-<h2>🎯 修正后的资金策略</h2>
-
-<div class="action-box">
-<strong>🟠 第一步：7,200元当"氧气瓶"，别动</strong><br>
-今天大盘-4%级别，下午抄底=接飞刀。7,200元留着当应急现金，<strong>等大盘企稳信号</strong>（如指数连续2日缩量止跌、或政策底出现）再考虑用。
-</div>
-
+<!-- 关键新信号 -->
+<div class="card priority-danger">
+<h2>🔴 关键新信号：东山封死跌停没被打开</h2>
 <div class="danger-box">
-<strong>🔴 第二步：真正的调仓弹药是东山明天减仓的 ~3.2万</strong><br>
-东山 200股 × 161.80 ≈ <strong>32,360 元</strong>（若全清回收）<br>
-这才是能改变组合结构的钱。思路升级：
+<strong>创业板午后反弹 +3.4%，但东山依然死死封在 161.80 跌停价。</strong><br><br>
+这释放一个重要信号：<strong>东山的抛压是"个股层面"的，不是大盘beta。</strong>
 <ul style="margin-top:6px">
-<li><strong>用东山的3.2万，换强逻辑 + 低股价标的</strong></li>
-<li>例如：补1手生益(9,852) + 1手沪电(9,564) = 19,416，剩余留现金</li>
-<li>或：等生益/沪电跌到更便宜的位置再动手（不急）</li>
-<li><strong>本质是把"弱逻辑高仓位"换成"强逻辑合理仓位"</strong></li>
+<li>如果今天下跌只是大盘拖累，那科技股反弹时东山应该至少撬板（打开跌停）</li>
+<li>结果它纹丝不动 → 说明有<strong>专属东山的卖盘</strong>（机构出货/止损盘/基本面担忧），跟大盘无关</li>
+<li>这意味着：<strong>指望"大盘反弹来拯救东山"是不成立的</strong></li>
+</ul>
+<span style="font-size:12px;color:#c0392b">⚠️ 今天封板到收盘的话，明天开盘这批今天没卖掉的单子+新增止损盘会集中涌出，<strong>低开/继续跌停概率更高</strong></span>
+</div>
+</div>
+
+<!-- 判断刷新结论 -->
+<div class="card" style="background:#eaf4fb">
+<h2 style="color:#2980b9;border-bottom-color:#2980b9">✅ 判断是否需要刷新？</h2>
+<div class="info-box" style="background:#fff;border-left:4px solid #2980b9">
+<strong>结论：整体判断不变，但"卖东山"的紧迫性更高了。</strong>
+<table style="margin-top:8px">
+<tr><th>标的</th><th>原判断</th><th>午后刷新</th><th>结论</th></tr>
+<tr><td>东山</td><td>明日必处理</td><td>封板未开+个股性抛压</td><td><span class="tag tag-danger">更该走</span></td></tr>
+<tr><td>生益</td><td>持有</td><td>小弹，仍-7.4%</td><td><span class="tag tag-hold">持有不变</span></td></tr>
+<tr><td>沪电</td><td>持有/可选减</td><td>小弹，仍-7%</td><td><span class="tag tag-hold">持有不变</span></td></tr>
+<tr><td>北特(100)</td><td>持有观察</td><td>持平未弹</td><td><span class="tag tag-hold">持有不变</span></td></tr>
+<tr><td>洛阳</td><td>持有（压舱石）</td><td>最抗跌，仅-0.9%</td><td><span class="tag tag-safe">持有不变</span></td></tr>
+</table>
+<ul style="margin-top:10px;color:#2980b9">
+<li>✅ 持仓结构判断无需刷新：生益/沪电/洛阳逻辑成立持有，北特已减负持有</li>
+<li>🔴 东山判断<strong>强化</strong>：封板未开证明其弱势是结构性的，明天减仓决心应更坚定</li>
+<li>💰 资金策略不变：7,200当氧气瓶；真弹药是东山明日减仓的~3.2万</li>
 </ul>
 </div>
-
-<div class="safe-box">
-<strong>🟢 第三步：洛阳不加仓</strong><br>
-洛阳股价最低(18.68)、逻辑成立、已抗跌，但<strong>500股已是组合最大仓</strong>。<br>
-再加仓会提高单一标的集中度，得不偿失。<strong>洛阳就当压舱石，持有即可。</strong>
 </div>
 
-<div class="info-box" style="margin-top:8px">
-<strong>💡 一句话总结：</strong>现在别想"用7,200补仓"——那是杯水车薪。<br>
-真正能动的子弹是<strong>明天东山减仓回收的3.2万</strong>，用它做组合再平衡才是正解。
-</div>
-</div>
-
-<!-- 后续安排时间轴 -->
+<!-- 明日东山执行方案 -->
 <div class="card">
-<h2>🗓️ 后续安排（按时间轴）</h2>
-
+<h2>🗓️ 明日（07-31）东山执行方案</h2>
 <div class="danger-box">
-<strong>🔴 明日（07-31）开盘 — 东山精密必须处理</strong><br>
-现状：封死跌停 161.80，基本面最弱（负债177%+一次性增长+PCB退潮）<br><br>
-<strong>三种剧本：</strong>
-<ol>
-<li><strong>低开/继续跌停</strong>：开盘挂跌停价排队卖，能跑100先跑100</li>
-<li><strong>平开/小高开</strong>：挂 162–165 减 100–200 股（反弹即走）</li>
-<li><strong>大盘企稳反弹</strong>：仍建议至少减100股降低敞口</li>
+<strong>🔴 开盘第一件事：挂单卖东山</strong><br>
+基于"封板未开+个股性抛压"的判断，给出三档预案：
+<ol style="margin-top:6px">
+<li><strong>继续跌停/低开</strong>：9:15起挂跌停价（或更低）排队卖，能跑100先跑100，不恋战</li>
+<li><strong>平开/小高开（162-168）</strong>：挂 162-165 减 100-200 股，反弹即走</li>
+<li><strong>意外高开（>170）</strong>：直接减200全清，不贪反弹（弱基本面不配长期持有）</li>
 </ol>
-<span style="font-size:12px;color:#c0392b">⚠️ 东山减仓回收的 ~3.2万，是后续调仓的唯一大弹药</span>
-</div>
-
-<div class="action-box">
-<strong>🟠 盘中观察 — 沪电股份（可选减100）</strong><br>
-逻辑最稳但今日跟跌约-9%，若下午破95，可考虑减100股（留100底仓）<br>
-若大盘午后企稳，则持有不动
-</div>
-
-<div class="safe-box">
-<strong>🟢 持有 — 生益 / 洛阳（不动）</strong><br>
-• 生益：100股只能全清或不卖，逻辑成立，持有等修复<br>
-• 洛阳：最抗跌，铜钼逻辑成立，500股核心持有（不加仓）<br>
-<span style="font-size:12px;color:#666">盯紧：生益 95 / 洛阳 18.00 止损线</span>
-</div>
-
-<div class="safe-box">
-<strong>🟢 北特剩余 100 股 — 持有观察</strong><br>
-已减大部分，剩余100股浮亏-31.9%不构成重压<br>
-若反弹到38（原止损位）→ 清掉；若继续跌 → 持有（仓位已小）
+<span style="font-size:12px;color:#c0392b">⚠️ 无论哪种情况，核心动作都是"减仓/清仓"，不是"等回本"。东山已从成本242.75跌到161.80，等回本需要+50%涨幅，不现实</span>
 </div>
 </div>
 
@@ -169,16 +131,16 @@ li{margin:4px 0}
 <div class="card" style="background:#eaf4fb">
 <h2 style="color:#2980b9;border-bottom-color:#2980b9">📌 纪律总结</h2>
 <ul style="color:#2980b9">
-<li>✅ 你做对了一件事：深套中果断减掉逻辑破坏的北特（降低敞口67%）</li>
-<li>⚠️ 东山接飞刀教训：下跌途中加仓放大亏损，以后跌破止损就执行</li>
-<li>💡 资金现实：7,200元买不起高股价标的，留作氧气瓶；真正弹药是东山减仓的3.2万</li>
-<li>⏰ 明天开盘第一件事：处理东山（封死跌停的票越早挂单越好）</li>
-<li>🧘 深套时情绪管理最重要：组合风险已降低，睡得着比多赚重要</li>
+<li>✅ 北特减仓已执行，组合风险降低67%，操作正确</li>
+<li>🔴 东山封板未开 = 个股性弱势信号，明天减仓决心要更硬</li>
+<li>💡 午后反弹是beta不是alpha，不改变任何持仓逻辑</li>
+<li>⏰ 距收盘约1小时，剩下4只持有不动，盯好东山封板状态即可</li>
+<li>🧘 今天做对的事已经做了（砍北特），剩下的交给纪律</li>
 </ul>
 </div>
 
 <div class="footer">
-Generated by 研股股 | 数据源：腾讯自选股 westock | 2026-07-30 11:34<br>
+Generated by 研股股 | 数据源：腾讯自选股 westock | 2026-07-30 13:50<br>
 ⚠️ 仅供参考，不构成投资建议
 </div>
 </body>
