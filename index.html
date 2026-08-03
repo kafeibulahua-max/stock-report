@@ -3,114 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>盘前分析 · 2026-08-03</title>
+<title>开盘竞价刷新 · 2026-08-03 09:32</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background:#f5f6f8; color:#1a1a1a; padding:16px; line-height:1.6; }
-  .wrap { max-width:780px; margin:0 auto; }
-  .banner { background:linear-gradient(135deg,#1f3a5f,#2c5282); color:#fff; border-radius:12px; padding:18px 20px; margin-bottom:16px; }
-  .banner h1 { font-size:20px; margin-bottom:6px; }
-  .banner .sub { font-size:13px; opacity:.85; }
-  .card { background:#fff; border-radius:12px; padding:16px 18px; margin-bottom:14px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
-  .card h2 { font-size:16px; margin-bottom:12px; padding-left:10px; border-left:4px solid #2c5282; }
-  .red { color:#e03131; font-weight:600; }
-  .green { color:#2f9e44; font-weight:600; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background:#f5f6fa; color:#2c3e50; line-height:1.6; padding:16px; }
+  .banner { background:#fff3cd; border:1px solid #ffc107; color:#856404; padding:10px 14px; border-radius:8px; margin-bottom:16px; font-size:13px; font-weight:600; }
+  .wrap { max-width:860px; margin:0 auto; background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.06); overflow:hidden; }
+  header { background:linear-gradient(135deg,#2c3e50,#34495e); color:#fff; padding:20px 22px; }
+  header h1 { font-size:20px; font-weight:700; }
+  header p { font-size:13px; opacity:.85; margin-top:4px; }
+  section { padding:18px 22px; border-bottom:1px solid #ecf0f1; }
+  section h2 { font-size:16px; color:#2c3e50; margin-bottom:12px; border-left:4px solid #e74c3c; padding-left:10px; }
   table { width:100%; border-collapse:collapse; font-size:13px; }
-  th,td { padding:8px 6px; text-align:left; border-bottom:1px solid #eee; }
-  th { background:#f8f9fa; font-weight:600; color:#555; }
-  .tag { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; background:#e7f5ff; color:#1971c2; margin-right:4px; }
-  .tag.warn { background:#fff3bf; color:#e67700; }
-  .tag.good { background:#ebfbee; color:#2f9e44; }
-  ul { padding-left:18px; font-size:13.5px; }
-  li { margin-bottom:6px; }
-  .note { font-size:12px; color:#868e96; margin-top:8px; }
-  .disclaimer { font-size:11px; color:#adb5bd; text-align:center; margin-top:20px; padding-top:12px; border-top:1px dashed #dee2e6; }
-  .hl { background:#fff9db; padding:2px 6px; border-radius:4px; }
+  th,td { padding:9px 8px; text-align:center; border-bottom:1px solid #ecf0f1; }
+  th { background:#f8f9fa; color:#7f8c8d; font-weight:600; }
+  .red { color:#e74c3c; font-weight:600; }
+  .green { color:#27ae60; font-weight:600; }
+  .flat { color:#7f8c8d; }
+  .kbox { background:#f8f9fa; border-radius:8px; padding:12px 14px; margin:8px 0; font-size:13px; }
+  .kbox b { color:#2c3e50; }
+  .upd { background:#eaf2ff; border-left:4px solid #3498db; padding:12px 14px; border-radius:0 8px 8px 0; margin:10px 0; font-size:13px; }
+  .upd b { color:#2980b9; }
+  .ops { display:flex; flex-wrap:wrap; gap:10px; }
+  .op { flex:1; min-width:240px; border:1px solid #ecf0f1; border-radius:8px; padding:12px; }
+  .op .name { font-weight:700; font-size:14px; margin-bottom:6px; }
+  .op .tag { display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; margin-bottom:8px; }
+  .tag-hold { background:#e8f8f0; color:#27ae60; }
+  .tag-watch { background:#fef9e7; color:#f39c12; }
+  .tag-sell { background:#fdedec; color:#e74c3c; }
+  .risk { background:#fdedec; border-radius:8px; padding:12px 14px; font-size:13px; }
+  .risk li { margin-left:18px; margin-bottom:4px; }
+  footer { padding:14px 22px; font-size:11px; color:#95a5a6; background:#fafbfc; }
+  #chart { width:100%; height:240px; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media(max-width:640px){ .grid2{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
+<div class="banner">⚠️ 持仓变更（2026-07-31 生效）：已割肉 <b>东山精密</b>（全清 200股）、<b>北特科技</b>（全清 100股）。当前仅持 <b>3 只</b>，可用现金约 4 万元（两账户合计）。本报告已按最新持仓生成。</div>
 <div class="wrap">
+  <header>
+    <h1>开盘竞价刷新 · 2026-08-03 09:32</h1>
+    <p>生益低开 -3.54%、沪电 -1.2% 证伪"PCB 高开"预期 → 今日转为「观察日」，不低位割肉、不追高</p>
+  </header>
 
-  <div class="banner">
-    <h1>📊 盘前分析 · 2026-08-03（周一）</h1>
-    <div class="sub">周末后首个交易日 · 当前持仓仅 3 只（已割肉东山/北特） · 大盘情绪偏强（创业板指 +3.06%）</div>
-  </div>
-
-  <div class="card">
-    <h2>🔔 今日重点关注（盘前必看）</h2>
-    <ul>
-      <li><span class="tag good">利好</span><b>宏观暖风密集</b>：国常会核准 4 核电项目（8 台机组、投资超 1700 亿）+ 央行定调"适度宽松货币政策、流动性充裕" + 股票 ETF 七月净流入 <b>4778 亿</b>（历史峰值）。</li>
-      <li><span class="tag good">利好</span><b>地缘缓和</b>：特朗普取消对伊朗打击、霍尔木兹海峡开放 → 风险偏好提升、油价回落。</li>
-      <li><span class="tag warn">风险</span><b>PCB 高开未封板</b>：生益 105.64 / 沪电 103.75（相对 07-31 涨停价回落），警惕"利好兑现"高开低走。</li>
-      <li><span class="tag">纪律</span>已割肉东山/北特，<b>绝不因"卖飞"心理去追涨买回</b>；现金约 4 万，不加仓不追高。</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>📰 周末核心消息面</h2>
+  <section>
+    <h2>一、最新竞价 / 开盘快照（09:32）</h2>
     <table>
-      <tr><th>类别</th><th>内容</th><th>影响方向</th></tr>
-      <tr><td>政策</td><td>国常会(7/31)：扩大国内需求、核准 4 核电项目（辽宁庄河等，8 台机组投资超 1700 亿）、新型电网/物流网建设</td><td><span class="green">利好电网/核电/基建</span></td></tr>
-      <tr><td>货币</td><td>央行下半年工作会议(8/1)：继续适度宽松货币政策、保持流动性充裕、综合融资成本低位</td><td><span class="green">利好成长股估值</span></td></tr>
-      <tr><td>地缘</td><td>特朗普取消对伊朗打击、霍尔木兹海峡开放</td><td><span class="green">利好风险偏好/油价跌</span></td></tr>
-      <tr><td>资金</td><td>股票 ETF 七月净流入 4778 亿创历史峰值；中信证券研判"调整基本结束"</td><td><span class="green">增量资金/券商偏多</span></td></tr>
-      <tr><td>行业</td><td>市场监管总局开展光伏行业价格合规指导（反内卷）</td><td><span class="green">利好光伏龙头</span>（无持仓）</td></tr>
-      <tr><td>外围</td><td>美股周五收涨（苹果 -7%、亚马逊 +15% 分化）</td><td><span class="green">整体偏暖</span></td></tr>
+      <tr><th>名称</th><th>持仓</th><th>成本</th><th>现价</th><th>今日</th><th>浮亏%</th></tr>
+      <tr><td>生益科技 600183</td><td>100股</td><td>137.36</td><td class="green">101.90</td><td class="green">-3.54%</td><td class="green">-25.8%</td></tr>
+      <tr><td>沪电股份 002463</td><td>200股</td><td>124.60</td><td class="green">102.50</td><td class="green">-1.20%</td><td class="green">-17.7%</td></tr>
+      <tr><td>洛阳钼业 603993</td><td>500股</td><td>22.99</td><td class="flat">19.52</td><td class="flat">0.00%</td><td class="green">-15.1%</td></tr>
     </table>
-  </div>
+    <div class="kbox">
+      <b>大盘环境：</b>深证 <b class="flat">13578.93（0.00%）</b> 平开；创业板指 <b class="flat">3343.96（0.00%）</b> 平开——而盘前期货指曾 +3%，现货平开 = <b>利好兑现、资金不追</b>。上证数据竞价末未稳定（[STALE]）。<br>
+      <b>账户总盘：</b>持仓市值 ≈ 4.05 万 + 现金 ≈ 4 万 ≈ <b>8.05 万</b>；三股合计浮亏 ≈ <b>-0.97 万</b>（较盘前略增，因 PCB 走弱）。
+    </div>
+    <div id="chart"></div>
+  </section>
 
-  <div class="card">
-    <h2>💼 当前持仓状态（08-03 盘前）</h2>
+  <section>
+    <h2>二、周末消息回顾（已 Price-in，今日未发酵）</h2>
+    <div class="grid2">
+      <div class="kbox">
+        <b>利好：</b><br>
+        • 国常会核准 4 核电项目（投资 1700 亿+）<br>
+        • 央行定调"继续适度宽松"<br>
+        • 股票 ETF 7月净流入 4778 亿（历史峰值）<br>
+        • 地缘缓和（霍尔木兹开放）
+      </div>
+      <div class="kbox">
+        <b>盘面验证：</b><br>
+        • 利好密集但大盘<b>平开</b>，未高举高打<br>
+        • PCB 龙头生益<b>逆势低开 -3.54%</b><br>
+        • 创业板指盘前 +3% → 现货 0%<br>
+        → <b>"利好兑现 / 反弹衰减"格局成立</b>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>三、策略刷新（对比盘前 09:08）</h2>
+    <div class="upd">
+      <b>盘前判断：</b>"周末利好密集，PCB 高开未封板，今日以逢高减亏为主。"<br>
+      <b>开盘实测：</b>PCB 不仅没高开，反而<b>低开走弱</b>（生益 -3.54%、沪电 -1.2%），大盘平开。<br>
+      <b>→ 策略必须刷新：</b>从"逢高减亏日"转为"<b>观察日 + 不低位割肉 + 盯支撑</b>"。价格比盘前更低，此时减亏=在更低点割肉，无意义；抄底亦不成熟（趋势未稳）。
+    </div>
+    <div class="ops">
+      <div class="op">
+        <div class="name">生益科技 100股</div>
+        <span class="tag tag-watch">持有 · 盯100关口</span>
+        <div>低开 -3.54% 至 101.9。<b>100股只能全清或不卖</b>——低位不割肉。逻辑仍成立（AI PCB 基材刚需），beta 退潮是短期。关键支撑 <b>100 整数关口</b>，破则收盘确认后全清（止损非减亏）。</div>
+      </div>
+      <div class="op">
+        <div class="name">沪电股份 200股</div>
+        <span class="tag tag-hold">持有 · 可正T</span>
+        <div>平开微跌 -1.2% 至 102.5，全组合最稳。持有；想降本可<b>正T</b>（102吸→105~106抛，留100底仓）。若反弹至 106~108 再考虑减100锁利。不急。</div>
+      </div>
+      <div class="op">
+        <div class="name">洛阳钼业 500股</div>
+        <span class="tag tag-hold">持有 · 压舱</span>
+        <div>平开 19.52，铜钴逻辑独立、前期最抗跌，是组合最好的分散与压舱石。持有不动，轻仓反T可选非必需。</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>四、今日操作优先级</h2>
     <table>
-      <tr><th>名称</th><th>持仓</th><th>成本</th><th>现价</th><th>浮亏</th><th>状态</th></tr>
-      <tr><td>生益科技</td><td>100股</td><td>137.36</td><td>105.64</td><td class="red">-23.1%</td><td>持有/可全清减亏</td></tr>
-      <tr><td>沪电股份</td><td>200股</td><td>124.60</td><td>103.75</td><td class="red">-16.7%</td><td>持有/可减100锁利</td></tr>
-      <tr><td>洛阳钼业</td><td>500股</td><td>22.99</td><td>19.52</td><td class="red">-15.1%</td><td>压舱持有</td></tr>
-      <tr><td><s>东山精密</s></td><td colspan="5"><s>已清仓 07-30 @161.8</s></td></tr>
-      <tr><td><s>北特科技</s></td><td colspan="5"><s>已清仓 07-31 @38.44</s></td></tr>
+      <tr><th>优先级</th><th>动作</th><th>触发条件</th></tr>
+      <tr><td>P0</td><td class="flat">无强制动作，全面观察</td><td>—</td></tr>
+      <tr><td>P1</td><td class="red">生益若跌破100收盘确认 → 100股全清</td><td>收盘价 &lt; 100</td></tr>
+      <tr><td>P2</td><td class="flat">沪电反弹106~108 → 减100锁利 / 或正T降本</td><td>价 ≥ 106</td></tr>
+      <tr><td>P3</td><td class="flat">洛阳持有压舱，现金按兵不动</td><td>—</td></tr>
     </table>
-    <div class="note">数据来源：westock 行情接口（盘前/开盘快照，生益价为分钟兜底 105.64；收盘价以交易所为准）。</div>
-  </div>
+  </section>
 
-  <div class="card">
-    <h2>🎯 消息面对持仓的影响</h2>
-    <ul>
-      <li><b>生益 / 沪电（PCB 主线）</b>：宽松货币 + 风险偏好修复利好成长，但 07-31 已暴力涨停，今日<b>高开后未封板、高位震荡</b>。PCB（AI 算力/覆铜板）长逻辑未破坏，但短期已涨多，<span class="hl">重点看承接而非追高</span>。</li>
-      <li><b>洛阳钼业（铜钴/有色）</b>：地缘缓和→油价跌对有色影响中性；铜钴看自身供需，今日 +2.95% 温和。逻辑独立、与 PCB 不相关，<span class="hl">是组合里最好的分散压舱</span>。</li>
-    </ul>
-  </div>
+  <section>
+    <h2>五、纪律红线</h2>
+    <div class="risk">
+      <ul>
+        <li>⚠️ <b>不追东山 / 北特</b>：已割肉，别因"卖飞"情绪去追涨买回（尤其北特纯 beta 涨停、无实质催化）。</li>
+        <li>⚠️ <b>不低位割肉</b>：生益 101.9 不割（比盘前更低），逻辑成立的票等反弹减亏而非恐慌砍。</li>
+        <li>⚠️ <b>不追高</b>：今日无高可追，PCB 逆势走弱，利好兑现期慎加仓。</li>
+        <li>⚠️ <b>现金约4万按兵不动</b>：大盘平开+PCB 走弱，非抄底时机；等方向明确或回调更好买点。</li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="card">
-    <h2>⚡ 今日关注点 & 操作</h2>
-    <ul>
-      <li><b>① PCB 承接力</b>：生益/沪电今日高开未封板（生益 110→105.64、沪电 106→103.75）。若放量滞涨/回落 → 是减亏窗口；若站稳 5 日线续强 → 持有。</li>
-      <li><b>② 生益 100 股</b>：<span class="hl">100 股只能全清或不卖</span>。若反弹至 108–110 附近（贴近 07-31 涨停价），可**全清减亏**；逻辑成立也可继续持有。</li>
-      <li><b>③ 沪电 200 股</b>：最稳，可<span class="hl">减 100 锁利（103–105 卖 100，留 100 底仓）</span>；或纯持有。PCB 若延续反弹，沪电是核心仓。</li>
-      <li><b>④ 洛阳 500 股</b>：压舱石，持有。铜钴逻辑独立，不随 PCB 波动，分散风险。</li>
-      <li><b>⑤ 现金约 4 万</b>：<span class="hl">不加仓、不追高</span>（高位票买不起 + 大盘刚反弹）。等回调或新机会。</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>🛡️ 操作纪律（红线）</h2>
-    <ul>
-      <li>⚠️ 7/31 暴力反弹后，今日警惕"<b>利好兑现</b>"高开低走——不追涨。</li>
-      <li>⚠️ 生益/沪电/洛阳仍深套（-15%~-23%），<b>反弹是减亏窗口不是回本信号</b>，别幻想回本。</li>
-      <li>⚠️ 已割肉东山/北特，<b>不要因"卖飞"心理去追涨买回</b>——尤其北特（纯 beta 无催化）。</li>
-      <li>✅ 仓位结构已健康：3 只逻辑票 + 4 万现金，保持纪律即可。</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>⚖️ 多空视角</h2>
-    <ul>
-      <li><b>多方</b>：宽松货币 + ETF 天量流入 + 地缘缓和 + 券商看多 → 反弹延续。</li>
-      <li><b>空方</b>：7/31 已暴涨、短线超买、今日高开未封板显疲态、宏观利好已 price in → 回踩。</li>
-      <li><b>研股股立场</b>：谨慎乐观。持股待涨但<span class="hl">逢高减亏</span>（生益/沪电），不追不贪。</li>
-    </ul>
-  </div>
-
-  <div class="disclaimer">⚠️ 本报告仅供参考，不构成个人投资建议。行情可能延迟，以交易所官方数据为准。</div>
+  <footer>
+    数据来源：westock-data 实时行情（快照 2026-08-03 09:32，竞价末部分指数数据未稳定已标注）。本报告为自动化持仓分析产出，仅供参考，不构成个人投资建议。行情可能延迟，以交易所官方数据为准。
+  </footer>
 </div>
+<script>
+  var chart = echarts.init(document.getElementById('chart'));
+  chart.setOption({
+    title: { text:'持仓累计浮亏% vs 今日涨跌幅', left:'center', textStyle:{ fontSize:13, color:'#7f8c8d' } },
+    tooltip: { trigger:'axis' },
+    legend: { bottom:0, textStyle:{ fontSize:11 } },
+    grid: { top:40, bottom:50, left:50, right:20 },
+    xAxis: { type:'category', data:['生益','沪电','洛阳'] },
+    yAxis: { type:'value', axisLabel:{ formatter:'{value}%' } },
+    series: [
+      { name:'累计浮亏%', type:'bar', data:[-25.8,-17.7,-15.1], itemStyle:{ color:'#27ae60' }, label:{ show:true, position:'top', formatter:'{c}%', fontSize:11 } },
+      { name:'今日涨跌幅%', type:'bar', data:[-3.54,-1.2,0], itemStyle:{ color:'#e74c3c' }, label:{ show:true, position:'top', formatter:'{c}%', fontSize:11 } }
+    ]
+  });
+  window.addEventListener('resize', function(){ chart.resize(); });
+</script>
 </body>
 </html>
