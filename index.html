@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日盘前持仓分析报告 · 2026-08-04</title>
+<title>每日盘后持仓分析报告 · 2026-08-05</title>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,6 +41,7 @@
   .stopbar .lbl { color: #888780; font-size: 12px; }
   .stopbar.triggered { background: #fbe3e0; border-left: 4px solid #c0261f; }
   .stopbar.safe { background: #e9f7f1; border-left: 3px solid #1d9e75; }
+  .stopbar.near { background: #fff6e5; border-left: 3px solid #d85a30; }
   .mini-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
   .mini { background: #f7f6f1; padding: 8px; border-radius: 6px; text-align: center; }
   .mini .v { font-size: 14px; font-weight: 600; }
@@ -61,62 +62,61 @@
   .badge-lo { background:#1d9e75;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px; }
   .ok { color: #1d9e75; font-weight: 600; }
   @media (max-width: 768px) { .grid2, .grid3, .grid4, .mini-grid { grid-template-columns: 1fr 1fr; } .chart{height:300px;} }
-</style>
-</head>
+</style></head>
 <body>
 <div class="wrap">
-<h1>每日盘前持仓分析报告</h1>
-<div class="sub">2026-08-04（周二） · 盘前 09:00 生成 · 数据基准 2026-08-03 收盘 · 数据源：腾讯自选股（westock-data）</div>
+<h1>每日盘后持仓分析报告</h1>
+<div class="sub">2026-08-05（周三） · 盘后 15:30 生成 · 数据基准 2026-08-05 收盘 · 数据源：腾讯自选股（westock-data）</div>
 
 <div class="cleared">
 <strong>📋 持仓变更提示</strong>：自动化任务原始清单为 5 只，实际已执行两笔清仓 —— <strong>东山精密 002384</strong>（07-30 清仓）、<strong>北特科技 603009</strong>（07-31 于 38.44 清仓 100 股）。
 <strong>当前实际持仓为 3 只</strong>，本报告按实际持仓生成，两只已清仓标的不再跟踪。
 </div>
 
-<!-- ① 今日重点关注 · 盘前必看 -->
-<div class="card" style="border-left:4px solid #d85a30; background:#fff5f3;">
-  <h2 style="color:#d85a30;">① 今日重点关注 · 盘前必看</h2>
-  <div class="sec-title">关键价位监控表（按紧急度排序 · 基准 08-03 收盘）</div>
+<!-- ① 今日重点关注 · 盘后复盘 -->
+<div class="card" style="border-left:4px solid #534ab7; background:#f6f5fc;">
+  <h2 style="color:#534ab7;">① 今日重点关注 · 盘后复盘（关键价位复核）</h2>
+  <div class="sec-title">关键价位复核表（按距止损远近排序 · 基准 08-05 收盘）</div>
   <table>
-    <tr><th style="width:82px">紧急度</th><th>标的</th><th>08-03 收盘</th><th>关键价位</th><th>距现价</th><th>盘前状态判断</th><th>今日动作</th></tr>
-    <tr class="trig-row">
-      <td><span class="badge-hi">🔴 最高</span></td>
-      <td><strong>沪电股份</strong><br><span style="font-size:11px;color:#888">002463 · 200股</span></td>
-      <td><span class="down">101.61</span><br><span class="down" style="font-size:12px">-2.06%</span></td>
-      <td>止损线 <strong>104.00</strong><br><span style="font-size:11px;color:#888">止盈一 116.00</span></td>
-      <td><span class="down">-2.30%</span><br><span style="font-size:11px;color:#888">已触发(07-30)加深</span></td>
-      <td><span class="warn">破位确认</span><br><span style="font-size:11px">今日最高 104.06 短暂触及即回落，收盘再失守；ADX 53 下跌趋势强</span></td>
-      <td><strong>反弹至 104~110 减 100 或全清</strong>；<br>破 100（今日低 99.81）→ <strong>全清</strong></td>
-    </tr>
-    <tr class="trig-row">
-      <td><span class="badge-hi">🔴 高</span></td>
+    <tr><th style="width:82px">紧急度</th><th>标的</th><th>08-05 收盘</th><th>关键价位</th><th>距现价</th><th>盘后状态判断</th><th>次日动作</th></tr>
+    <tr class="risk-row">
+      <td><span class="badge-mid">🟡 中</span></td>
       <td><strong>生益科技</strong><br><span style="font-size:11px;color:#888">600183 · 100股</span></td>
-      <td><span class="down">102.03</span><br><span class="down" style="font-size:12px">-3.42%</span></td>
-      <td>止损线 <strong>115.00</strong><br><span style="font-size:11px;color:#888">决策门槛 110.00</span></td>
-      <td><span class="down">-11.28%</span><br><span style="font-size:11px;color:#888">深度破位</span></td>
-      <td><span class="warn">止损已失效</span><br><span style="font-size:11px">最高 105.88，距门槛 110 仍差约 4 元；技术评分全组最弱</span></td>
-      <td><strong>放量站上 110 才留</strong>；<br>否则 <strong>100 股全清</strong>（手数约束）</td>
+      <td><span class="up">122.79</span><br><span class="up" style="font-size:12px">+9.41%</span></td>
+      <td>止损线 <strong>115.00</strong><br><span style="font-size:11px;color:#888">止盈一 134.00</span></td>
+      <td><span class="ok">距止损 +6.77%</span><br><span style="font-size:11px;color:#888">距止盈一 +9.08%</span></td>
+      <td><span class="ok">止损收复</span><br><span style="font-size:11px">收盘 122.79 重返 115 止损上方（此前深破已失效）；但仍处 MA20(127) 下方，反弹未确认反转</span></td>
+      <td>持有观察；<strong>站稳 MA20(127) 转强</strong>；<br>跌破 115 则 100 股全清</td>
+    </tr>
+    <tr class="safe-row">
+      <td><span class="badge-lo">🟢 低</span></td>
+      <td><strong>沪电股份</strong><br><span style="font-size:11px;color:#888">002463 · 200股</span></td>
+      <td><span class="up">115.60</span><br><span class="up" style="font-size:12px">+3.43%</span></td>
+      <td>止损线 <strong>104.00</strong><br><span style="font-size:11px;color:#888">止盈一 <strong>116.00</strong></span></td>
+      <td><span class="ok">距止损 +11.15%</span><br><span class="warn" style="font-size:11px">距止盈一 -0.35%</span></td>
+      <td><span class="ok">止损解除</span><br><span style="font-size:11px">收盘 115.60 收复 104（此前 07-30~08-03 触发已解除）；盘中最高 119 触及止盈一，收盘差 0.40 未站上</span></td>
+      <td><strong>减 100 股(半仓)锁盈</strong>；<br>破 115 余 100 观望，破 110 清</td>
     </tr>
     <tr class="safe-row">
       <td><span class="badge-lo">🟢 低</span></td>
       <td><strong>洛阳钼业</strong><br><span style="font-size:11px;color:#888">603993 · 500股</span></td>
-      <td><span class="down">19.18</span><br><span class="down" style="font-size:12px">-1.74%</span></td>
+      <td><span class="up">20.47</span><br><span class="up" style="font-size:12px">+6.67%</span></td>
       <td>止损 <strong>18.00</strong><br>止盈一 <strong>20.50</strong></td>
-      <td><span class="ok">距止损 +6.56%</span><br><span style="font-size:11px;color:#888">距止盈 +6.88%</span></td>
-      <td><span class="ok">安全区</span><br><span style="font-size:11px">低 18.95 未破 18；唯一 MACD 红柱 + SAR 在价下</span></td>
-      <td>持有；<strong>触 20.50 减 100–200 股</strong>；<br>破 19.00 转警戒</td>
+      <td><span class="ok">距止损 +13.72%</span><br><span class="warn" style="font-size:11px">距止盈一 -0.15%</span></td>
+      <td><span class="ok">安全区</span><br><span style="font-size:11px">收盘 20.47 差 0.03 未站上止盈一；盘中最高 20.58 已触及；MACD 红柱 + 突破 MA120，全组最强</span></td>
+      <td><strong>减 100–200 股锁盈</strong>；<br>站上 20.50 看 21.70</td>
     </tr>
   </table>
 
-  <div class="sec-title" style="margin-top:18px">今日盯盘时间表（08-04 周二）</div>
+  <div class="sec-title" style="margin-top:18px">次日（08-06 周四）盯盘时间表</div>
   <table>
     <tr><th style="width:112px">时段</th><th>关注重点</th></tr>
-    <tr><td><strong>09:15–09:25</strong><br><span style="font-size:11px;color:#888">竞价</span></td><td>① <strong>沪电竞价是否高开至 104 上方</strong>（收 101.61，若高开即减仓窗口）；② 生益能否高开冲击 110（概率低）；③ PCB/元件板块竞价强弱 —— 盘前热榜 PCB/元件缺席前 12，若继续低开确认下跌中继。</td></tr>
-    <tr><td><strong>09:30–10:30</strong><br><span style="font-size:11px;color:#888">执行窗</span></td><td><strong>沪电核心执行区</strong>：反弹至 104~110 即挂减 100 股（回收约 ¥1.02 万），留 100 底仓；若放量冲高至 110 以上可一并全清。生益若无力站 110，维持"尾盘全清"预案。</td></tr>
-    <tr><td><strong>10:30–11:30</strong><br><span style="font-size:11px;color:#888">上午</span></td><td>观察 PCB 双雄是否出现"低开—弱反弹—再下杀"的下跌中继形态；若沪电跌破 100（今日低 99.81），无条件全清 200 股。</td></tr>
-    <tr><td><strong>13:00–14:30</strong><br><span style="font-size:11px;color:#888">午后</span></td><td>洛阳午后若跌破 19.00（MA5/MA10 支撑）转入警戒但不动作；若冲 20.50 上方减 100–200 股锁盈。PCB 若午后无量反抽即减仓良机。</td></tr>
-    <tr style="background:#fef0ed;"><td><strong>14:30–15:00</strong><br><span style="font-size:11px;color:#888">尾盘</span></td><td><strong>生益最终决断</strong>：14:30 后仍低于 110 → 15:00 前 100 股全清。沪电依反弹高度决定减仓比例。记录收盘价核对次日止损。</td></tr>
-    <tr><td><strong>15:00 收盘</strong></td><td><strong>确认收盘价是否破位（收盘破位才正式触发止损）</strong></td></tr>
+    <tr><td><strong>09:15–09:25</strong><br><span style="font-size:11px;color:#888">竞价</span></td><td>① <strong>沪电/洛阳能否高开站上止盈一</strong>（116.00 / 20.50）—— 今日收盘均差毫厘未站上，次日开盘定调锁盈节奏；② 生益能否延续强势冲击 MA20(127)；③ 板块竞价强弱 —— 今日元件 +6.57%、电子布 +7.76%、工业金属资金 +65 亿，关注热度能否延续。</td></tr>
+    <tr><td><strong>09:30–10:30</strong><br><span style="font-size:11px;color:#888">执行窗</span></td><td><strong>锁盈核心区</strong>：沪电反弹至 116 上方挂减 100 股（回收约 ¥1.16 万），留 100 底仓；洛阳冲 20.50 上方减 100–200 股（回收 ¥2,047–4,094）。生益持有观察，未达 MA20 不动。</td></tr>
+    <tr><td><strong>10:30–11:30</strong><br><span style="font-size:11px;color:#888">上午</span></td><td>观察 PCB 双雄是否出现"冲高回落"——今两根大阳后短期乖离偏大（生益 BIAS6 +13.2），防获利盘兑现；沪电若跌破 115 则剩余 100 股转观望。</td></tr>
+    <tr><td><strong>13:00–14:30</strong><br><span style="font-size:11px;color:#888">午后</span></td><td>洛阳午后若站稳 20.50 上方，剩余仓位看至止盈二 21.70；若回落至 20.00 下方则中止减仓、转为持有。PCB 若午后无量回落即锁盈良机。</td></tr>
+    <tr style="background:#eef0f7;"><td><strong>14:30–15:00</strong><br><span style="font-size:11px;color:#888">尾盘</span></td><td><strong>生益最终决断</strong>：14:30 后仍低于 MA20(127) → 维持持有（不强行出）；若跌破 115(止损收复位) 则 100 股全清。核对收盘价与止盈一。</td></tr>
+    <tr><td><strong>15:00 收盘</strong></td><td><strong>确认收盘价是否站上止盈一（116/20.50）—— 站上则减缓减仓，未站上则按计划锁盈</strong></td></tr>
     <tr><td><strong>15:30 盘后</strong></td><td>自动生成盘后分析报告并推送</td></tr>
   </table>
   <div class="note">
@@ -126,16 +126,21 @@
 
 <!-- ② 今日核心结论 -->
 <div class="tldr">
-  <h2>② 今日核心结论（盘前版）</h2>
+  <h2>② 今日核心结论（盘后版）</h2>
   <p>
-  <span class="hl">昨日（08-03）复盘</span>：三只持仓全线收绿，组合当日 <span class="down">-¥959（-2.33%）</span>，把上周五 "+5.87% 反弹" 定性为<strong>明确的下跌中继</strong>。
-  PCB 双雄（生益 -3.42%、沪电 -2.06%）重回下行，洛阳 -1.74% 仍守 18 止损上方，是全组合唯一未破位的核心资产。<br><br>
-  <span class="hl">组合现状</span>：持仓市值 <span class="hl">¥40,115</span>，累计浮亏 <span class="down">-¥10,035（-20.01%）</span>，仓位 <span class="hl">47.5%</span>，现金 ¥44,301 不动（占总资产 52.5%）。<br><br>
-  <span class="hl">今日三票定位</span>：<strong>沪电（最高优先级）</strong>—— 止损 104 已于 07-30 触发、08-03 收 101.61 加深破位，ADX 53 下跌趋势强、10 日主力净流出 -38.98 亿（三只最惨），<strong>反弹即减仓是唯一正确动作</strong>；
-  <strong>生益（次高）</strong>—— 距止损 115 已深破 -11.28%，止损机制失效，改以 110 为决策门槛，技术评分全组最弱 + PE 63 最贵，100 股只能全清或不卖；
-  <strong>洛阳（压舱石）</strong>—— 距止损 +6.56% 安全、MACD 红柱、10 日主力净流入 +28.19 亿，持有为主，触及 20.50 再减 100–200 股锁盈。<br><br>
-  <span class="hl">盘前板块信号</span>：今日盘前热榜前 12 为 <strong>AI应用 / 电网设备 / 电力 / 半导体 / 核电 / 云计算 / 光伏设备</strong> 等，<strong>PCB 概念与元件双双缺席</strong>（直接关联持仓），市场资金在算力/电力/能源主线，PCB 缺乏人气、下跌中继中无资金接力。大盘环境综合评分 18.73（价值主导 + 缩量 + 短期弱势），风格仍不利高估值成长 PCB 双雄、利好低 PE 洛阳。<br><br>
-  <span class="hl">一句话策略</span>：<strong>减 PCB、守洛阳、现金作盾</strong> —— 今日任务是把"反弹减仓"从计划变成动作。
+  <span class="hl">今日（08-05）复盘</span>：三只持仓<strong>全线放量大涨</strong>，组合当日盯市 <span class="up">+¥2,462（+5.70%）</span>，
+  总市值升至 <span class="hl">¥45,634</span>，累计浮亏大幅收窄至 <span class="down">-¥4,516（-9.01%）</span>（昨日 -20.01%）。
+  生益 <span class="up">+9.41%</span> 逼近涨停（高 123.45=涨停价）、沪电 <span class="up">+3.43%</span>、洛阳 <span class="up">+6.67%</span>，
+  把 08-03 判定的"下跌中继"彻底推翻—— <strong>连续两个交易日（08-04 + 08-05）的强劲反弹已构成明确的 V 型反转雏形</strong>。<br><br>
+  <span class="hl">技术面较盘前（基于 08-03 数据）的核心变化</span>：PCB 双雄由"深度破位、空头排列"转为<strong>强劲反弹、收复短均线（MA5/MA10/MA120）</strong>，
+  但<strong>仍处 MA20(127/118.39) 与 MA60 下方</strong>—— 反弹已确认，反转待验证；洛阳则已<strong>突破 MA120 且 MACD 红柱扩张</strong>，是全组唯一处于完整多头排列的标的。
+  综合评分全线跳升（生益 79.07 / 沪电 80.10 / 洛阳 75.35），技术评分周环比分别 +18.78 / +37.76 / -17.49。<br><br>
+  <span class="hl">主力资金全天流向</span>：<strong>三票单日主力全部大额净流入</strong>—— 生益 <span class="up">+12.93 亿</span>（超大单 +12.57 亿，全市场第 7）、
+  洛阳 <span class="up">+12.34 亿</span>（全市场第 8）、沪电 <span class="up">+2.38 亿</span>，
+  <strong>彻底逆转此前"全线净流出"的颓势</strong>；5 日主力净额生益/沪电已转正（+14.58 / +4.51 亿），洛阳 10/20 日维持 +14.51 / +21.72 亿。<br><br>
+  <span class="hl">止损止盈是否触发</span>：<strong>今日无止损触发、反而是"止损收复日"</strong>—— 沪电 104 止损（此前 07-30~08-03 触发）已解除、生益重返 115 止损上方；
+  更关键的是 <strong>沪电(116) 与洛阳(20.50) 双双逼近止盈一</strong>（收盘差毫厘未站上，盘中最高 119 / 20.58 均已触及），进入"锁盈窗口"。<br><br>
+  <span class="hl">一句话策略</span>：<strong>反弹已立、反转待验，次日以"逢高锁盈"为主</strong> —— 沪电减 100 股、洛阳减 100–200 股、生益持有观察、现金不动。
   </p>
 </div>
 
@@ -143,22 +148,22 @@
 <div class="card">
   <h2>③ 持仓总览（合并两账户）</h2>
   <div class="grid4">
-    <div class="stat"><div class="v">¥40,115</div><div class="l">持仓市值</div></div>
+    <div class="stat"><div class="v">¥45,634</div><div class="l">持仓市值</div></div>
     <div class="stat"><div class="v">¥50,150</div><div class="l">持仓成本</div></div>
-    <div class="stat"><div class="v down">-¥10,035</div><div class="l">累计浮亏（-20.01%）</div></div>
-    <div class="stat"><div class="v">47.5%</div><div class="l">仓位（现金 ¥44,301）</div></div>
+    <div class="stat"><div class="v down">-¥4,516</div><div class="l">累计浮亏（-9.01%）</div></div>
+    <div class="stat"><div class="v">50.7%</div><div class="l">仓位（现金 ¥44,301）</div></div>
   </div>
   <div class="grid2" style="margin-top:18px">
     <div>
-      <div class="sec-title">明细（按 08-03 收盘价）</div>
+      <div class="sec-title">明细（按 08-05 收盘价）</div>
       <table>
       <tr><th>标的</th><th>股数</th><th>成本价</th><th>现价</th><th>市值</th><th>盈亏</th><th>幅度</th></tr>
-      <tr><td><strong>生益科技</strong><br><span style="font-size:11px;color:#888">600183</span></td><td>100</td><td>137.361</td><td>102.03</td><td>¥10,203</td><td class="down">-¥3,533</td><td class="down">-25.73%</td></tr>
-      <tr><td><strong>沪电股份</strong><br><span style="font-size:11px;color:#888">002463</span></td><td>200</td><td>124.596</td><td>101.61</td><td>¥20,322</td><td class="down">-¥4,597</td><td class="down">-18.45%</td></tr>
-      <tr><td><strong>洛阳钼业</strong><br><span style="font-size:11px;color:#888">603993</span></td><td>500</td><td>22.990</td><td>19.18</td><td>¥9,590</td><td class="down">-¥1,905</td><td class="down">-16.57%</td></tr>
-      <tr style="background:#f7f6f1"><td colspan="4"><strong>合计</strong></td><td><strong>¥40,115</strong></td><td class="down"><strong>-¥10,035</strong></td><td class="down"><strong>-20.01%</strong></td></tr>
+      <tr><td><strong>生益科技</strong><br><span style="font-size:11px;color:#888">600183</span></td><td>100</td><td>137.361</td><td>122.79</td><td>¥12,279</td><td class="down">-¥1,457</td><td class="down">-10.61%</td></tr>
+      <tr><td><strong>沪电股份</strong><br><span style="font-size:11px;color:#888">002463</span></td><td>200</td><td>124.596</td><td>115.60</td><td>¥23,120</td><td class="down">-¥1,799</td><td class="down">-7.22%</td></tr>
+      <tr><td><strong>洛阳钼业</strong><br><span style="font-size:11px;color:#888">603993</span></td><td>500</td><td>22.990</td><td>20.47</td><td>¥10,235</td><td class="down">-¥1,260</td><td class="down">-10.96%</td></tr>
+      <tr style="background:#f7f6f1"><td colspan="4"><strong>合计</strong></td><td><strong>¥45,634</strong></td><td class="down"><strong>-¥4,516</strong></td><td class="down"><strong>-9.01%</strong></td></tr>
       </table>
-      <div class="note">总资产 ¥84,416（持仓 ¥40,115 + 现金 ¥44,301）。<strong>当日组合盯市 <span class="down">-¥959（-2.33%）</span></strong>，上周五反弹成果回吐过半；累计浮亏较 07-31（-18.10%）扩大至 -20.01%。</div>
+      <div class="note">总资产 ¥89,935（持仓 ¥45,634 + 现金 ¥44,301）。<strong>当日组合盯市 <span class="up">+¥2,462（+5.70%，较 08-04 收盘）</span></strong>；累计浮亏较 08-03（-20.01%）腰斩至 -9.01%。现金 ¥44,301 未动，仓位升至 50.7%。</div>
     </div>
     <div>
       <div class="sec-title">市值分布</div>
@@ -175,20 +180,20 @@
       <div><span class="acc-tab active">平安证券</span></div>
       <table style="margin-top:0">
       <tr><th>标的</th><th>股数</th><th>市值</th><th>盈亏</th></tr>
-      <tr><td>生益科技 600183</td><td>100</td><td>¥10,203</td><td class="down">-¥3,533（-25.73%）</td></tr>
-      <tr><td>沪电股份 002463</td><td>200</td><td>¥20,322</td><td class="down">-¥4,597（-18.45%）</td></tr>
-      <tr style="background:#f7f6f1"><td colspan="2"><strong>小计</strong></td><td><strong>¥30,525</strong></td><td class="down"><strong>-¥8,130（-21.05%）</strong></td></tr>
+      <tr><td>生益科技 600183</td><td>100</td><td>¥12,279</td><td class="down">-¥1,457（-10.61%）</td></tr>
+      <tr><td>沪电股份 002463</td><td>200</td><td>¥23,120</td><td class="down">-¥1,799（-7.22%）</td></tr>
+      <tr style="background:#f7f6f1"><td colspan="2"><strong>小计</strong></td><td><strong>¥35,399</strong></td><td class="down"><strong>-¥3,256（-8.42%）</strong></td></tr>
       </table>
-      <div class="note">该账户 100% 为 <strong>PCB/覆铜板</strong> 单一赛道，今日两只同跌（生益 -3.42% / 沪电 -2.06%），行业集中度风险最高。沪电止损已触发、生益深度破位，该账户是两个减仓决策的执行地。</div>
+      <div class="note">该账户 100% 为 <strong>PCB/覆铜板</strong> 单一赛道，今日两只同涨（生益 +9.41% / 沪电 +3.43%），收回 08-03 破位的大部分失地。两票仍处 MA20/MA60 下方，反弹性质待确认；沪电逼近止盈一 116，是次日首要锁盈执行地。</div>
     </div>
     <div>
       <div><span class="acc-tab active">国投证券</span></div>
       <table style="margin-top:0">
       <tr><th>标的</th><th>股数</th><th>市值</th><th>盈亏</th></tr>
-      <tr><td>洛阳钼业 603993</td><td>500</td><td>¥9,590</td><td class="down">-¥1,905（-16.57%）</td></tr>
-      <tr style="background:#f7f6f1"><td colspan="2"><strong>小计</strong></td><td><strong>¥9,590</strong></td><td class="down"><strong>-¥1,905（-16.57%）</strong></td></tr>
+      <tr><td>洛阳钼业 603993</td><td>500</td><td>¥10,235</td><td class="down">-¥1,260（-10.96%）</td></tr>
+      <tr style="background:#f7f6f1"><td colspan="2"><strong>小计</strong></td><td><strong>¥10,235</strong></td><td class="down"><strong>-¥1,260（-10.96%）</strong></td></tr>
       </table>
-      <div class="note">该账户为 <strong>有色/铜钴资源</strong>，与 PCB 赛道低相关，是组合天然对冲。今日 -1.74% 为三只最小跌幅，技术面最健康，明日无强制动作。</div>
+      <div class="note">该账户为 <strong>有色/铜钴资源</strong>，与 PCB 赛道低相关，是组合天然对冲。今日 +6.67%、突破 MA120、MACD 红柱，技术上已领先 PCB 双雄进入多头排列；逼近止盈一 20.50，次日可减 100–200 股锁盈。</div>
     </div>
   </div>
 </div>
@@ -199,88 +204,90 @@
 
   <div class="stock-card">
     <div class="hd">
-      <div><span class="name">沪电股份</span><span class="code">002463 · 深圳主板 · 200股</span><span class="tag tag-pcb">PCB / 印制电路板</span></div>
-      <div style="text-align:right"><span class="down" style="font-size:19px">101.61</span> <span class="down">-2.06%</span><br><span style="font-size:11px;color:#888">综合评分 74.82（资金 66.07 / 技术 48.87）</span></div>
+      <div><span class="name">生益科技</span><span class="code">600183 · 上海主板 · 100股</span><span class="tag tag-pcb">覆铜板 CCL</span></div>
+      <div style="text-align:right"><span class="up" style="font-size:19px">122.79</span> <span class="up">+9.41%</span><br><span style="font-size:11px;color:#888">综合评分 79.07（资金 81.56 / 技术 63.64 / 基本 87.25）</span></div>
     </div>
-    <div class="stopbar triggered">
-      <span class="lbl">止损止盈监控</span>　止损 <strong>104.00</strong>（<span class="down">现价低于止损 -2.30%，已触发确认</span>）｜ 止盈一 <strong>116.00</strong>（需 +14.15%）｜ 止盈二 <strong>126.00</strong>（需 +24.00%）<br>
-      <span style="font-size:12px">🔴 <strong>止损已于 07-30 触发，08-03 收 101.61 加深破位</strong>：当日最高 104.06 短暂触及即回落，收盘再失守；反弹即减仓窗口。</span>
+    <div class="stopbar safe">
+      <span class="lbl">止损止盈监控</span>　止损 <strong>115.00</strong>（<span class="ok">现价高于止损 +6.77%，已收复</span>）｜ 止盈一 <strong>134.00</strong>（需 <span class="up">+9.08%</span>）｜ 止盈二 <strong>146.00</strong>（需 <span class="up">+19.00%</span>）<br>
+      <span style="font-size:12px">🟢 <strong>止损收复</strong>：收盘 122.79 重返 115 上方（此前深破至 102 失效已修复），但仍处 MA20(127) 下方，反弹未确认反转。</span>
     </div>
     <div class="mini-grid">
-      <div class="mini"><div class="v down">空头排列</div><div class="l">均线形态</div></div>
-      <div class="mini"><div class="v down">-4.91</div><div class="l">MACD 柱（绿）</div></div>
-      <div class="mini"><div class="v">21.6</div><div class="l">KDJ-K（超卖）</div></div>
-      <div class="mini"><div class="v">34.9</div><div class="l">RSI6</div></div>
+      <div class="mini"><div class="v up">收复短均</div><div class="l">均线形态</div></div>
+      <div class="mini"><div class="v down">-1.997</div><div class="l">MACD 柱（绿·收窄）</div></div>
+      <div class="mini"><div class="v">44.0</div><div class="l">KDJ-K</div></div>
+      <div class="mini"><div class="v">57.5</div><div class="l">RSI6</div></div>
     </div>
     <table>
     <tr><th style="width:64px">维度</th><th>解读</th></tr>
-    <tr><td><strong>技术</strong></td><td>技术评分 <strong>48.87</strong>（月线 -42.62，严重塌陷）。价格 101.61 在 MA5(102.58)/MA10(109.52)/MA20(119.92)/MA60(126.10) <span class="down">全部下方</span>，标准空头排列。MACD 三线零轴下（DIF -8.21 / DEA -5.75），绿柱 -4.91。<strong>ADX 53.1、MDI 41.7 &gt; PDI 6.7 —— 下跌趋势强度居全市场前列</strong>。SAR 110.13 在价上（空头），BOLL 下轨 94.52 为下一道支撑。BIAS24 -17.0 乖离仍大。</td></tr>
-    <tr><td><strong>资金</strong></td><td>08-03 主力<span class="down">净流出 -2.20 亿</span>（超大单 -2.15 亿）。拉长周期：<span class="down">5 日 -11.89 亿、10 日 -38.98 亿、20 日 -37.64 亿</span> —— <strong>三只里中期资金撤离最彻底</strong>，10 日净流出规模约为生益的 3.3 倍。</td></tr>
-    <tr><td><strong>基本</strong></td><td>2026Q1 营收 62.14 亿、归母净利 <strong>12.42 亿</strong>、EPS 0.6455，TTM 归母 43.02 亿，基本面评分 <strong>85.19</strong>（三只中高位）。PE 45.45、PB 12.35，估值仍偏高。筹码平均成本约 129，当前获利盘仅约 14%，86% 筹码套牢——上方抛压重但杀跌空间亦有限。</td></tr>
-    <tr><td><strong>消息</strong></td><td>08-03 盘后<strong>暂无新公告</strong>。近期：07-24 为控股子公司提供担保进展（中性）；<strong>07-15/16/21/22 连续 4 次投资者关系活动记录表</strong>（机构调研密集，关注度未散）；07-13 已发布 2026 年半年度业绩预告（已 price in）。无个股级利好催化。</td></tr>
+    <tr><td><strong>技术</strong></td><td>技术评分 <strong>63.64</strong>（周环比 <span class="up">+18.78</span>，明显修复）。价格 122.79 已站上 MA5(108.55)/MA10(113.41)/MA120(101.52)，但<strong>仍处 MA20(127.00)/MA30(139.28)/MA60(137.82) 下方</strong>—— 短多长空，典型超跌反弹结构。MACD 三线零轴下（DIF -10.31 / DEA -9.31），绿柱 -1.997 较前期 -7.41 大幅收窄；<strong>ADX 56.3、PDI 34.6 &gt; MDI 13.8 —— 下跌趋势已被扭转为向上</strong>。BIAS6 +13.2 短期乖离偏大，RSI6 57.5 回归中性。</td></tr>
+    <tr><td><strong>资金</strong></td><td>08-05 主力<span class="up">净流入 +12.93 亿</span>（超大单 +12.57 亿，全市场第 7），<strong>彻底逆转此前连续净流出</strong>。拉长周期：<span class="up">5 日 +14.58 亿（转正）</span>、10 日 -15.32 亿、20 日 -1.90 亿 —— 中期抛压已基本被本周 rebound 消化，但 10 日仍小幅为负，需观察持续性。</td></tr>
+    <tr><td><strong>基本</strong></td><td>2026Q1 营收 81.41 亿、归母净利 <strong>11.58 亿</strong>、EPS 0.48，TTM 归母 39.28 亿，基本面评分 <strong>87.25</strong>（全组最高）。但 <span class="warn">PE 75.92、PB 18.66 为组合最贵</span>，估值消化压力最大。筹码平均成本约 137（与你的 137.361 成本重合），现价 122.79 仍套牢约 7 成筹码。</td></tr>
+    <tr><td><strong>消息</strong></td><td>08-05 当日<strong>暂无新公告</strong>。近期：07-24 临时股东会决议公告；07-16 限制性股票激励第二个解除限售期解禁上市（偏空，新增流通盘）；07-14 拟处置持有的联瑞新材可转债（中性偏正）。<strong>无回购类利好</strong>，但今日强势更多由板块β与资金驱动。</td></tr>
     </table>
-    <div class="note"><strong>今日操作</strong>：止损已触发，<strong>反弹即减仓为首选</strong>。200 股可减 100（半仓）或全清：反弹至 104~110 挂减 100 股（回收约 ¥1.02 万）；若放量冲高至 110 以上可全清；若跌破 100（今日低 99.81）则无条件全清。</div>
+    <div class="note"><strong>次日操作</strong>：受手数约束，100 股<strong>只能全清或不卖</strong>。判定标准：<strong>次日放量站上 MA20(127)</strong> → 确认反转、继续持有；若冲高回落跌破 115(止损收复位) → <strong>100 股全清</strong>锁损；或趁反弹至 130+ 主动全清以降低 PCB 集中度。技术最弱 + 估值最贵，是组合中反弹持续性最需验证的仓位。</div>
   </div>
 
   <div class="stock-card">
     <div class="hd">
-      <div><span class="name">生益科技</span><span class="code">600183 · 上海主板 · 100股</span><span class="tag tag-pcb">覆铜板 CCL</span></div>
-      <div style="text-align:right"><span class="down" style="font-size:19px">102.03</span> <span class="down">-3.42%</span><br><span style="font-size:11px;color:#888">综合评分 74.16（资金 58.77 / 技术 44.45）</span></div>
+      <div><span class="name">沪电股份</span><span class="code">002463 · 深圳主板 · 200股</span><span class="tag tag-pcb">PCB / 印制电路板</span></div>
+      <div style="text-align:right"><span class="up" style="font-size:19px">115.60</span> <span class="up">+3.43%</span><br><span style="font-size:11px;color:#888">综合评分 80.10（资金 76.17 / 技术 78.11 / 基本 85.00）</span></div>
     </div>
-    <div class="stopbar triggered">
-      <span class="lbl">止损止盈监控</span>　止损 <strong>115.00</strong>（<span class="down">现价低于止损 -11.28%，早已实质失效</span>）｜ 止盈一 <strong>134.00</strong>（需 +31.33%）｜ 止盈二 <strong>146.00</strong>（需 +43.08%）<br>
-      <span style="font-size:12px">🔴 <strong>改用决策门槛 110（MA5 上方）</strong>：当日最高 105.88 距门槛仍差约 4 元，未达；技术评分全组最弱。</span>
+    <div class="stopbar near">
+      <span class="lbl">止损止盈监控</span>　止损 <strong>104.00</strong>（<span class="ok">现价高于止损 +11.15%，已解除</span>）｜ 止盈一 <strong>116.00</strong>（<span class="warn">收盘 -0.35% 未站上，盘中 119 触及</span>）｜ 止盈二 <strong>126.00</strong>（需 <span class="up">+9.00%</span>）<br>
+      <span style="font-size:12px">🟠 <strong>止损解除 + 逼近止盈一</strong>：收盘 115.60 收复 104（此前 07-30~08-03 触发已解除），距止盈一 116 仅差 0.40，进入锁盈窗口。</span>
     </div>
     <div class="mini-grid">
-      <div class="mini"><div class="v down">空头排列</div><div class="l">均线形态</div></div>
-      <div class="mini"><div class="v down">-7.41</div><div class="l">MACD 柱（绿）</div></div>
-      <div class="mini"><div class="v">12.4</div><div class="l">KDJ-K（深度超卖）</div></div>
-      <div class="mini"><div class="v">29.6</div><div class="l">RSI6</div></div>
+      <div class="mini"><div class="v up">收复短均</div><div class="l">均线形态</div></div>
+      <div class="mini"><div class="v down">-0.838</div><div class="l">MACD 柱（绿·收窄）</div></div>
+      <div class="mini"><div class="v">53.1</div><div class="l">KDJ-K</div></div>
+      <div class="mini"><div class="v">57.2</div><div class="l">RSI6</div></div>
     </div>
     <table>
     <tr><th style="width:64px">维度</th><th>解读</th></tr>
-    <tr><td><strong>技术</strong></td><td>技术评分 <strong>44.45</strong>，<span class="down">组合内最弱</span>（月线 -48.72，断崖）。价格 102.03 位于 MA5(105.86)/MA10(116.08)/MA20(130.06)/MA60(136.70) 全线下方，MA120 100.65 <span class="down">仅比现价低 1.4%</span> —— 年线级支撑已近在咫尺。MACD 柱 -7.41 为三票最深绿柱，BIAS24 <span class="down">-24.26</span> 极端乖离，KDJ-K 12.4 深度超卖。近 20 日 <span class="down">-33.86%</span>，跌幅居首。ADX 51.0 下跌趋势强。</td></tr>
-    <tr><td><strong>资金</strong></td><td>08-03 主力<span class="down">净流出 -3.52 亿</span>（超大单 -4.73 亿，三只最大单日抛压）。<span class="down">5 日 -1.55 亿、10 日 -11.80 亿、20 日 -18.96 亿</span>，三个周期全线净流出。</td></tr>
-    <tr><td><strong>基本</strong></td><td>2026Q1 营收 81.41 亿、归母净利 <strong>11.58 亿</strong>、EPS 0.48，TTM 归母 39.28 亿，基本面评分 <strong>87.16</strong>（三只最高）。但 <span class="warn">PE 63.09、PB 15.51 为组合最贵</span>，估值消化压力最大。筹码平均成本约 137（与你的 137.361 成本重合），获利盘仅约 19%。</td></tr>
-    <tr><td><strong>消息</strong></td><td>08-03 盘后<strong>暂无新公告</strong>。近期：07-24 临时股东会决议公告；<strong>07-16 限制性股票激励第二个解除限售期解禁上市</strong>（新增流通盘，偏空）；07-14 拟处置持有的联瑞新材可转债（中性偏正）。<strong>无回购类利好</strong>，不具备"等一天"的理由。</td></tr>
+    <tr><td><strong>技术</strong></td><td>技术评分 <strong>78.11</strong>（周环比 <span class="up">+37.76</span>，全组修复幅度最大）。价格 115.60 站上 MA5(105.86)/MA10(108.57)/MA120(105.66)，<strong>仍处 MA20(118.39)/MA30(125.39)/MA60(126.26) 下方</strong>。MACD 柱 -0.838（零轴下但极度收窄，金叉在即）；<strong>ADX 60.9、PDI 37.7 &gt; MDI 13.0 —— 趋势已转强</strong>。BOLL 中轨 118.39 即 MA20，是下一关键阻力；SAR 95.07 在价下（多头）。BIAS6 +9.3 乖离偏大需防回踩。</td></tr>
+    <tr><td><strong>资金</strong></td><td>08-05 主力<span class="up">净流入 +2.38 亿</span>（超大单 +5.02 亿、大单 -2.64 亿，内部分歧）。<span class="up">5 日 +4.51 亿（转正）</span>，但 10 日 -21.30 亿、20 日 -18.10 亿仍为大幅净流出—— 中期资金撤离尚未完全修复，反弹更多靠短线资金回补。</td></tr>
+    <tr><td><strong>基本</strong></td><td>2026Q1 营收 62.14 亿、归母净利 <strong>12.42 亿</strong>、EPS 0.6455，TTM 归母 43.02 亿，基本面评分 <strong>85.00</strong>。PE 51.71、PB 14.05，估值仍偏高。筹码平均成本约 129，现价 115.60 仍套牢约 7 成。</td></tr>
+    <tr><td><strong>消息</strong></td><td>08-05 当日<strong>暂无新公告</strong>。近期：07-24 为控股子公司提供担保进展（中性）；07-15/16/21/22 连续 4 次投资者关系活动记录表（机构调研密集）；07-13 已发布 2026 年半年度业绩预告（已 price in）。无个股级利空。</td></tr>
     </table>
-    <div class="note"><strong>今日操作</strong>：受手数约束，100 股<strong>只能全清或不卖</strong>。判定标准：<strong>今日放量站上 110（MA5 上方）</strong>才留仓；否则 <strong>14:30–15:00 前 100 股全清</strong>，回收约 ¥1.02 万并入现金池。技术最弱 + 估值最贵 + 筹码最散 + 无催化，是组合中最该优先出清的仓位。</div>
+    <div class="note"><strong>次日操作</strong>：止损已解除、逼近止盈一 116，<strong>减仓锁盈为首选</strong>。200 股可减 100（半仓）或全清：反弹至 116~120 挂减 100 股（回收约 ¥1.16 万），留 100 底仓看能否放量突破 MA20(118.39) 与止盈二 126；若跌破 115 余 100 股转观望，跌破 110 则全清。BIAS6 偏大，防单日回踩。</div>
   </div>
 
   <div class="stock-card">
     <div class="hd">
       <div><span class="name">洛阳钼业</span><span class="code">603993 · 上海主板 · 500股</span><span class="tag tag-metal">铜钴 / 有色金属</span></div>
-      <div style="text-align:right"><span class="down" style="font-size:19px">19.18</span> <span class="down">-1.74%</span><br><span style="font-size:11px;color:#888">综合评分 78.33（最高 · 资金 71.09 / 技术 71.72）</span></div>
+      <div style="text-align:right"><span class="up" style="font-size:19px">20.47</span> <span class="up">+6.67%</span><br><span style="font-size:11px;color:#888">综合评分 75.35（资金 42.85 / 技术 70.35 / 基本 85.39）</span></div>
     </div>
-    <div class="stopbar safe">
-      <span class="lbl">止损止盈监控</span>　止损 <strong>18.00</strong>（<span class="ok">安全垫 +6.56%</span>）｜ 止盈一 <strong>20.50</strong>（需 <span class="up">+6.88%</span>）｜ 止盈二 <strong>21.70</strong>（需 +13.14%）<br>
-      <span style="font-size:12px">🟢 <strong>唯一全面安全的仓位</strong>：当日低 18.95 未破 18，距止盈一一步之遥，触及即可减 100–200 股锁盈。</span>
+    <div class="stopbar near">
+      <span class="lbl">止损止盈监控</span>　止损 <strong>18.00</strong>（<span class="ok">安全垫 +13.72%</span>）｜ 止盈一 <strong>20.50</strong>（<span class="warn">收盘 -0.15% 未站上，盘中 20.58 触及</span>）｜ 止盈二 <strong>21.70</strong>（需 <span class="up">+6.01%</span>）<br>
+      <span style="font-size:12px">🟠 <strong>逼近止盈一</strong>：收盘 20.47 差 0.03 未站上 20.50，盘中最高 20.58 已触及；突破 MA120 + MACD 红柱，技术全组最强。</span>
     </div>
     <div class="mini-grid">
       <div class="mini"><div class="v up">多头排列</div><div class="l">均线形态</div></div>
-      <div class="mini"><div class="v up">+0.22</div><div class="l">MACD 柱（红）</div></div>
-      <div class="mini"><div class="v">50.1</div><div class="l">KDJ-K（中性）</div></div>
-      <div class="mini"><div class="v">54.0</div><div class="l">RSI6</div></div>
+      <div class="mini"><div class="v up">+0.294</div><div class="l">MACD 柱（红·扩张）</div></div>
+      <div class="mini"><div class="v">61.3</div><div class="l">KDJ-K</div></div>
+      <div class="mini"><div class="v">73.2</div><div class="l">RSI6（偏热）</div></div>
     </div>
     <table>
     <tr><th style="width:64px">维度</th><th>解读</th></tr>
-    <tr><td><strong>技术</strong></td><td>技术评分 <strong>71.72</strong>，<span class="ok">组合内唯一健康标的</span>。价格 19.18 站在 MA5(19.15)/MA10(19.25)/MA20(18.45)/MA60(18.67) 上方，<strong>唯独微破 MA120(19.33) —— 唯一瑕疵</strong>（长线均值刚被刺穿，需观察收回）。<strong>MACD 在零轴上方红柱（DIF 0.25 &gt; DEA 0.142）</strong>，三票中唯一多头信号；SAR 17.63 在价下（多头）。BOLL 上轨 20.23 与止盈一 20.50 构成短期压力带。近 20 日 <span class="up">+4.75%</span>、近 5 日 -0.93%，中期仍正。</td></tr>
-    <tr><td><strong>资金</strong></td><td>08-03 主力<span class="down">净流出 -2.17 亿</span>（单日获利回吐，当日三只同跌所致）。关键差异：<strong>5 日 +0.12 亿、10 日 +28.19 亿、20 日 +21.44 亿<span class="up">均为正</span></strong> —— 三只中唯一中期资金持续净流入的标的。</td></tr>
-    <tr><td><strong>基本</strong></td><td>2026Q1 营收 <strong>664.03 亿</strong>、归母净利 <strong>77.60 亿</strong>、EPS 0.36，TTM 归母 241.53 亿，经营现金流 TTM 308.58 亿（现金创造能力极强）。<span class="ok">PE 仅 16.99、PB 4.96，估值为组合最低</span>。基本面评分 85.31、风险评分 80.50（均为组合最优）。筹码结构健康。</td></tr>
-    <tr><td><strong>消息</strong></td><td><strong>07-31 17:36 盘后集中发布 6 项公告</strong>（衍生品交易业务管理制度、临时股东会通知、章程及内控制度修订、董秘工作制度、信息披露暂缓与豁免制度、股东会会议资料）—— <span class="ok">全部为公司治理与内控制度类，常规合规修订，无实质利好利空</span>。08-03 盘后暂无新公告。</td></tr>
+    <tr><td><strong>技术</strong></td><td>技术评分 <strong>70.35</strong>，<span class="ok">全组唯一完整多头排列</span>。价格 20.47 站上<strong>全部均线</strong>（MA5 19.46 / MA10 19.38 / MA20 18.67 / MA60 18.66 / MA120 19.29）—— 今日正式突破此前压制它的 MA120。<strong>MACD 零轴上方红柱（DIF 0.347 &gt; DEA 0.200，柱 +0.294 扩张）</strong>，三票中唯一明确多头信号；SAR 17.75 在价下（多头）。BOLL 上轨 20.57 与止盈一 20.50 构成短期共振压力（收盘 20.47 刚压在下方）。RSI6 73.2 偏热，短线上行斜率需降速。</td></tr>
+    <tr><td><strong>资金</strong></td><td>08-05 主力<span class="up">净流入 +12.34 亿</span>（超大单 +12.64 亿，全市场第 8），单日力度与生益并列最强。拉长周期：<span class="down">5 日 -2.07 亿（小负）</span>、<span class="up">10 日 +14.51 亿、20 日 +21.72 亿</span> —— 中期资金持续净流入的标的不变。5 日小负使资金评分周环比下降 -19.38，但中长线逻辑未变。</td></tr>
+    <tr><td><strong>基本</strong></td><td>2026Q1 营收 <strong>664.03 亿</strong>、归母净利 <strong>77.60 亿</strong>、EPS 0.36，TTM 归母 241.53 亿，经营现金流 TTM 308.58 亿（现金创造能力极强）。<span class="ok">PE 仅 18.13、PB 5.29，估值为组合最低</span>。基本面评分 85.39、风险评分 80.60（组合最优）。</td></tr>
+    <tr><td><strong>消息</strong></td><td>08-05 当日<strong>暂无新公告</strong>。近期：07-31 17:36 盘后集中发布 6 项公告（衍生品交易业务管理制度、临时股东会通知、章程及内控制度修订等）—— <span class="ok">全部为公司治理与内控制度类，常规合规修订，无实质利好利空</span>。青岛市国资委旗下，铜钴资源龙头。</td></tr>
     </table>
-    <div class="note"><strong>今日操作</strong>：<strong>持有为主，压舱石地位不变</strong>。500 股可按 100 股灵活分批。触及 <strong>20.50 减 100–200 股</strong>锁盈；跌破 <strong>19.00</strong>（MA5/MA10）转入警戒但不动作；止损 18.00 不变。<span class="ok">组合中最不需要担心的仓位，唯一需盯的是 MA120（19.33）能否收回。</span></div>
+    <div class="note"><strong>次日操作</strong>：<strong>持有为主、逢高锁盈</strong>。500 股可按 100 股灵活分批：<strong>触及 20.50 减 100–200 股</strong>锁盈（回收 ¥2,047–4,094）；若放量站稳 20.50 上方则看止盈二 21.70；RSI6 偏热不宜追高，跌破 <strong>19.50</strong>（MA5/MA10 上方）转入警戒但不动作；止损 18.00 不变。<span class="ok">组合中最健康、最不需担心的仓位。</span></div>
   </div>
 </div>
 
-<!-- ⑥ 近21日走势 -->
+<!-- ⑥ 近23日走势 -->
 <div class="card">
-  <h2>⑥ 近 21 日走势对比（归一化，07-06 = 100）</h2>
+  <h2>⑥ 近 23 日走势对比（归一化，07-06 = 100）</h2>
   <div id="lineChart" class="chart"></div>
   <div class="note">
-  归一化对比清晰显示分化延续：<strong>洛阳钼业 104.75</strong>（<span class="up">+4.75%</span>，07-22 后维持 100 线上方震荡）；
-  <strong>沪电股份 78.87</strong>（<span class="down">-21.13%</span>）；<strong>生益科技 66.12</strong>（<span class="down">-33.86%</span>，跌幅最深）。
-  三只自 07-31 反弹高点后<strong>同步回落</strong>，PCB 双雄重回下行、洛阳微跌但守住 100 线 —— 走势分化格局未变，洛阳仍是唯一正收益资产。
+  归一化对比清晰显示<strong> V 型反转</strong>：三只自 07-30/07-31 低点后<strong>连续两个交易日强劲反弹</strong>——
+  <strong>生益科技</strong> 由 07-30 低点 64.87 弹至 79.55（<span class="up">+22.7%</span>）；
+  <strong>沪电股份</strong> 由 07-30 低点 74.94 弹至 89.73（<span class="up">+19.7%</span>）；
+  <strong>洛阳钼业</strong> 由 07-24 低点 103.99 弹至 111.80（<span class="up">+7.5%</span>），且已突破 07-06 基准线。
+  关键差异：洛阳始终在 100 线上方运行、率先修复；PCB 双雄虽强势反弹但仍未回到 07-06 基准（生益 79.55 / 沪电 89.73 仍低于 100），说明其反弹源自超跌，<strong>距修复中期趋势（MA20/MA60）仍有空间</strong>。
   </div>
 </div>
 
@@ -289,10 +296,11 @@
   <h2>⑦ 主力资金对比（单位：亿元）</h2>
   <div id="fundChart" class="chart"></div>
   <div class="note">
-  <strong>核心矛盾一眼可见</strong>：08-03 单日三票主力<span class="down">全部净流出</span>（生益 -3.52、沪电 -2.20、洛阳 -2.17），连最抗跌的洛阳也出现单日出逃（反弹后获利回吐）。
-  拉长周期：<span class="down">生益与沪电的 5/10/20 日全线为负</span>（沪电 10 日 <span class="down">-38.98 亿</span>最惨烈），
-  <strong>只有洛阳钼业的 10 日 +28.19 亿、20 日 +21.44 亿维持正流入</strong>。
-  结论不变：PCB 双雄是<strong>趋势性资金撤离</strong>，洛阳钼业才是资金真正持续布局的标的。这是"减 PCB、守洛阳"策略的最硬依据。
+  <strong>核心变化：由"全线流出"逆转为"全线流入"</strong>。08-05 单日三票主力<span class="up">全部净流入</span>（生益 +12.93、洛阳 +12.34、沪电 +2.38），
+  与 08-03 的"三票同跌同流出"形成鲜明对比。
+  拉长周期：<strong>生益与沪电的 5 日净额已转正</strong>（+14.58 / +4.51 亿），但 10/20 日仍为净流出（沪电 10 日 <span class="down">-21.30 亿</span>最深），说明中期资金撤离尚未完全修复，本周反弹含短线回补成分；
+  <strong>洛阳的 10 日 +14.51 亿、20 日 +21.72 亿维持正流入</strong>，中长线资金逻辑最扎实。
+  结论：资金面已转向友好，但 PCB 双雄的"反转"仍需后续交易日放量确认，<strong>"逢高锁盈、不追高"仍是当下最稳妥的动作</strong>。
   </div>
 </div>
 
@@ -301,54 +309,54 @@
   <h2>⑧ 板块联动分析</h2>
   <div class="grid2">
   <div>
-  <div class="sec-title">持仓相关板块（08-03 收盘）</div>
+  <div class="sec-title">持仓相关板块（08-05 收盘）</div>
   <table>
-  <tr><th>板块</th><th>收盘涨跌</th><th>日内形态</th><th>20日累计</th></tr>
-  <tr><td><strong>PCB 概念</strong><br><span style="font-size:11px;color:#888">对应 沪电/生益</span></td><td class="down">-0.95%</td><td><span style="font-size:11px">开 2061.88 / 高 2092.57<br>收 2052.22 = 冲高回落</span></td><td class="down">-28.77%</td></tr>
-  <tr><td><strong>元件（申万二级）</strong><br><span style="font-size:11px;color:#888">对应 沪电/生益</span></td><td class="down">-1.83%</td><td><span style="font-size:11px">开 18352 / 高 18810<br>收 18314 = 冲高回落</span></td><td class="down">-29.18%</td></tr>
-  <tr><td><strong>有色金属</strong><br><span style="font-size:11px;color:#888">申万一级 · 对应 洛阳</span></td><td style="color:#888">横盘</td><td><span style="font-size:11px">独立运行</span></td><td style="color:#888">温和</td></tr>
+  <tr><th>板块</th><th>收盘涨跌</th><th>形态/领涨</th><th>5日 / 20日</th></tr>
+  <tr><td><strong>元件（申万二级）</strong><br><span style="font-size:11px;color:#888">对应 沪电/生益</span></td><td class="up">+6.57%</td><td><span style="font-size:11px">领涨 胜宏科技 +17.12%</span></td><td class="up">+10.33% / <span class="down">-14.56%</span></td></tr>
+  <tr><td><strong>电子布概念</strong><br><span style="font-size:11px;color:#888">CCL 上游 · 关联 生益</span></td><td class="up">+7.76%</td><td><span style="font-size:11px">领涨 国际复材 +14.04%</span></td><td class="up">+6.65% / <span class="down">-19.82%</span></td></tr>
+  <tr><td><strong>有色金属</strong><br><span style="font-size:11px;color:#888">贵金属/小金属 · 对应 洛阳</span></td><td class="up">贵金属 +7.72%<br>小金属 +6.43%</td><td><span style="font-size:11px">工业金属 资金 +65亿</span></td><td class="up">+9.37% / +19.65%</td></tr>
   </table>
-  <div class="note" style="background:#fef5f3;color:#8d2320">
-  <strong>⚠️ 延续弱势信号</strong>：PCB 概念与元件 08-03<strong>双双冲高回落收绿</strong>，且 20 日累计跌幅均超 <span class="down">-28%</span>，明确处于下跌通道。
-  个股层面完全同步（生益 -3.42%、沪电 -2.06%），属板块性行为而非个股问题。<strong>反弹一日游已坐实，下跌中继概率高。</strong>
+  <div class="note" style="background:#e9f7f1;color:#0f6e56">
+  <strong>✅ 强势共振</strong>：PCB 链条（元件 +6.57%、电子布 +7.76%）与有色（贵金属 +7.72%、小金属 +6.43%）<strong>今日同步大涨</strong>，与三只持仓涨幅高度吻合，属板块性β驱动而非个股独立行情。工业金属单日主力资金流入 +65.03 亿居行业资金流入前列，直接利好洛阳钼业。
   </div>
   </div>
   <div>
-  <div class="sec-title">今日盘前热榜前 12（08-04 09:15）</div>
+  <div class="sec-title">今日板块热榜（08-05 收盘 · sector ranking）</div>
   <table>
-  <tr><th style="width:38px">排名</th><th>板块</th><th>与持仓关联</th></tr>
-  <tr><td>1</td><td>AI应用</td><td><span style="color:#888">无</span></td></tr>
-  <tr><td>2</td><td>电网设备</td><td><span style="color:#888">无</span></td></tr>
-  <tr><td>3</td><td>电力</td><td><span style="color:#888">无</span></td></tr>
-  <tr><td>4</td><td>半导体</td><td><span style="color:#888">同属电子（弱关联）</span></td></tr>
-  <tr><td>5</td><td>核电概念</td><td><span style="color:#888">无</span></td></tr>
-  <tr><td>6</td><td>云计算</td><td><span style="color:#888">无</span></td></tr>
-  <tr><td>7</td><td>软件开发</td><td><span style="color:#888">无</span></td></tr>
-  <tr><td>8</td><td>光伏设备</td><td><span style="color:#888">无</span></td></tr>
-  <tr class="risk-row"><td>—</td><td><strong>PCB 概念 / 元件</strong></td><td><span class="warn">直接关联（沪电/生益）· 缺席前 12</span></td></tr>
+  <tr><th style="width:90px">分类</th><th>板块</th><th>涨幅</th></tr>
+  <tr><td>行业①</td><td>玻璃玻纤</td><td class="up">+7.90%</td></tr>
+  <tr><td>行业②</td><td>电子化学品Ⅱ</td><td class="up">+7.86%</td></tr>
+  <tr><td>行业③</td><td>贵金属</td><td class="up">+7.72%</td></tr>
+  <tr><td>行业④</td><td>非金属材料Ⅱ</td><td class="up">+7.48%</td></tr>
+  <tr class="safe-row"><td>行业⑤</td><td><strong>元件</strong></td><td class="up">+6.57%</td></tr>
+  <tr><td>行业⑥</td><td>小金属</td><td class="up">+6.43%</td></tr>
+  <tr><td>概念①</td><td>靶材</td><td class="up">+9.75%</td></tr>
+  <tr class="safe-row"><td>概念②</td><td><strong>电子布</strong></td><td class="up">+7.76%</td></tr>
+  <tr><td>概念③</td><td>有色(铋)</td><td class="up">+7.49%</td></tr>
+  <tr><td>概念④</td><td>大硅片</td><td class="up">+7.40%</td></tr>
+  <tr class="risk-row"><td>资金流入</td><td>半导体 +136.7亿 / 工业金属 +65.0亿 / 消费电子 +61.0亿</td><td><span style="font-size:11px">行业 Top3</span></td></tr>
   </table>
   <div class="note" style="background:#fff6e5;color:#7a5610">
-  <strong>⚠️ 热点与持仓错位</strong>：今日盘前最热板块为<strong>AI应用、电网设备、电力、半导体、核电、云计算、光伏</strong>，
-  市场资金在<strong>算力/电力/能源/高端制造</strong>主线，而 PCB/元件（直接关联持仓）<strong>缺席热榜前 12</strong>。
-  <strong>PCB 缺乏板块级人气，下跌中继中无资金接力</strong>，持仓两只 PCB 股今日仍面临资金分流压力。洛阳钼业属有色资源，独立运行。
+  <strong>⚠️ 与 08-03 热榜对比</strong>：08-03 PCB/元件<strong>缺席热榜前 12</strong>（下跌中继特征）；今日<strong>元件 +6.57%、电子布 +7.76% 双双入榜</strong>，且电子/半导体/有色获巨额资金流入 —— 市场风险偏好显著回升，PCB 链条重新获得资金关照。这是"下跌中继"判定被推翻的直接盘面证据。
   </div>
   </div>
   </div>
 
-  <div class="sec-title" style="margin-top:6px">大盘环境（综合评分 18.73 · 数据基准 2026-08-03）</div>
+  <div class="sec-title" style="margin-top:6px">大盘环境（综合评分 22.45 · 数据基准 2026-08-04）</div>
   <table>
   <tr><th>维度</th><th>状态</th><th>对持仓的含义</th></tr>
-  <tr><td>情绪指标 <span class="badge-hi">5</span></td><td class="up">情绪狂热（涨停 &gt;50 只 / 涨股比 &gt;70%）</td><td>短期情绪高点，<span class="warn">往往是减仓而非加仓时机</span></td></tr>
-  <tr><td>个股宽度 <span class="badge-hi">5</span></td><td class="up">普涨（创新高 &gt;200 只）</td><td>普涨后分化风险上升，今日 PCB 已率先回落</td></tr>
-  <tr><td>短期趋势方向 <span class="badge-lo">2</span></td><td class="down">弱势下跌（均线空头排列）</td><td><span class="warn">与持仓 PCB 双雄空头排列一致</span></td></tr>
-  <tr><td>成交量能 <span class="badge-lo">2</span></td><td class="down">缩量下跌（成交额 70–90% 均值）</td><td>量能不足，下跌中继缺乏承接</td></tr>
-  <tr><td>估值水平 <span class="badge-mid">4</span></td><td class="warn">偏高区间（PE 分位 70–90%）</td><td>生益 PE 63.09 / 沪电 45.45 高位，<span class="ok">洛阳 16.99 安全</span></td></tr>
-  <tr><td>行业轮动 <span class="badge-mid">4</span></td><td class="warn">分化严重（头尾相差 &gt;5%）</td><td>板块选择比择时重要，<span class="warn">押错赛道代价大</span></td></tr>
-  <tr><td>风格轮动 <span class="badge-lo">1</span></td><td>价值主导（价值指数 &gt; 成长 +5%）</td><td><span class="ok">利好洛阳钼业（低 PE 价值股）</span>，不利高估值成长 PCB 双雄</td></tr>
+  <tr><td>情绪指标 <span class="badge-hi">5</span></td><td class="up">情绪狂热（涨停 &gt;50 只 / 涨股比 &gt;70%）</td><td>短期情绪高点，<span class="warn">普涨后防分化、不宜追高</span></td></tr>
+  <tr><td>个股宽度 <span class="badge-hi">5</span></td><td class="up">普涨（创新高 &gt;200 只）</td><td>普涨日，PCB/有色均受益；次日或分化</td></tr>
+  <tr><td>短期趋势方向 <span class="badge-lo">2</span></td><td class="down">弱势下跌（均线空头排列）</td><td><span class="warn">仍滞后显示弱势，与今日反弹背离</span></td></tr>
+  <tr><td>技术指标 <span class="badge-hi">5</span></td><td class="up">极强（MACD 金叉向上发散）</td><td><span class="ok">与持仓全线反弹一致，趋势转强</span></td></tr>
+  <tr><td>板块宽度 <span class="badge-mid">3</span></td><td class="warn">局部热点（上涨板块 40~60%）</td><td>热点集中在电子/有色，持仓沾光</td></tr>
+  <tr><td>成交量能 <span class="badge-mid">3</span></td><td class="warn">缩量震荡（成交额 90~110% 均值）</td><td>量能一般，反弹持续性待放量确认</td></tr>
+  <tr><td>估值水平 <span class="badge-mid">4</span></td><td class="warn">偏高区间（PE 分位 70~90%）</td><td>生益 PE 75.9 / 沪电 51.7 高位，<span class="ok">洛阳 18.1 安全</span></td></tr>
+  <tr><td>风格轮动 <span class="badge-lo">1</span></td><td>价值主导（价值指数 &gt; 成长 +5%）</td><td>仍利好洛阳钼业（低 PE 价值），不利高估值成长 PCB</td></tr>
   </table>
   <div class="note">
-  <strong>综合研判</strong>：大盘处于「情绪狂热 + 缩量 + 短期空头 + 价值风格主导」组合 —— 典型<strong>反弹末段/下跌中继特征</strong>。
-  风格轮动指向价值，明确利好洛阳钼业、不利高估值成长的 PCB 双雄。盘面结构（PCB/元件冲高回落、半导体高波动、电力/核电走强）进一步支持「<strong>逢高减 PCB、坚定守洛阳、现金不动</strong>」。
+  <strong>综合研判</strong>：大盘总评由 08-03 的 18.73 升至 <strong>22.45</strong>（调整 27.72），技术指标转为"极强"、板块宽度改善，<strong>与持仓 V 型反弹相互印证</strong>。
+  但<strong>量能仅"缩量震荡"、风格仍"价值主导"</strong>—— 意味着今日的普涨含情绪修复成分，PCB 高估值成长股在风格上仍不占优，反弹的成色需后续放量确认。操作上"锁盈不追高"仍是占优策略。
   </div>
 </div>
 
@@ -357,82 +365,83 @@
   <h2>⑨ 风险预警（按距止损远近排序）</h2>
   <table>
   <tr><th style="width:74px">等级</th><th>标的</th><th>现价 / 止损</th><th>距止损</th><th>风险描述</th><th>应对</th></tr>
-  <tr class="trig-row">
-  <td><span class="badge-hi">🔴 极高</span></td>
-  <td><strong>沪电股份</strong><br><span style="font-size:11px;color:#888">200 股</span></td>
-  <td>101.61 / <strong>104.00</strong></td>
-  <td><span class="down">-2.30%</span><br><span style="font-size:11px;color:#888">已触发(07-30)加深</span></td>
-  <td>止损已确认触发，收 101.61 较止损低 2.30%，连续第 4 日收于下方。ADX 53 下跌趋势强，10 日主力净流出 -38.98 亿（三只最惨）。下一道支撑 BOLL 下轨 94.52，<strong>破 100 后向下空间约 -7%。</strong></td>
-  <td>反弹至 104~110 减 100；<br>破 100 全清</td>
-  </tr>
-  <tr class="trig-row">
-  <td><span class="badge-hi">🔴 高</span></td>
+  <tr class="risk-row">
+  <td><span class="badge-mid">🟡 中</span></td>
   <td><strong>生益科技</strong><br><span style="font-size:11px;color:#888">100 股</span></td>
-  <td>102.03 / <strong>115.00</strong></td>
-  <td><span class="down">-11.28%</span><br><span style="font-size:11px;color:#888">早已实质失效</span></td>
-  <td><strong>止损机制失效</strong>（距止损已达 -11.28%）。技术评分 44.45 全组最低，BIAS24 -24.26 极端乖离，MA120 100.65 年线支撑仅剩 1.4% 缓冲；PE 63.09 估值最贵；07-16 股权激励解禁新增流通盘。</td>
-  <td>改用门槛 110：<br>站上 → 留<br><strong>未达 → 100 股全清</strong></td>
+  <td>122.79 / <strong>115.00</strong></td>
+  <td><span class="ok">+6.77%</span><br><span style="font-size:11px;color:#888">但处 MA20 下方</span></td>
+  <td>止损已收复（+6.77%），<strong>但仍是距止损最近的仓位</strong>。技术最弱：价格仍处 MA20(127)/MA60(137.8) 下方，反弹未确认反转；PE 75.9 组合最贵，BIAS6 +13.2 短期乖离偏大。若反弹无法站上 MA20，有回踩 115 甚至更深的风险。</td>
+  <td>持有观察；<br>站 MA20(127) 转强<br><strong>破 115 → 100 股全清</strong></td>
+  </tr>
+  <tr class="safe-row">
+  <td><span class="badge-lo">🟢 低</span></td>
+  <td><strong>沪电股份</strong><br><span style="font-size:11px;color:#888">200 股</span></td>
+  <td>115.60 / <strong>104.00</strong></td>
+  <td><span class="ok">+11.15%</span><br><span style="font-size:11px;color:#888">止损已解除</span></td>
+  <td>止损解除（+11.15%），风险显著下降。当前主要风险转为<strong>"止盈一 116 附近遇阻回落"</strong>：仍处 MA20(118.39)/MA60(126.26) 下方，10 日主力净流出 -21.30 亿未完全修复，BIAS6 +9.3 短期乖离偏大，单日回踩概率不低。</td>
+  <td>减 100 股锁盈；<br>破 115 余 100 观望<br>破 110 全清</td>
   </tr>
   <tr class="safe-row">
   <td><span class="badge-lo">🟢 低</span></td>
   <td><strong>洛阳钼业</strong><br><span style="font-size:11px;color:#888">500 股</span></td>
-  <td>19.18 / <strong>18.00</strong></td>
-  <td><span class="ok">+6.56%</span><br><span style="font-size:11px;color:#888">安全垫充足</span></td>
-  <td>无实质风险。唯一瑕疵：微破 MA120(19.33)，需观察收回。BOLL 上轨 20.23 与止盈一 20.50 构成压力带；KDJ-K 50.1 中性，短线上行空间收窄。5 日主力 +0.12 亿接近平。</td>
-  <td>持有；<br>触 20.50 减 100–200 股<br>破 19.00 转警戒</td>
+  <td>20.47 / <strong>18.00</strong></td>
+  <td><span class="ok">+13.72%</span><br><span style="font-size:11px;color:#888">安全垫充足</span></td>
+  <td>无实质风险。技术全组最强（突破 MA120 + MACD 红柱）。唯一瑕疵：<strong>RSI6 73.2 偏热 + 逼近止盈一/BOLL 上轨(20.57)</strong>，短线或有震荡；距止损 18.00 仍有 +13.72% 缓冲。</td>
+  <td>减 100–200 股锁盈；<br>站 20.50 看 21.70<br>破 19.50 转警戒</td>
   </tr>
   </table>
 
   <div class="sec-title" style="margin-top:18px">组合层面风险</div>
   <table>
   <tr><th style="width:130px">风险项</th><th>说明</th><th>建议</th></tr>
-  <tr class="risk-row"><td><strong>行业过度集中</strong></td><td>平安账户 100%、全组合 <strong>76.1%</strong> 市值押注 PCB / 覆铜板单一赛道（生益 25.5% + 沪电 50.7%）。两票同跌确认同涨同跌、无分散效果。</td><td>执行减仓优先降低 PCB 敞口，不再回补</td></tr>
-  <tr class="risk-row"><td><strong>止损纪律松弛</strong></td><td>沪电止损 104 已触发 4 个交易日未执行、生益连续多日破位，止损机制形同虚设。本轮亏损扩大的主因之一。</td><td>今日必须以"反弹减仓/门槛清仓"做出<strong>明确决断</strong></td></tr>
-  <tr class="risk-row"><td><strong>反弹误判风险</strong></td><td>上周五 +5.87% 一度造成反转错觉，08-03 全线回落（-2.33%）<strong>证伪反弹</strong>。三项证据（板块冲高回落 + 资金全流出 + 热榜无 PCB）均指向下跌中继。</td><td>不因单日波动放弃减仓计划</td></tr>
-  <tr><td><strong>现金闲置</strong></td><td>现金 ¥44,301 占总资产 52.5%，历史高位。方向不明时是优势，但需避免情绪性追高。</td><td><span class="ok">继续按兵不动</span>，等 PCB 二次探底或新赛道明确信号</td></tr>
+  <tr><td><strong>反弹成色待验</strong></td><td>PCB 双雄虽两日大涨，但<strong>仍处 MA20/MA60 下方、量能仅"缩量震荡"、风格仍价值主导</strong>，属超跌反弹还是反转尚未确认。若后续无量回落，可能再探前低。</td><td>次日以"锁盈"为主，不追高；观察能否放量站上 MA20</td></tr>
+  <tr><td><strong>行业过度集中</strong></td><td>平安账户 100%、全组合 <strong>77.6%</strong> 市值仍押注 PCB / 覆铜板单一赛道（生益 26.9% + 沪电 50.7%）。两票同涨同跌，无分散效果。</td><td>借反弹减 PCB 敞口，降低集中度</td></tr>
+  <tr><td><strong>短期乖离偏大</strong></td><td>生益 BIAS6 +13.2、沪电 BIAS6 +9.3，连续大阳后获利盘丰厚，次日易现冲高回落。</td><td>逢高锁盈而非加仓；设好回落防线</td></tr>
+  <tr><td><strong>现金闲置</strong></td><td>现金 ¥44,301 占总资产 49.3%。反弹中现金是盾也是机会成本，但方向未明时不宜盲目回补 PCB。</td><td><span class="ok">继续按兵不动</span>，等反转确认或新主线</td></tr>
   </table>
 </div>
 
-<!-- ⑩ 今日操作决策树 + 事件日历 -->
+<!-- ⑩ 次日操作决策树 + 事件日历 -->
 <div class="card">
-  <h2>⑩ 今日操作决策树与事件日历</h2>
-  <div class="sec-title">今日（08-04）操作决策树</div>
+  <h2>⑩ 次日操作决策树与事件日历</h2>
+  <div class="sec-title">次日（08-06）操作决策树</div>
   <table>
   <tr><th style="width:120px">标的</th><th>触发条件</th><th>动作（已按手数校验）</th><th>预计资金</th></tr>
-  <tr class="trig-row"><td rowspan="2"><strong>沪电股份</strong><br><span style="font-size:11px;color:#888">002463 · 200 股<br>可减 100 或全清</span></td>
-  <td>反弹至 104~110 区间</td><td><span class="warn">减 100 股</span>（留 100 底仓）或全清</td><td>回收约 <strong>¥1.02 万</strong>（减100）</td></tr>
-  <tr class="trig-row"><td><strong>跌破 100.00（今日低 99.81）</strong></td><td><span class="warn">200 股全部清仓</span></td><td>回收约 <strong>¥2.03 万</strong></td></tr>
-  <tr class="trig-row"><td rowspan="2"><strong>生益科技</strong><br><span style="font-size:11px;color:#888">600183 · 100 股<br>⚠️ 只能全清或不卖</span></td>
-  <td>今日放量站上 110.00（MA5 上方）</td><td><span class="ok">留仓，再观察一日</span></td><td>—</td></tr>
-  <tr class="trig-row"><td><strong>14:30 后仍 &lt; 110.00</strong></td><td><span class="warn">100 股全部清仓</span></td><td>回收约 <strong>¥1.02 万</strong></td></tr>
+  <tr class="safe-row"><td rowspan="2"><strong>沪电股份</strong><br><span style="font-size:11px;color:#888">002463 · 200 股<br>可减 100 或全清</span></td>
+  <td>反弹至 116~120（止盈一附近/上方）</td><td><span class="ok">减 100 股</span>（留 100 底仓）锁盈</td><td>回收约 <strong>¥1.16 万</strong></td></tr>
+  <tr class="safe-row"><td>放量突破 MA20(118.39) 并站稳</td><td><span class="ok">留 100 股看止盈二 126</span></td><td>—</td></tr>
+  <tr class="risk-row"><td rowspan="2"><strong>生益科技</strong><br><span style="font-size:11px;color:#888">600183 · 100 股<br>⚠️ 只能全清或不卖</span></td>
+  <td>次日放量站上 MA20(127.00)</td><td><span class="ok">留仓，确认反转再观察</span></td><td>—</td></tr>
+  <tr class="risk-row"><td><strong>跌破 115.00（止损收复位）</strong></td><td><span class="warn">100 股全部清仓</span></td><td>回收约 <strong>¥1.23 万</strong></td></tr>
   <tr class="safe-row"><td rowspan="3"><strong>洛阳钼业</strong><br><span style="font-size:11px;color:#888">603993 · 500 股<br>可 100 股分批</span></td>
-  <td>触及 20.50（止盈一）</td><td>减 <strong>100–200 股</strong>锁盈</td><td>回收 ¥2,050–4,100</td></tr>
-  <tr class="safe-row"><td>19.00 &lt; 价格 &lt; 20.50</td><td><span class="ok">持有不动（默认路径）</span></td><td>—</td></tr>
-  <tr class="safe-row"><td>跌破 19.00（MA5/MA10）</td><td>转入警戒观察，<strong>暂不动作</strong>；止损 18.00 不变</td><td>—</td></tr>
-  <tr><td><strong>现金</strong><br><span style="font-size:11px;color:#888">¥44,301</span></td><td>任何情形</td><td><span class="ok">按兵不动，今日不建仓</span><br><span style="font-size:11px">下跌中继中现金是盾；PCB 需二次探底确认，新热点不在能力圈不追</span></td><td>—</td></tr>
+  <td>触及 20.50（止盈一）</td><td>减 <strong>100–200 股</strong>锁盈</td><td>回收 ¥2,047–4,094</td></tr>
+  <tr class="safe-row"><td>20.00 &lt; 价格 &lt; 20.50</td><td><span class="ok">持有不动（默认路径）</span></td><td>—</td></tr>
+  <tr class="safe-row"><td>放量站稳 20.50 上方</td><td><span class="ok">看止盈二 21.70</span></td><td>—</td></tr>
+  <tr><td><strong>现金</strong><br><span style="font-size:11px;color:#888">¥44,301</span></td><td>任何情形</td><td><span class="ok">按兵不动，今日不建仓</span><br><span style="font-size:11px">反弹成色未验，现金作盾；不追 PCB、不接回已清仓标的</span></td><td>—</td></tr>
   </table>
 
   <div class="sec-title" style="margin-top:18px">事件日历</div>
   <table>
   <tr><th style="width:110px">时间</th><th>标的</th><th>事件</th><th>影响</th></tr>
-  <tr><td><strong>08-03（昨日）</strong></td><td>全部</td><td>PCB 双雄确认回落、洛阳微跌守位；盘后三只均暂无新个股公告</td><td><span class="warn">中性偏关键</span>（下跌中继验证日）</td></tr>
+  <tr><td><strong>08-05（今日）</strong></td><td>全部</td><td>全线放量大涨：生益 +9.41%(近涨停)、沪电 +3.43%、洛阳 +6.67%；三票单日主力合计净流入约 +27.7 亿；止损全部收复、沪电/洛阳逼近止盈一</td><td><span class="ok">强正面</span>（V 型反弹）</td></tr>
+  <tr><td>08-04（昨日）</td><td>全部</td><td>反弹启动日：生益 +9.95%、沪电 +10.0%、洛阳持平，开启两日连涨</td><td><span class="ok">正面</span></td></tr>
   <tr><td>07-31（已发生）</td><td>洛阳钼业</td><td>盘后 6 项公告：衍生品交易管理制度、临时股东会通知、章程及内控制度修订等</td><td><span class="ok">中性</span>（治理制度类常规修订）</td></tr>
   <tr><td>8 月中下旬<br><span style="font-size:11px;color:#888">（待定）</span></td><td>洛阳钼业</td><td><strong>2026 年第一次临时股东会</strong>（审议章程及内控制度修订）</td><td><span class="ok">低</span>（程序性会议）</td></tr>
-  <tr class="risk-row"><td><strong>8 月（密集期）</strong></td><td>生益科技<br>洛阳钼业</td><td><strong>2026 年半年报披露</strong>（具体日期以交易所预约公告为准）</td><td><span class="warn">高</span> — 中报是 8 月最大变量，业绩不及预期将放大跌幅</td></tr>
+  <tr class="risk-row"><td><strong>8 月（密集期）</strong></td><td>生益科技<br>洛阳钼业</td><td><strong>2026 年半年报披露</strong>（具体日期以交易所预约公告为准）</td><td><span class="warn">高</span> — 中报是 8 月最大变量，业绩不及预期将放大波动</td></tr>
   <tr><td>已披露</td><td>沪电股份</td><td>07-13 已发布 2026 年半年度业绩预告</td><td><span class="ok">已 price in</span></td></tr>
   <tr><td>持续</td><td>沪电股份</td><td>07-15/16/21/22 连续 4 次机构调研（投资者关系活动记录表）</td><td><span class="ok">正面</span>（机构关注度未散）</td></tr>
   <tr class="risk-row"><td>已发生</td><td>生益科技</td><td>07-16 限制性股票激励第二个解除限售期解禁上市</td><td><span class="warn">偏空</span>（新增流通盘）</td></tr>
   </table>
 
   <div class="note" style="margin-top:16px">
-  <strong>一句话总结今日</strong>：08-03 <strong>-¥959（-2.33%）</strong> 的回撤把上周五 "+5.87% 反弹" 定性为<strong>明确的下跌中继</strong>而非反转起点 —— PCB 概念/元件冲高回落收绿、三只主力全部净流出、盘前热榜前 12 无 PCB，三证合一。
-  今天的任务就是<strong>把"反弹减仓"从计划变成动作</strong>：沪电反弹至 104~110 减 100、生益不站 110 则全清，同时坚定持有唯一健康的洛阳钼业、现金继续作盾。
+  <strong>一句话总结今日</strong>：08-05 <strong>+¥2,462（+5.70%）</strong> 的放量大涨，叠加 08-04 的反弹启动，<strong>把 08-03 的"下跌中继"判定彻底推翻</strong> —— PCB 双雄收复短均线、洛阳突破 MA120，三票单日主力合计净流入约 +27.7 亿，止损全数收复、沪电/洛阳逼近止盈一。
+  但 PCB 双雄<strong>仍处 MA20/MA60 下方、量能仅缩量震荡、风格仍价值主导</strong>，反弹成色待验。次日策略：<strong>沪电减 100、洛阳减 100–200 锁盈，生益持有观察，现金不动</strong>。
   </div>
 </div>
 
 <div class="footer">
-  本报告由每日盘前自动化任务生成 · 数据来源：腾讯自选股（行情/技术/资金/财务/公告/板块 · westock-data）<br>
-  数据基准为 2026-08-03 收盘价，生成时间 2026-08-04 09:00（盘前）；大盘环境综合评分数据基准 2026-08-03<br>
+  本报告由每日盘后自动化任务生成 · 数据来源：腾讯自选股（行情/技术/资金/财务/公告/板块 · westock-data）<br>
+  数据基准为 2026-08-05 收盘价，生成时间 2026-08-05 15:30（盘后）；大盘环境综合评分数据基准 2026-08-04<br>
   <strong>本报告仅为个人持仓数据整理与技术分析参考，不构成任何投资建议。市场有风险，投资决策及盈亏由投资者自行承担。</strong>
 </div>
 </div>
@@ -449,31 +458,32 @@ pie.setOption({
     type: 'pie', radius: ['42%', '68%'], center: ['50%', '44%'],
     avoidLabelOverlap: true,
     itemStyle: { borderRadius: 6, borderColor: '#fff', borderWidth: 2 },
-    label: { formatter: '{b}\n{d}%', fontSize: 12, color: '#444' },
+    label: { formatter: '{b}
+{d}%', fontSize: 12, color: '#444' },
     data: [
-      { value: 20322, name: '沪电股份', itemStyle: { color: '#534ab7' } },
-      { value: 10203, name: '生益科技', itemStyle: { color: '#8b84d9' } },
-      { value: 9590,  name: '洛阳钼业', itemStyle: { color: '#3aa88a' } }
+      { value: 23120, name: '沪电股份', itemStyle: { color: '#534ab7' } },
+      { value: 12279, name: '生益科技', itemStyle: { color: '#8b84d9' } },
+      { value: 10235, name: '洛阳钼业', itemStyle: { color: '#3aa88a' } }
     ]
   }]
 });
 
-// ⑥ 近21日归一化走势
+// ⑥ 近23日归一化走势
 var line = echarts.init(document.getElementById('lineChart'));
-var dates = ['07-06','07-07','07-08','07-09','07-10','07-13','07-14','07-15','07-16','07-17','07-20','07-21','07-22','07-23','07-24','07-27','07-28','07-29','07-30','07-31','08-03'];
+var dates = ['07-06','07-07','07-08','07-09','07-10','07-13','07-14','07-15','07-16','07-17','07-20','07-21','07-22','07-23','07-24','07-27','07-28','07-29','07-30','07-31','08-03','08-04','08-05'];
 line.setOption({
   tooltip: { trigger: 'axis', valueFormatter: function(v){ return v.toFixed(2); } },
   legend: { data: ['生益科技','沪电股份','洛阳钼业'], top: 0, itemWidth: 14, textStyle: { fontSize: 12, color: '#666' } },
   grid: { left: 45, right: 24, top: 42, bottom: 34 },
   xAxis: { type: 'category', data: dates, axisLine: { lineStyle: { color: '#ddd' } }, axisLabel: { fontSize: 11, color: '#888' } },
-  yAxis: { type: 'value', name: '归一化', min: 60, max: 115, splitLine: { lineStyle: { color: '#f0eee8' } }, axisLabel: { fontSize: 11, color: '#888' }, nameTextStyle: { fontSize: 11, color: '#888' } },
+  yAxis: { type: 'value', name: '归一化', min: 60, max: 120, splitLine: { lineStyle: { color: '#f0eee8' } }, axisLabel: { fontSize: 11, color: '#888' }, nameTextStyle: { fontSize: 11, color: '#888' } },
   series: [
     { name: '生益科技', type: 'line', smooth: true, symbol: 'circle', symbolSize: 4, lineStyle: { width: 2, color: '#8b84d9' }, itemStyle: { color: '#8b84d9' },
-      data: [100.00,97.73,94.29,102.03,96.84,87.15,95.87,98.81,95.28,85.75,79.95,87.94,81.68,81.09,76.95,81.67,73.50,70.12,64.87,68.48,66.12] },
+      data: [100.00,97.73,94.29,102.03,96.84,87.15,95.87,98.81,95.28,85.75,79.95,87.94,81.68,81.09,76.95,81.67,73.50,70.12,64.87,68.48,66.12,72.72,79.55] },
     { name: '沪电股份', type: 'line', smooth: true, symbol: 'circle', symbolSize: 4, lineStyle: { width: 2, color: '#534ab7' }, itemStyle: { color: '#534ab7' },
-      data: [100.00,100.69,99.51,106.58,100.47,96.76,106.44,106.52,106.13,99.20,89.28,95.16,88.67,89.84,87.11,91.20,82.09,81.70,74.94,80.53,78.87] },
+      data: [100.00,100.69,99.51,106.58,100.47,96.76,106.44,106.52,106.13,99.20,89.28,95.16,88.67,89.84,87.11,91.20,82.09,81.70,74.94,80.53,78.87,86.76,89.73] },
     { name: '洛阳钼业', type: 'line', smooth: true, symbol: 'circle', symbolSize: 4, lineStyle: { width: 2.6, color: '#3aa88a' }, itemStyle: { color: '#3aa88a' },
-      data: [100.00,96.61,95.74,93.88,95.58,92.08,99.45,97.82,99.40,95.08,98.25,102.02,107.10,109.39,103.99,105.73,103.77,104.20,103.55,106.61,104.75] }
+      data: [100.00,96.61,95.74,93.88,95.58,92.08,99.45,97.82,99.40,95.08,98.25,102.02,107.10,109.39,103.99,105.73,103.77,104.20,103.55,106.61,104.75,104.81,111.80] }
   ]
 });
 
@@ -484,12 +494,12 @@ fund.setOption({
   tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, valueFormatter: function(v){ return v.toFixed(2) + ' 亿'; } },
   legend: { data: ['生益科技','沪电股份','洛阳钼业'], top: 0, itemWidth: 14, textStyle: { fontSize: 12, color: '#666' } },
   grid: { left: 56, right: 24, top: 42, bottom: 34 },
-  xAxis: { type: 'category', data: ['08-03 单日','近 5 日','近 10 日','近 20 日'], axisLine: { lineStyle: { color: '#ddd' } }, axisLabel: { fontSize: 12, color: '#888' } },
+  xAxis: { type: 'category', data: ['08-05 单日','近 5 日','近 10 日','近 20 日'], axisLine: { lineStyle: { color: '#ddd' } }, axisLabel: { fontSize: 12, color: '#888' } },
   yAxis: { type: 'value', name: '亿元', splitLine: { lineStyle: { color: '#f0eee8' } }, axisLabel: { fontSize: 11, color: '#888' }, nameTextStyle: { fontSize: 11, color: '#888' } },
   series: [
-    { name: '生益科技', type: 'bar', barGap: '10%', data: [-3.52, -1.55, -11.80, -18.96], itemStyle: { color: barColor }, label: { show: true, position: 'top', fontSize: 10, color: '#666', formatter: function(p){ return p.value.toFixed(1); } } },
-    { name: '沪电股份', type: 'bar', data: [-2.20, -11.89, -38.98, -37.64], itemStyle: { color: barColor }, label: { show: true, position: 'top', fontSize: 10, color: '#666', formatter: function(p){ return p.value.toFixed(1); } } },
-    { name: '洛阳钼业', type: 'bar', data: [-2.17, 0.12, 28.19, 21.44], itemStyle: { color: barColor }, label: { show: true, position: 'top', fontSize: 10, color: '#666', formatter: function(p){ return p.value.toFixed(1); } } }
+    { name: '生益科技', type: 'bar', barGap: '10%', data: [12.93, 14.58, -15.32, -1.90], itemStyle: { color: barColor }, label: { show: true, position: 'top', fontSize: 10, color: '#666', formatter: function(p){ return p.value.toFixed(1); } } },
+    { name: '沪电股份', type: 'bar', data: [2.38, 4.51, -21.30, -18.10], itemStyle: { color: barColor }, label: { show: true, position: 'top', fontSize: 10, color: '#666', formatter: function(p){ return p.value.toFixed(1); } } },
+    { name: '洛阳钼业', type: 'bar', data: [12.34, -2.07, 14.51, 21.72], itemStyle: { color: barColor }, label: { show: true, position: 'top', fontSize: 10, color: '#666', formatter: function(p){ return p.value.toFixed(1); } } }
   ]
 });
 
