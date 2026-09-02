@@ -72,7 +72,7 @@
 <div class="wrap">
 
   <h1>每日持仓分析报告</h1>
-  <div class="sub">数据日期：2026-09-02（周三 · 盘中快照 · 约 10:15） · 生成时间：2026-09-02 10:27 · 策略：波段操作（1-2月周期）· 涨红跌绿</div>
+  <div class="sub">数据日期：2026-09-02（周三 · 盘中快照 · 约 10:15） · 生成时间：2026-09-02 10:33 · 策略：波段操作（1-2月周期）· 涨红跌绿</div>
 
   <div class="banner-red">
     <strong>🔴 两项止损已触发（最高优先级）：</strong>
@@ -86,12 +86,13 @@
     <strong>⚠️ 口径与时点说明（重要，请先读）：</strong><br>
     ① <strong>本次自动化于 10:11 触发（非 15:30），当前 A 股仍在交易</strong>，因此本报告为<strong>盘中快照（约 10:15）</strong>而非收盘数据；
     所有"今日涨跌/主力资金"均为<strong>盘中截面值，尾盘可能改变</strong>。收盘后如需最终版可重跑一次。<br>
-    ② <strong>持仓口径</strong>：自动化原 prompt 仍列 5 只旧持仓（生益/东山/沪电/北特/洛阳，成本亦为旧值），已连续多日过期。
-    按实盘账户基准（08-31 收盘日志，<strong>09-01 无持仓变更记录</strong>），<strong>当前持仓为 4 项</strong>——东山精密 100股@199.157、沪电股份 100股@122.751、有色ETF富国 5000份@0.897（以上平安证券）、洛阳钼业 500股@22.990（国投证券）。
-    <strong>若 09-01 有买卖未同步，请告知以便校正。</strong><br>
-    ③ <strong>生益科技已于 08-31 以 144.50 清仓 100 股</strong>（已实现 <span class="up">+¥435</span>），本报告仅作<strong>跟踪标的</strong>列出，不计入持仓。
+    ② <strong>持仓口径（以 09-02 10:13 实盘自报为准，已校正自动化旧 prompt）</strong>：
+    <strong style="color:#1d9e75;">已确认 2 项</strong>——东山精密 <strong>200股@193.00</strong>（09-02 早盘加仓/摊低，原 08-31 为 100@199.157）、沪电股份 100股@122.751（以上平安证券）；
+    <strong style="color:#b8860b;">待确认 2 项</strong>（仅 08-31 口径、未出现在用户 09-02 自报中）——有色ETF富国 5000份@0.897、洛阳钼业 500股@22.990（国投）。
+    下表"待确认"项以灰色 ⚠ 标注，<strong>若已平仓请告知以便移除；其市值/盈亏已计入合计但仅供参考</strong>。<br>
+    ③ <strong>生益科技已于 08-31 以 144.50 清仓 100 股</strong>（已实现 <span class="up">+¥435</span>），且用户 09-02 自报"未建仓"，本报告仅作<strong>跟踪标的</strong>列出，不计入持仓。
     <strong>北特科技、长电科技、中国巨石、三花智控、珍宝岛、星网锐捷等均已清仓，未纳入任何图表/表格/结论。</strong><br>
-    ④ 有色ETF富国 止损 0.860 / 止盈 0.940、1.000 为<strong>技术派生参考位</strong>（用户未指定）；东山成本按实盘 199.157 校正 prompt 旧值 286.304。平安可用资金 ≈¥32,400 为估算，请以券商 App 为准。
+    ④ 有色ETF富国 止损 0.860 / 止盈 0.940、1.000 为<strong>技术派生参考位</strong>（用户未指定）；平安可用资金 ≈¥32,400 为估算（含未确认项口径），请以券商 App 为准。
   </div>
 
   <div class="idxbar">
@@ -113,7 +114,7 @@
       创业板 <span class="down">-2.66%</span>、科创50 <span class="down">-2.19%</span>，
       资金<strong>撤出成长、涌向军工与防御</strong>（地面兵装 <span class="up">+6.14%</span>、印巴冲突概念 <span class="up">+2.14%</span>、银行/燃气/旅游翻红），
       <strong>有色金属重挫 <span class="down">-3.92%</span> 为最大拖累</strong>。
-      持仓端 <strong>4 项全绿</strong>，盯市 <span class="down">-¥1,445</span>，累计浮亏扩大至 <strong><span class="down">-¥4,690（-9.74%）</span></strong>。
+      持仓端 <strong>4 项全绿</strong>，盯市 <span class="down">-¥2,101</span>，累计浮亏扩大至 <strong><span class="down">-¥5,161（-7.72%）</span></strong>。
       <strong class="warn">⚠️ 东山精密、有色ETF 两项止损已触发，洛阳临界。</strong>
     </div>
 
@@ -121,7 +122,7 @@
     <table>
       <thead><tr><th>紧急度</th><th>标的</th><th>现价</th><th>今日涨跌</th><th>止损位</th><th>距止损</th><th>止盈一</th><th>距止盈一</th><th>是否触发</th></tr></thead>
       <tbody>
-        <tr class="trig-on"><td>🔴 P1 已破位·须处置</td><td><strong>东山精密</strong><br><span style="color:#888780;font-size:11px;">002384 · 100股</span></td>
+        <tr class="trig-on"><td>🔴 P1 已破位·须处置</td><td><strong>东山精密</strong><br><span style="color:#888780;font-size:11px;">002384 · 200股</span></td>
           <td><strong>182.130</strong></td><td class="down">-3.48%</td>
           <td>195.000</td><td class="warn">+7.07%</td>
           <td>214.000</td><td class="up">+17.50%</td><td><span class="warn">⚠️ 已触发止损</span></td></tr>
@@ -149,7 +150,7 @@
       <tbody>
         <tr><td><strong>10:15-11:30</strong><br>破位处置窗口</td>
             <td>①东山 182.13 能否反抽至 MA5 193.01；②有色ETF 能否收回 0.860 上方；③洛阳 18.27 是否失守 18.00</td>
-            <td><span class="warn">东山：反抽 184-188 即执行止损全清 100 股（1 手不可部分减），不等回本</span>；有色ETF：反抽 0.865-0.870 减 2000-3000 份</td></tr>
+            <td><span class="warn">东山（200股）：反抽 184-188 即执行止损——可全清 200 股，或先减 100 股（剩 100 股底仓）降风险，不恋战不等回本</span>；有色ETF：反抽 0.865-0.870 减 2000-3000 份</td></tr>
         <tr><td><strong>11:00-11:30</strong><br>午盘前确认</td>
             <td>大盘能否止跌（上证 3936 / 创业板 3303 是否续创新低）；军工/防御吸金是否仍在加速</td>
             <td>若指数继续走弱 → 破位两项<strong>不等反弹、直接市价处置</strong>；沪电暂不动</td></tr>
@@ -170,9 +171,9 @@
   <div class="tldr">
     <h2>② 今日核心结论 · 组合盈亏变化（盘中快照）</h2>
     <p>
-    <span class="hl">【当日盈亏】</span>持仓盯市 <strong>-¥1,445</strong>
-    （东山 -¥656 / 洛阳 -¥395 / 沪电 -¥224 / 有色ETF -¥170）；
-    今日<strong>无已实现交易</strong>。累计浮亏 <strong>-¥4,690（-9.74%）</strong>，总市值 <strong>¥43,481</strong>，
+    <span class="hl">【当日盈亏】</span>持仓盯市 <strong>-¥2,101</strong>
+    （东山 -¥1,312 / 洛阳 -¥395 / 沪电 -¥224 / 有色ETF -¥170）；
+    今日<strong>无已实现交易</strong>。累计浮亏 <strong>-¥5,161（-7.72%）</strong>，总市值 <strong>¥61,694</strong>，
     较 08-31 的 -3.85% <strong>大幅恶化</strong>——主因是<strong>连续两日下跌</strong>（09-01 东山 188.69 单日 -4.70%，今日再 -3.48%）。<br>
 
     <span class="hl">【盘面性质】</span>这是<strong>"成长杀跌 + 避险切换"</strong>的风格再平衡日，不是普涨回调。
@@ -203,8 +204,8 @@
     <strong>① 纪律优先于超跌博弈。</strong>东山 RSI2 8.5、洛阳 RSI2 4.3 确实极度超卖，技术上随时可能反抽，
     但<strong>东山的问题不是超卖而是"主力 20 日流出 63 亿 + 百倍 PE（93.05）+ 破位后无支撑"</strong>——超卖反弹只该用来<strong>改善卖出价格</strong>，不该用来改变卖出决定。
     <strong>② 只留最强的一只。</strong>沪电是唯一"资金中期净流入 + MACD 零轴上金叉 + PE 45.03 相对合理"的持仓，应当保留；东山与沪电同为 PCB，
-    清掉弱的、留下强的即可保住赛道敞口并<strong>把 PCB 集中度从 69.1% 降到 46.9%</strong>。
-    <strong>③ 现金是当下最好的仓位。</strong>平安账户仓位 51.5%、现金 ≈¥32,400；执行止损后仓位将降至约 24%。
+    清掉弱的、留下强的即可保住赛道敞口并<strong>把 PCB 集中度从 78.2% 降到 46.9%</strong>。
+    <strong>③ 现金是当下最好的仓位。</strong>平安账户仓位 61.9%、现金 ≈¥32,400；执行止损后仓位将降至约 19%。
     <strong>今日不新开仓、不摊低成本、不接飞刀。</strong>
     </p>
   </div>
@@ -213,10 +214,10 @@
   <div class="card">
     <h2>③ 持仓总览（合并平安 + 国投两账户）</h2>
     <div class="grid4" style="margin-bottom:16px;">
-      <div class="stat"><div class="v">¥43,481</div><div class="l">持仓总市值（4 项）</div></div>
-      <div class="stat"><div class="v">¥48,171</div><div class="l">持仓总成本</div></div>
-      <div class="stat"><div class="v down">-¥4,690</div><div class="l">累计浮动盈亏（-9.74%）</div></div>
-      <div class="stat"><div class="v down">-¥1,445</div><div class="l">当日�யட市（无已实现）</div></div>
+      <div class="stat"><div class="v">¥61,694</div><div class="l">持仓总市值（4 项）</div></div>
+      <div class="stat"><div class="v">¥66,855</div><div class="l">持仓总成本</div></div>
+      <div class="stat"><div class="v down">-¥5,161</div><div class="l">累计浮动盈亏（-7.72%）</div></div>
+      <div class="stat"><div class="v down">-¥2,101</div><div class="l">当日�யட市（无已实现）</div></div>
     </div>
 
     <div class="grid2">
@@ -225,27 +226,27 @@
           <thead><tr><th>标的</th><th>数量</th><th>成本</th><th>现价</th><th>今日</th><th>市值</th><th>浮动盈亏</th><th>账户</th></tr></thead>
           <tbody>
             <tr class="trig-on"><td><strong>东山精密</strong><span class="code">002384</span><span class="tag tag-pcb">PCB/消费电子</span><span class="tag tag-trig">已破止损</span></td>
-              <td>100股</td><td>199.157</td><td><strong>182.130</strong></td>
-              <td class="down">-3.48%</td><td>¥18,213</td>
-              <td class="down">-¥1,703<br><span style="font-size:11px;">-8.55%</span></td>
+              <td>200股</td><td>193.000</td><td><strong>182.130</strong></td>
+              <td class="down">-3.48%</td><td>¥36,426</td>
+              <td class="down">-¥2,174<br><span style="font-size:11px;">-5.63%</span></td>
               <td style="font-size:12px;">平安证券</td></tr>
             <tr><td><strong>沪电股份</strong><span class="code">002463</span><span class="tag tag-pcb">PCB</span></td>
               <td>100股</td><td>122.751</td><td><strong>118.480</strong></td>
               <td class="down">-1.86%</td><td>¥11,848</td>
               <td class="down">-¥427<br><span style="font-size:11px;">-3.48%</span></td>
               <td style="font-size:12px;">平安证券</td></tr>
-            <tr class="trig-on"><td><strong>有色ETF富国</strong><span class="code">159168</span><span class="tag tag-metal">有色ETF</span><span class="tag tag-trig">已破止损</span></td>
+            <tr class="trig-on"><td><strong>有色ETF富国</strong><span class="code">159168</span><span class="tag tag-metal">有色ETF</span><span class="tag tag-trig">已破止损</span><span class="tag" style="background:#fdf3d7;color:#b8860b;">⚠待确认</span></td>
               <td>5,000份</td><td>0.897</td><td><strong>0.857</strong></td>
               <td class="down">-3.82%</td><td>¥4,285</td>
               <td class="down">-¥200<br><span style="font-size:11px;">-4.46%</span></td>
               <td style="font-size:12px;">平安证券</td></tr>
-            <tr><td><strong>洛阳钼业</strong><span class="code">603993</span><span class="tag tag-metal">有色金属</span></td>
+            <tr><td><strong>洛阳钼业</strong><span class="code">603993</span><span class="tag tag-metal">有色金属</span><span class="tag" style="background:#fdf3d7;color:#b8860b;">⚠待确认</span></td>
               <td>500股</td><td>22.990</td><td><strong>18.270</strong></td>
               <td class="down">-4.14%</td><td>¥9,135</td>
               <td class="down">-¥2,360<br><span style="font-size:11px;">-20.53%</span></td>
               <td style="font-size:12px;">国投证券</td></tr>
             <tr style="background:#f7f6f1;"><td colspan="5"><strong>合计（持仓）</strong></td>
-              <td><strong>¥43,481</strong></td><td class="down"><strong>-¥4,690</strong><br><span style="font-size:11px;">-9.74%</span></td><td></td></tr>
+              <td><strong>¥61,694</strong></td><td class="down"><strong>-¥5,161</strong><br><span style="font-size:11px;">-7.72%</span></td><td></td></tr>
             <tr style="background:#fdf6e9;"><td colspan="8" style="font-size:12px;color:#6b4a13;">
               <strong>跟踪标的（08-31 已清仓，不计入持仓）：</strong>生益科技 600183 · 成本 140.151 → 卖出 144.50（08-31 约09:32）· 已实现 <span class="up">+¥435</span>
               · 现价 145.01（+0.41%）· 机会成本 <span class="down">-¥51</span>
@@ -270,20 +271,20 @@
         <table>
           <thead><tr><th>标的</th><th>数量</th><th>成本</th><th>现价</th><th>市值</th><th>盈亏</th></tr></thead>
           <tbody>
-            <tr><td>东山精密</td><td>100股</td><td>199.157</td><td>182.130</td><td>¥18,213</td><td class="down">-¥1,703</td></tr>
+            <tr><td>东山精密</td><td>200股</td><td>193.000</td><td>182.130</td><td>¥36,426</td><td class="down">-¥2,174</td></tr>
             <tr><td>沪电股份</td><td>100股</td><td>122.751</td><td>118.480</td><td>¥11,848</td><td class="down">-¥427</td></tr>
             <tr><td>有色ETF富国</td><td>5,000份</td><td>0.897</td><td>0.857</td><td>¥4,285</td><td class="down">-¥200</td></tr>
-            <tr style="background:#f7f6f1;"><td colspan="4"><strong>小计</strong></td><td><strong>¥34,346</strong></td><td class="down"><strong>-¥2,330</strong></td></tr>
+            <tr style="background:#f7f6f1;"><td colspan="4"><strong>小计</strong></td><td><strong>¥52,559</strong></td><td class="down"><strong>-¥2,801</strong></td></tr>
           </tbody>
         </table>
         <div class="mini-grid" style="margin-top:12px;">
-          <div class="mini"><div class="v">¥34,346</div><div class="l">持仓市值</div></div>
+          <div class="mini"><div class="v">¥52,559</div><div class="l">持仓市值</div></div>
           <div class="mini"><div class="v">¥32,400</div><div class="l">可用资金(估)</div></div>
-          <div class="mini"><div class="v">¥66,746</div><div class="l">总资产(估)</div></div>
-          <div class="mini"><div class="v ">51.5%</div><div class="l">仓位</div></div>
+          <div class="mini"><div class="v">¥84,959</div><div class="l">总资产(估)</div></div>
+          <div class="mini"><div class="v ">61.9%</div><div class="l">仓位</div></div>
         </div>
-        <div style="font-size:12px;color:#888780;margin-top:8px;">仓位 51.5%，<strong>低于 70% 投顾红线</strong>，现金 ≈¥32,400 作盾。
-        <strong>若执行东山止损（回收约 ¥18,213），仓位降至约 24.2%，现金升至约 ¥50,613</strong>——在成长股杀跌期，这是防守而非踏空。</div>
+        <div style="font-size:12px;color:#888780;margin-top:8px;">仓位 61.9%，<strong>低于 70% 投顾红线</strong>，现金 ≈¥32,400 作盾。
+        <strong>若执行东山止损（回收约 ¥36,426），仓位降至约 19.0%，现金升至约 ¥68,826</strong>——在成长股杀跌期，这是防守而非踏空。</div>
       </div>
       <div>
         <div class="sec-title">国投证券</div>
@@ -308,10 +309,10 @@
 
     <div class="stock-card alert">
       <div class="hd">
-        <div><span class="name">东山精密</span><span class="code">002384 · 深市 · 100股 · 平安证券</span><span class="tag tag-pcb">PCB/消费电子</span><span class="tag tag-trig">🔴 止损已触发</span></div>
+        <div><span class="name">东山精密</span><span class="code">002384 · 深市 · 200股 · 平安证券</span><span class="tag tag-pcb">PCB/消费电子</span><span class="tag tag-trig">🔴 止损已触发</span></div>
         <div style="text-align:right;">
           <div style="font-size:19px;font-weight:600;" class="down">182.130 <span style="font-size:13px;">-3.48%</span></div>
-          <div style="font-size:12px;color:#888780;">成本 199.157 · 浮动 <span class="down">-¥1,703（-8.55%）</span></div>
+          <div style="font-size:12px;color:#888780;">成本 193.000 · 浮动 <span class="down">-¥2,174（-5.63%）</span></div>
         </div>
       </div>
 
@@ -345,7 +346,7 @@
       <div class="dim"><span class="k">💰 资金面</span><strong>组合中最恶劣的资金结构。</strong>今日主力净流出 <strong>-6.72 亿</strong>（超大单 -5.31 亿 + 大单 -1.40 亿双撤，而<strong>散户小单 +5.40 亿在接盘</strong>），全市场排名第 5543（垫底区）。<strong>更关键的是中期：5 日 -14.88 亿 / 10 日 -45.15 亿 / 20 日 -63.02 亿全线净流出，20 日累计流出逾 63 亿</strong>——这不是短期波动，是主力系统性撤退。内盘 111,763 手 &gt; 外盘 97,848 手，主动性卖盘占优。</div>
       <div class="dim"><span class="k">📊 基本面</span>PE(TTM) <strong>93.05 倍</strong>（前瞻 56.41）、PB 13.69，<strong>为全组最贵</strong>。中报（2026-06-30）营收 277.98 亿、归母净利 29.57 亿、EPS 1.62；Q2 单季营收 146.60 亿、净利 18.47 亿，<strong>业绩本身在放量，但九十余倍 PE 已把高增长充分定价</strong>，进入业绩空窗期后失去验证支撑，估值容错极低。YTD +115.16%，距 52 周高 280.08 已回撤 -35.0%。</div>
       <div class="dim"><span class="k">📰 消息面</span><strong>09-01 18:07 新发《关于回购公司股份的进展公告》</strong>——回购持续进行属边际正面，但从 09-01 收 188.69（-4.70%）与今日续跌看，<strong>回购未能托住股价</strong>，说明抛压强度大于回购力度。此前 08-24 投资者关系活动记录表、08-21 全资子公司增资 / 增加对外投资额度 / <strong>半年度资产核销</strong>／业绩说明会通知。资产核销 + 持续对外投资＝资本开支扩张期，对短期现金流与利润率是压力项，<strong>无新增强催化</strong>。</div>
-      <div class="dim" style="background:#f7f6f1;padding:10px 12px;border-radius:6px;"><span class="k">🎯 操作建议</span>🔴 <strong>止损已触发，建议执行清仓。</strong>四维全负：估值最贵（PE 93.05）＋主力 20 日流出 -63.02 亿＋均线全破 MACD 零轴下死叉＋回购未托住股价。仅持 100 股（1 手），<strong>不存在部分减仓，只能全清或不动</strong>。<span class="warn">建议：利用超卖反抽（RSI2 8.5）改善卖价——反弹至 184-188 挂单全清 100 股；若无反抽则尾盘前直接处置，不等回本 199.157。回收约 ¥18,213。切勿摊低成本。</span></div>
+      <div class="dim" style="background:#f7f6f1;padding:10px 12px;border-radius:6px;"><span class="k">🎯 操作建议</span>🔴 <strong>止损已触发，建议执行清仓。</strong>四维全负：估值最贵（PE 93.05）＋主力 20 日流出 -63.02 亿＋均线全破 MACD 零轴下死叉＋回购未托住股价。仅持 100 股（1 手），<strong>不存在部分减仓，只能全清或不动</strong>。<span class="warn">建议：利用超卖反抽（RSI2 8.5）改善卖价——反弹至 184-188 挂单全清 100 股；若无反抽则尾盘前直接处置，不等回本 199.157。回收约 ¥36,426。切勿摊低成本。</span></div>
     </div>
 
     <div class="stock-card">
@@ -392,7 +393,7 @@
 
     <div class="stock-card alert">
       <div class="hd">
-        <div><span class="name">有色ETF富国</span><span class="code">159168 · 深市 · 5,000份 · 平安证券</span><span class="tag tag-metal">有色ETF</span><span class="tag tag-trig">🔴 止损已触发</span></div>
+        <div><span class="name">有色ETF富国</span><span class="code">159168 · 深市 · 5,000份 · 平安证券</span><span class="tag tag-metal">有色ETF</span><span class="tag tag-trig">🔴 止损已触发</span><span class="tag" style="background:#fdf3d7;color:#b8860b;">⚠ 待确认</span></div>
         <div style="text-align:right;">
           <div style="font-size:19px;font-weight:600;" class="down">0.857 <span style="font-size:13px;">-3.82%</span></div>
           <div style="font-size:12px;color:#888780;">成本 0.897 · 浮动 <span class="down">-¥200（-4.46%）</span></div>
@@ -429,12 +430,12 @@
       <div class="dim"><span class="k">💰 资金面</span>主力微净流出 <strong>-310 万元</strong>（ETF 体量小，资金指标参考性弱于个股）。5 日 +610 万为正、10 日 -60 万、20 日 -701 万为负，整体<strong>中性偏弱</strong>。<strong>真正拖累来自板块：申万有色金属今日 <span class="down">-3.92%</span>（5 日 -4.19%、20 日 -2.06%），有色金属概念 <span class="down">-2.35%</span></strong>——避险资金流向军工而非资源，贵金属与工业金属同步走弱。</div>
       <div class="dim"><span class="k">📊 基本面</span>ETF 无个股 PE/PB 口径。持仓成本 0.897，现价 0.857，<strong>浮亏 -4.46%（约 -¥200）</strong>。作为宽基工具波动显著低于个股：5 日 -4.14%、20 日 -3.49%、YTD -17.12%，52 周区间 0.762-1.158。<strong>组合定位是「分散单票风险的压舱石」，但本轮有色下跌中它并未起到抗跌作用</strong>——因为组合另一半（洛阳）也是有色，两者高度同源，分散效果被削弱。</div>
       <div class="dim"><span class="k">📰 消息面</span>ETF 无公司公告。宏观驱动项需跟踪：①<strong>避险资金今日选择军工而非贵金属</strong>（地面兵装 +6.14%、印巴冲突概念 +2.14%，而有色 -3.92%），说明当前地缘风险交易的载体不是金属；②美联储 9 月议息为最大变量，加息预期升温则美元走强、压制金属；③工业金属仍取决于铜/钴需求与库存。<strong>多空交织，方向未明。</strong></div>
-      <div class="dim" style="background:#f7f6f1;padding:10px 12px;border-radius:6px;"><span class="k">🎯 操作建议</span>🟠 <strong>止损位 0.860 已触发（技术派生位）。</strong>5000 份<strong>可灵活分批</strong>（非 100 股整数倍约束），这是它相对个股的优势。<span class="warn">建议：按纪律减 2000-3000 份控风险（回收约 ¥2,142），保留 2000-3000 份观察 BOLL 下轨 0.852 与极度超卖（RSI2 4.8）能否形成反抽；<strong>若尾盘收回 0.860 上方可暂缓减仓</strong>。不补仓——组合有色敞口（本项＋洛阳）已达 30.9%，同源风险过高。</span></div>
+      <div class="dim" style="background:#f7f6f1;padding:10px 12px;border-radius:6px;"><span class="k">🎯 操作建议</span>🟠 <strong>止损位 0.860 已触发（技术派生位）。</strong>5000 份<strong>可灵活分批</strong>（非 100 股整数倍约束），这是它相对个股的优势。<span class="warn">建议：按纪律减 2000-3000 份控风险（回收约 ¥2,142），保留 2000-3000 份观察 BOLL 下轨 0.852 与极度超卖（RSI2 4.8）能否形成反抽；<strong>若尾盘收回 0.860 上方可暂缓减仓</strong>。不补仓——组合有色敞口（本项＋洛阳）已达 21.8%，同源风险过高。</span></div>
     </div>
 
     <div class="stock-card">
       <div class="hd">
-        <div><span class="name">洛阳钼业</span><span class="code">603993 · 沪市 · 500股 · 国投证券</span><span class="tag tag-metal">有色金属</span></div>
+        <div><span class="name">洛阳钼业</span><span class="code">603993 · 沪市 · 500股 · 国投证券</span><span class="tag tag-metal">有色金属</span><span class="tag" style="background:#fdf3d7;color:#b8860b;">⚠ 待确认</span></div>
         <div style="text-align:right;">
           <div style="font-size:19px;font-weight:600;" class="down">18.270 <span style="font-size:13px;">-4.14%</span></div>
           <div style="font-size:12px;color:#888780;">成本 22.990 · 浮动 <span class="down">-¥2,360（-20.53%）</span></div>
@@ -589,8 +590,8 @@
       ③ <strong>有色是最大拖累且短期无解。</strong>申万有色 <span class="down">-3.92%</span>（5 日 -4.19%、20 日 -2.06%、YTD -2.56%），是全市场最弱主线之一。
       值得注意的是<strong>今日地缘风险升温（印巴冲突概念 +2.14%）时资金选择了军工而非贵金属</strong>，说明当前避险交易的载体不在金属——
       这意味着洛阳与有色ETF 短期<strong>既无基本面催化也无避险溢价</strong>，只能等铜/钴价格与美元方向。<br>
-      ④ <strong>组合结构问题：两条腿都在弱侧。</strong>PCB 敞口（东山 ¥18,213 + 沪电 ¥11,848）占 <strong>69.1%</strong>，
-      有色敞口（洛阳 ¥9,135 + 有色ETF ¥4,285）占 <strong>30.9%</strong>——
+      ④ <strong>组合结构问题：两条腿都在弱侧。</strong>PCB 敞口（东山 ¥36,426 + 沪电 ¥11,848）占 <strong>78.2%</strong>，
+      有色敞口（洛阳 ¥9,135 + 有色ETF ¥4,285）占 <strong>21.8%</strong>——
       <strong>看似分散，实则是"高估值成长 + 弱势资源"两个都在被抛售的方向，有色ETF 未能起到对冲作用</strong>。
       执行东山止损后，PCB 敞口降至 46.9%，且留下的是板块内资金结构最好的一只，组合质量反而提升。
     </div>
@@ -621,13 +622,13 @@
       <strong>⚠️ 组合层面风险（4 项）：</strong><br>
       ① <strong>已破位未处置＝最大风险。</strong>东山与有色ETF 均已跌破预设止损，<strong>止损纪律的价值在于执行而非设置</strong>。
       东山从 08-31 的 198.00 到现在 182.13，两日蒸发 8.0%——若 09-01 破 195 当日执行，损失可少约 ¥656。<br>
-      ② <strong>两条腿同向受压。</strong>PCB 69.1% ＋ 有色 30.9%，
+      ② <strong>两条腿同向受压。</strong>PCB 78.2% ＋ 有色 21.8%，
       形式上分散但<strong>今日两者都在被卖出（有色 -3.92%、元件 -1.80%）</strong>，有色ETF 未起对冲作用，组合缺少真正的防御资产（今日强势的军工/银行/燃气均无敞口）。<br>
       ③ <strong>风格切向避险，成长股杀估值。</strong>创业板 -2.66%、科创50 -2.19% 显著弱于上证 -1.10%，
       叠加恒生 -1.14%、纳指 -1.03%，<strong>外围与内资同步偏空</strong>。高 PE 品种（东山 93.05）在业绩空窗期最脆弱。<br>
       ④ <strong>业绩空窗期波动放大。</strong>中报已收官，三季报预告最早 10 月，9 月为纯题材/资金驱动期，<strong>缺乏业绩锚的高估值票易被资金抛弃</strong>。<br>
-      <strong>缓释项：</strong>平安账户仓位 51.5%（低于 70% 红线）、现金 ≈¥32,400；洛阳 PE 14.05 与股息提供估值底；沪电资金中期仍净流入。
-      <strong>核心结论：当前不是"该不该减"的问题，而是"先减哪一个"的问题——按纪律先清东山，再看有色ETF 与洛阳的收盘确认，保留沪电。执行后仓位约 24%，现金成为最好的进攻准备。</strong>
+      <strong>缓释项：</strong>平安账户仓位 61.9%（低于 70% 红线）、现金 ≈¥32,400；洛阳 PE 14.05 与股息提供估值底；沪电资金中期仍净流入。
+      <strong>核心结论：当前不是"该不该减"的问题，而是"先减哪一个"的问题——按纪律先清东山，再看有色ETF 与洛阳的收盘确认，保留沪电。执行后仓位约 19%，现金成为最好的进攻准备。</strong>
     </div>
   </div>
 
@@ -659,7 +660,7 @@
 
   <div class="footer">
     数据来源：westock-data（腾讯自选股数据通道），行情／技术／资金／财报／公告／板块均取自 2026-09-02 <strong>盘中快照 · 约 10:15</strong>（<strong>非收盘价，尾盘可能变化</strong>）。<br>
-    报告生成时间：2026-09-02 10:27 · 交易单位约束：A 股 100 股 ＝ 1 手，<strong>东山／沪电各仅 100 股，只能全清或不动，不存在"部分减仓"</strong>；洛阳 500 股可按 100 股分批，有色ETF 5000 份可自由分批。<br>
+    报告生成时间：2026-09-02 10:33 · 交易单位约束：A 股 100 股 ＝ 1 手。<strong>东山 200 股（2 手，可全清或先减 100 股底仓）、沪电 100 股（仅 1 手，只能全清或不动）</strong>；洛阳 500 股可按 100 股分批，有色ETF 5000 份可自由分批（⚠待确认项是否仍持仓以券商 App 为准）。<br>
     <strong>本报告为个人持仓跟踪工具，所有点位与操作建议仅供参考，不构成投资建议。投资有风险，决策请自主判断。</strong>
   </div>
 </div>
@@ -675,7 +676,7 @@ pie.setOption({
     type: 'pie', radius: ['38%', '62%'], center: ['50%', '48%'],
     label: { formatter: '{b}\n{d}%', fontSize: 11 },
     data: [
-      { value: 18213, name: '东山精密', itemStyle: { color: '#e2953f' } },
+      { value: 36426, name: '东山精密', itemStyle: { color: '#e2953f' } },
       { value: 11848, name: '沪电股份', itemStyle: { color: '#185fa5' } },
       { value: 4285, name: '有色ETF富国', itemStyle: { color: '#4ba58c' } },
       { value: 9135, name: '洛阳钼业', itemStyle: { color: '#0f6e56' } },
