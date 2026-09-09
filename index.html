@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日持仓分析报告 · 2026-09-08</title>
+<title>每日持仓分析报告 · 2026-09-09</title>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -58,44 +58,41 @@
 </head>
 <body>
 <div class="wrap">
-
   <h1>每日持仓分析报告</h1>
-  <div class="sub">数据日期：2026-09-08（周二收盘） · 生成时间：2026-09-08 15:30 · 策略：波段操作（1-2月周期）· 涨红跌绿</div>
+  <div class="sub">数据日期：2026-09-09（周三收盘） · 生成时间：2026-09-09 15:30 · 策略：波段操作（1-2月周期）· 涨红跌绿</div>
 
-  <!-- 持仓口径说明横幅 -->
   <div class="banner">
     <h2>⚠️ 持仓口径说明（重要）</h2>
     <p>本自动化 prompt 内置的「5只硬编码清单」（生益科技/东山精密/北特科技/沪电股份/洛阳钼业，成本价亦为旧值）<b>已长期过期</b>。
-    本报告严格以 <b>2026-09-08 13:19 实盘口径</b>（同花顺平安账户截图+盘中对话）为准：<br>
-    · <b>确认持有</b>：世纪华通 002602（100股@11.69，+38%）／ 有色ETF富国 sz159168（5000份@0.897，约-2%）——均平安证券；<br>
+    本报告严格以 <b>2026-09-09 10:09 实盘口径</b>（同花顺平安账户截图+盘中对话）为准：<br>
+    · <b>确认持有</b>：世纪华通 002602（1000股@15.855，现15.78，浮亏<span class="down">-0.47</span>）／ 有色ETF富国 sz159168（5000份@0.897，现0.897，平）——均平安证券；<br>
     · <b>待确认</b>：洛阳钼业 603993（500股@22.99，国投证券，09-02 起未更新）；<br>
-    · <b>已清仓·不计入</b>：东山精密（09-07 涨停潮日全清）、沪电股份（09-07 全清）、生益科技（09-07 全清落袋+640）、北特科技（早前清仓）。上述4只仅作<b>跟踪标的</b>列于模块⑧。<br>
-    止损止盈位：洛阳钼业沿用用户给定（18.00/20.5/21.7）；世纪华通/有色ETF无用户给定位，本报告内为<b>技术派生建议位</b>（标注「派生」），请以本人实际账户为准。现金数据引用 09-08 13:19 快照（平安可用≈¥4.36万），国投现金未同步。</p>
+    · <b>已清仓·仅跟踪</b>：东山精密（09-07~09-08全清）、沪电股份（09-07全清）、生益科技（09-07全清落袋+640）、北特科技（早前清仓）。上述4只仅作<b>跟踪标的</b>列于模块⑧。<br>
+    止损止盈位：洛阳钼业沿用用户给定（18.00/20.5/21.7）；世纪华通/有色ETF无用户给定位，为<b>技术派生建议位</b>（标注「派生」）。现金引用 09-09 10:09 快照（平安可用≈¥4.86万），国投现金未同步。</p>
   </div>
 
-  <!-- ① 今日重点关注 -->
   <div class="card" style="border-left:4px solid #d85a30; background:#fff5f3;">
     <h2 style="color:#d85a30;">⏰ 今日重点关注 · 盘后复盘必看</h2>
     <div style="margin-bottom:16px;">
       <div style="font-size:13px;font-weight:600;color:#444;margin-bottom:8px;">关键价位监控（按紧急程度排序）</div>
       <table>
         <thead><tr><th>优先级</th><th>股票</th><th>监控位</th><th>现价</th><th>距离</th><th>触发动作</th></tr></thead>
-        <tbody><tr><td>🔴 最高</td><td>有色ETF富国<span class="tag tag-metal">有色金属</span></td>
-      <td><strong>止损 0.85（派生）</strong></td><td>0.879</td>
-      <td class="warn">-3.30%</td><td>收盘跌破即止损</td></tr><tr><td>🔴 最高</td><td>洛阳钼业<span class="tag tag-metal">有色金属</span></td>
-      <td><strong>止损 18.0</strong></td><td>18.94</td>
-      <td class="warn">-4.96%</td><td>收盘跌破即止损</td></tr><tr><td>🟢 观察</td><td>世纪华通<span class="tag tag-auto">游戏/传媒</span></td>
-      <td><strong>止损 14.3（派生）</strong></td><td>16.13</td>
-      <td class="">-11.35%</td><td>暂安全·持续观察</td></tr></tbody>
+        <tbody><tr><td>🔴 最高</td><td>世纪华通<span class="tag tag-metal">游戏/传媒</span></td>
+      <td><strong>止损 14.3（派生）</strong></td><td>15.78</td>
+      <td class="warn"><span class="down">-9.38</span></td><td>收盘跌破即止损</td></tr><tr><td>🔴 最高</td><td>洛阳钼业<span class="tag tag-metal">有色金属</span> <span class="tag tag-auto">⚠待确认</span></td>
+      <td><strong>止损 18.0</strong></td><td>19.09</td>
+      <td class="warn"><span class="down">-5.71</span></td><td>收盘跌破即止损</td></tr><tr><td>🟢 观察</td><td>有色ETF富国<span class="tag tag-metal">有色金属</span></td>
+      <td><strong>止损 0.85（派生）</strong></td><td>0.897</td>
+      <td class="warn"><span class="down">-5.24</span></td><td>收盘跌破即止损</td></tr></tbody>
       </table>
     </div>
     <div>
-      <div style="font-size:13px;font-weight:600;color:#444;margin-bottom:8px;">次日盯盘时间表</div>
+      <div style="font-size:13px;font-weight:600;color:#444;margin-bottom:8px;">次日盯盘时间表（09-10 周四）</div>
       <table><thead><tr><th>时间段</th><th>关注事项</th></tr></thead><tbody>
-<tr><td><strong>09:00-09:25</strong> 集合竞价</td><td>洛阳钼业/有色ETF是否低开逼近止损(18.00/0.850)；世纪华通超买后是否高开回落</td></tr>
-<tr><td><strong>09:30-10:00</strong> 开盘半小时</td><td>洛阳钼业当日主力+7.19亿能否延续；有色板块(铜/钴)联动</td></tr>
-<tr><td><strong>10:00-11:30</strong> 上午盘</td><td>世纪华通RSI86超买，防冲高回落；观察量能配合</td></tr>
-<tr><td><strong>13:00-14:30</strong> 下午盘</td><td>洛阳钼业能否站稳19.00挑战止盈一20.50；有色ETF反弹0.910-0.940减仓区</td></tr>
+<tr><td><strong>09:00-09:25</strong> 集合竞价</td><td>有色ETF/洛阳钼业是否低开逼近止损(0.850/18.00)；关注凌晨苹果发布会催化PCB链</td></tr>
+<tr><td><strong>09:30-10:00</strong> 开盘半小时</td><td>洛阳钼业当日主力+1.75亿能否延续；有色金属(铜/钴)价格联动</td></tr>
+<tr><td><strong>10:00-11:30</strong> 上午盘</td><td>世纪华通-2.17%回调后主力是否回补（5/10/20日仍净流入+4.35/4.61/4.84亿）；观察量能</td></tr>
+<tr><td><strong>13:00-14:30</strong> 下午盘</td><td>洛阳钼业能否站稳19.30挑战止盈一20.50；有色ETF反弹0.940减仓区</td></tr>
 <tr><td><strong>14:50-15:00</strong> 收盘前</td><td>确认收盘价是否破位（收盘破位才正式触发止损）</td></tr>
 <tr style="background:#fef0ed;"><td><strong>15:00 收盘</strong></td><td><strong>确认收盘价是否破位</strong></td></tr>
 <tr><td><strong>15:30 盘后</strong></td><td>自动生成盘后分析报告并推送</td></tr>
@@ -103,28 +100,25 @@
     </div>
   </div>
 
-  <!-- ② TL;DR -->
   <div class="tldr">
     <h2>今日核心结论</h2>
-    <p>组合总市值 <span class="hl">¥15,478.00</span>，累计浮亏 <span class="hl">-1671.00%（-9.74%）</span>，
-当日盯市 <span class="hl">+347.00（+2.24%）</span>；平安账户仓位约 <span class="hl">12.1%</span>（现金≈¥43,600.00作盾），整体轻仓。
-<br>3 只实际持仓中 <span class="hl">世纪华通 强势（-0.19%，浮盈+37.98%，多头排列+MACD金叉）</span>为组合压舱石；
-<span class="hl">洛阳钼业当日+3.1%、主力净流入+7.19亿（全市场第8）强势回流</span>，但MACD仍绿柱、20日主力净流出-41.67亿，属超跌反弹非反转；
-有色ETF横盘偏弱（MACD绿柱）。<br>
-<span class="hl">当日无止损/止盈触发</span>（三只均运行在止损上方）。大盘二八分化：上证+0.2%、创业板-1.15%、科创50-1.52%。
-重点：洛阳钼业/有色ETF为距止损最近项（-3.30%/-4.96%），世纪华通最安全（-11.35%）且盈利。</p>
+    <p>组合总市值 <span class="hl">¥29,810</span>，累计浮亏 <span class="hl"><span class="down">-2025.0元</span>（<span class="down">-6.36</span>）</span>，
+    当日盯市 <span class="hl"><span class="down">-140.0元</span>（<span class="down">-0.44</span>）</span>；平安账户仓位约 <span class="hl">29.4%</span>（现金≈¥48,600作盾），整体轻仓。
+    <br>3 只实际持仓中 <span class="hl">洛阳钼业当日+1.27%、主力净流入+1.75亿延续强势、站上所有均线</span>；<span class="hl">有色ETF+2.05%反弹、站上MA5/10/20</span>；
+    世纪华通<span class="down">-2.17</span>独弱回落、当日主力<span class="down">-2.32亿</span>（净流出，但5/10/20日仍净流入+4.35/4.61/4.84亿，中期未转弱）。
+    <br><span class="hl">当日无止损/止盈触发</span>（三只距止损均为-5%~-9%）。大盘温和分化：上证+0.28%/深证+0.15%/创业板-0.14%/科创50-0.69%。
+    风险点：有色ETF(<span class="down">-5.24</span>%)与洛阳钼业(<span class="down">-5.71</span>%)距止损均仅约5%，为最高警戒；世纪华通最安全(<span class="down">-9.38</span>%)。</p>
   </div>
 
-  <!-- ③ 持仓总览 -->
   <div class="card">
     <h2>持仓总览（两账户合并）</h2>
     <div class="grid3" style="margin-bottom:16px;">
-  <div class="stat"><div class="v">15,478</div><div class="l">总市值(¥)</div></div>
-  <div class="stat"><div class="v down">-1671.00%</div><div class="l">累计浮亏 (-9.74%)</div></div>
-  <div class="stat"><div class="v">17,149</div><div class="l">总成本(¥)</div></div>
-  <div class="stat"><div class="v up">+347</div><div class="l">当日盈亏 (+2.24%)</div></div>
-  <div class="stat"><div class="v">12.1%</div><div class="l">平安仓位</div></div>
-  <div class="stat"><div class="v">3</div><div class="l">持仓只数</div></div></div>
+  <div class="stat"><div class="v">29,810</div><div class="l">总市值(¥)</div></div>
+  <div class="stat"><div class="v down"><span class="down">-2025.0</span></div><div class="l">累计浮亏 (<span class="down">-6.36</span>)</div></div>
+  <div class="stat"><div class="v">31,835</div><div class="l">总成本(¥)</div></div>
+  <div class="stat"><div class="v up"><span class="down">-140.0</span></div><div class="l">当日盈亏 (<span class="down">-0.44</span>)</div></div>
+  <div class="stat"><div class="v">29.4%</div><div class="l">平安仓位</div></div>
+  <div class="stat"><div class="v">3</div><div class="l">持仓只数(国投1只待确认)</div></div></div>
     <div class="grid2">
       <div>
         <div class="sec-title">市值分布</div>
@@ -137,229 +131,229 @@
     </div>
   </div>
 
-  <!-- ④ 账户分组 -->
   <div class="card">
     <h2>账户分组明细</h2>
-    <div style="margin-bottom:10px;"><span class="acc-tab active">平安证券 · 2只 · 市值¥6,008.00 · 浮亏+354.00%</span><table><thead><tr><th>股票</th><th>持仓</th><th>成本价</th><th>现价</th><th>市值</th><th>浮盈亏</th><th>当日涨跌</th></tr></thead><tbody><tr><td>世纪华通 sz002602 <span class="tag tag-auto">游戏/传媒</span></td>
-        <td>100股</td><td>11.69</td><td>16.13</td>
-        <td>¥1,613.00</td><td class="up">+444% (+37.98%)</td>
-        <td class="down">-0.19%</td></tr><tr><td>有色ETF富国 sz159168 <span class="tag tag-metal">有色金属</span></td>
-        <td>5000份</td><td>0.897</td><td>0.879</td>
-        <td>¥4,395.00</td><td class="down">-90% (-2.01%)</td>
-        <td class="up">+1.50%</td></tr></tbody></table></div>
-    <div style="margin-top:14px;"><span class="acc-tab active">国投证券 · 1只 · 市值¥9,470.00 · 浮亏-2025.00%</span><table><thead><tr><th>股票</th><th>持仓</th><th>成本价</th><th>现价</th><th>市值</th><th>浮盈亏</th><th>当日涨跌</th></tr></thead><tbody><tr><td>洛阳钼业 sh603993 <span class="tag tag-metal">有色金属</span></td>
-        <td>500股</td><td>22.99</td><td>18.94</td>
-        <td>¥9,470.00</td><td class="down">-2025% (-17.62%)</td>
-        <td class="up">+3.10%</td></tr></tbody></table></div>
+    <div style="margin-bottom:10px;"><span class="acc-tab active">平安证券 · 2只 · 市值¥20,265 · 浮亏<span class="down">-75.0元</span></span>
+    <table><thead><tr><th>股票</th><th>持仓</th><th>成本价</th><th>现价</th><th>市值</th><th>浮盈亏</th><th>当日涨跌</th></tr></thead><tbody><tr><td>世纪华通 sz002602 <span class="tag tag-auto">游戏/传媒</span></td>
+        <td>1000股</td><td>15.855</td><td>15.78</td>
+        <td>¥15,780</td><td class="down"><span class="down">-75.0元</span>(<span class="down">-0.47</span>)</td>
+        <td class="down"><span class="down">-2.17</span></td></tr><tr><td>有色ETF富国 sz159168 <span class="tag tag-metal">有色金属</span></td>
+        <td>5000份</td><td>0.897</td><td>0.897</td>
+        <td>¥4,485</td><td class="up"><span class="up">+0.0元</span>(<span class="up">+0.0</span>)</td>
+        <td class="up"><span class="up">+2.05</span></td></tr></tbody></table></div>
+    <div style="margin-top:14px;"><span class="acc-tab active">国投证券 · 1只 · 市值¥9,545 · 浮亏<span class="down">-1950.0元</span> · ⚠待确认</span>
+    <table><thead><tr><th>股票</th><th>持仓</th><th>成本价</th><th>现价</th><th>市值</th><th>浮盈亏</th><th>当日涨跌</th></tr></thead><tbody><tr><td>洛阳钼业 sh603993 <span class="tag tag-metal">有色金属</span> <span class="tag tag-auto">⚠待确认</span></td>
+        <td>500股</td><td>22.99</td><td>19.09</td>
+        <td>¥9,545</td><td class="down"><span class="down">-1950.0元</span>(<span class="down">-16.96</span>)</td>
+        <td class="up"><span class="up">+1.27</span></td></tr></tbody></table></div>
   </div>
-
-  <!-- ⑤ 个股四维卡片 -->
   <div class="card">
     <h2>个股四维分析卡片</h2>
     
     <div class="stock-card">
       <div class="hd">
-        <div><span class="name">世纪华通</span><span class="code">sz002602 · 平安证券</span><span class="tag tag-auto">游戏/传媒</span></div>
-        <div>现价 <span class="down">16.13</span> · 浮亏 <span class="up">+37.98%</span></div>
+        <div><span class="name">世纪华通</span><span class="code">sz002602 · 平安证券 <span class="tag tag-auto">游戏/传媒</span></span></div>
+        <div>现价 <span class="down">15.78</span> · 浮盈亏 <span class="down"><span class="down">-0.47</span></span></div>
       </div>
       <div class="mini-grid">
-        <div class="mini"><div class="v">15.95</div><div class="l">PE(TTM)</div></div>
-        <div class="mini"><div class="v">3.47</div><div class="l">PB</div></div>
-        <div class="mini"><div class="v">1188.89</div><div class="l">总市值(亿)</div></div>
-        <div class="mini"><div class="v down">-3.17亿</div><div class="l">主力净流(当日)</div></div>
+        <div class="mini"><div class="v">15.61</div><div class="l">PE(TTM)</div></div>
+        <div class="mini"><div class="v">3.4</div><div class="l">PB</div></div>
+        <div class="mini"><div class="v">1163.09</div><div class="l">总市值(亿)</div></div>
+        <div class="mini"><div class="v down"><span class="down">-2.32亿</span></div><div class="l">主力净流(当日)</div></div>
       </div>
       <table>
         <thead><tr><th>维度</th><th>指标</th><th>数值</th><th>信号</th></tr></thead>
         <tbody>
-          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>15.324 / 14.645 / 14.34 / 13.825</td><td class="up">价在均线上·多头</td></tr>
-          <tr><td>MACD (DIF/DEA/HIST)</td><td>0.456 / 0.219 / 0.473</td><td class="up">红柱·金叉</td></tr>
-          <tr><td>KDJ (K/D/J)</td><td>79.033 / 69.485 / 98.128</td><td>高位</td></tr>
-          <tr><td>BOLL / RSI6 / BIAS6</td><td>15.821 / 14.34 / 12.86 · 86.265 · 6.975</td><td>超买</td></tr>
-          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td>+6.85 / +8.90 亿</td><td class="up">净流入</td></tr>
-          <tr><td>20日主力净流</td><td>+7.80 亿</td><td class="up">中期流入</td></tr>
-          <tr><td>基本面</td><td>估值/属性</td><td colspan="2">PE 15.95 · PB 3.47 · 总市值 1188.89亿</td></tr>
-          <tr><td>消息面</td><td>近期公告</td><td colspan="2">世纪华通：关于续聘2026年度审计机构的公告 (2026-08-27)</td></tr>
+          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>15.67 / 14.83 / 14.41 / 13.87</td><td class="up">价在均线上·多头</td></tr>
+          <tr><td>MACD (DIF/DEA/HIST)</td><td>0.5 / 0.28 / 0.44</td><td class="up">红柱·金叉</td></tr>
+          <tr><td>KDJ (K/D/J)</td><td>76.43 / 71.8 / 85.69</td><td>高位超买</td></tr>
+          <tr><td>BOLL / RSI6 / BIAS6</td><td>16.02 / 14.41 / 12.81 · 71.54 · 2.47</td><td>近上轨·偏强</td></tr>
+          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td><span class="up">+4.35亿</span> / <span class="up">+4.61亿</span></td><td class="up">净流入</td></tr>
+          <tr><td>20日主力净流</td><td><span class="up">+4.84亿</span></td><td class="up">中期流入</td></tr>
+          <tr><td>基本面</td><td>估值/属性</td><td colspan="2">PE 15.61 · PB 3.4 · 总市值 1163.09亿</td></tr>
+          <tr><td>消息面</td><td>近期公告</td><td colspan="2">世纪华通：关于续聘2026年度审计机构的公告；世纪华通：关于召开2026年第二次临时股东会的通知</td></tr>
         </tbody>
       </table>
       <div class="stopbar">
         <span class="lbl">止损/止盈监控（波段1-2月）（技术派生·用户未给定）：</span>
-        <span class="warn">止损 14.3</span>｜
+        <span class="warn">止损 14.3（派生）</span>｜
         <span class="up">止盈一 18.0</span>｜
         <span class="up">止盈二 22.43</span>｜
-        现价距止损 <span class="">-11.35%</span>
+        现价距止损 <span class=""><span class="down">-9.38</span></span>
       </div>
     </div>
     <div class="stock-card">
       <div class="hd">
-        <div><span class="name">有色ETF富国</span><span class="code">sz159168 · 平安证券</span><span class="tag tag-metal">有色金属</span></div>
-        <div>现价 <span class="up">0.879</span> · 浮亏 <span class="down">-2.01%</span></div>
+        <div><span class="name">有色ETF富国</span><span class="code">sz159168 · 平安证券 <span class="tag tag-metal">有色金属</span></span></div>
+        <div>现价 <span class="up">0.897</span> · 浮盈亏 <span class="up"><span class="up">+0.0</span></span></div>
       </div>
       <div class="mini-grid">
-        <div class="mini"><div class="v">0</div><div class="l">PE(TTM)</div></div>
-        <div class="mini"><div class="v">0</div><div class="l">PB</div></div>
-        <div class="mini"><div class="v">4.64</div><div class="l">总市值(亿)</div></div>
-        <div class="mini"><div class="v up">+0.02亿</div><div class="l">主力净流(当日)</div></div>
+        <div class="mini"><div class="v">0.0</div><div class="l">PE(TTM)</div></div>
+        <div class="mini"><div class="v">0.0</div><div class="l">PB</div></div>
+        <div class="mini"><div class="v">4.71</div><div class="l">总市值(亿)</div></div>
+        <div class="mini"><div class="v up"><span class="up">+0.03亿</span></div><div class="l">主力净流(当日)</div></div>
       </div>
       <table>
         <thead><tr><th>维度</th><th>指标</th><th>数值</th><th>信号</th></tr></thead>
         <tbody>
-          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>0.874 / 0.887 / 0.886 / 0.872</td><td class="down">价在均线下·空头</td></tr>
-          <tr><td>MACD (DIF/DEA/HIST)</td><td>0.002 / 0.005 / -0.007</td><td class="down">绿柱·死叉</td></tr>
-          <tr><td>KDJ (K/D/J)</td><td>37.38 / 43.253 / 25.634</td><td>中性</td></tr>
-          <tr><td>BOLL / RSI6 / BIAS6</td><td>0.917 / 0.886 / 0.855 · 48.399 · 0.285</td><td>中性</td></tr>
-          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td>-0.06 / -0.01 亿</td><td class="down">净流出</td></tr>
-          <tr><td>20日主力净流</td><td>-0.12 亿</td><td class="down">中期流出</td></tr>
-          <tr><td>基本面</td><td>估值/属性</td><td colspan="2">ETF · 跟踪有色金属 · 总市值 4.64亿</td></tr>
+          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>0.88 / 0.89 / 0.89 / 0.87</td><td class="up">价在均线上·多头</td></tr>
+          <tr><td>MACD (DIF/DEA/HIST)</td><td>0.0 / 0.01 / -0.0</td><td class="up">绿柱·死叉</td></tr>
+          <tr><td>KDJ (K/D/J)</td><td>49.06 / 45.19 / 56.8</td><td>中性</td></tr>
+          <tr><td>BOLL / RSI6 / BIAS6</td><td>0.92 / 0.89 / 0.85 · 59.94 · 2.22</td><td>近上轨·偏强</td></tr>
+          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td><span class="down">-0.03亿</span> / <span class="up">+0.03亿</span></td><td class="down">净流出</td></tr>
+          <tr><td>20日主力净流</td><td><span class="up">+0.0亿</span></td><td class="up">中期流入</td></tr>
+          <tr><td>基本面</td><td>估值/属性</td><td colspan="2">ETF · 跟踪有色金属 · 总市值 4.71亿</td></tr>
           <tr><td>消息面</td><td>近期公告</td><td colspan="2">—</td></tr>
         </tbody>
       </table>
       <div class="stopbar">
         <span class="lbl">止损/止盈监控（波段1-2月）（技术派生·用户未给定）：</span>
-        <span class="warn">止损 0.85</span>｜
+        <span class="warn">止损 0.85（派生）</span>｜
         <span class="up">止盈一 0.94</span>｜
         <span class="up">止盈二 1.0</span>｜
-        现价距止损 <span class="warn">-3.30%</span>
+        现价距止损 <span class="warn"><span class="down">-5.24</span></span>
       </div>
     </div>
     <div class="stock-card">
       <div class="hd">
-        <div><span class="name">洛阳钼业</span><span class="code">sh603993 · 国投证券 <span class="tag tag-auto">⚠待确认</span></span><span class="tag tag-metal">有色金属</span></div>
-        <div>现价 <span class="up">18.94</span> · 浮亏 <span class="down">-17.62%</span></div>
+        <div><span class="name">洛阳钼业</span><span class="code">sh603993 · 国投证券 <span class="tag tag-auto">⚠待确认</span> <span class="tag tag-metal">有色金属</span></span></div>
+        <div>现价 <span class="up">19.09</span> · 浮盈亏 <span class="down"><span class="down">-16.96</span></span></div>
       </div>
       <div class="mini-grid">
-        <div class="mini"><div class="v">14.57</div><div class="l">PE(TTM)</div></div>
-        <div class="mini"><div class="v">4.52</div><div class="l">PB</div></div>
-        <div class="mini"><div class="v">4052.08</div><div class="l">总市值(亿)</div></div>
-        <div class="mini"><div class="v up">+7.19亿</div><div class="l">主力净流(当日)</div></div>
+        <div class="mini"><div class="v">14.68</div><div class="l">PE(TTM)</div></div>
+        <div class="mini"><div class="v">4.66</div><div class="l">PB</div></div>
+        <div class="mini"><div class="v">4084.17</div><div class="l">总市值(亿)</div></div>
+        <div class="mini"><div class="v up"><span class="up">+1.75亿</span></div><div class="l">主力净流(当日)</div></div>
       </div>
       <table>
         <thead><tr><th>维度</th><th>指标</th><th>数值</th><th>信号</th></tr></thead>
         <tbody>
-          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>18.572 / 18.959 / 18.785 / 18.824</td><td class="up">价在均线上·多头</td></tr>
-          <tr><td>MACD (DIF/DEA/HIST)</td><td>-0.082 / -0.035 / -0.095</td><td class="down">绿柱·死叉</td></tr>
-          <tr><td>KDJ (K/D/J)</td><td>30.977 / 33.706 / 25.52</td><td>中性</td></tr>
-          <tr><td>BOLL / RSI6 / BIAS6</td><td>19.655 / 18.785 / 17.914 · 54.424 · 1.537</td><td>中性</td></tr>
-          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td>-12.92 / -5.16 亿</td><td class="down">净流出</td></tr>
-          <tr><td>20日主力净流</td><td>-41.67 亿</td><td class="down">中期流出</td></tr>
-          <tr><td>基本面</td><td>估值/属性</td><td colspan="2">PE 14.57 · PB 4.52 · 总市值 4052.08亿</td></tr>
-          <tr><td>消息面</td><td>近期公告</td><td colspan="2">洛阳钼业：洛阳钼业2026年半年度权益分派实施公告 (2026-09-02)</td></tr>
+          <tr><td rowspan="4">技术面</td><td>MA5/MA10/MA20/MA60</td><td>18.7 / 18.91 / 18.79 / 18.81</td><td class="up">价在均线上·多头</td></tr>
+          <tr><td>MACD (DIF/DEA/HIST)</td><td>-0.05 / -0.04 / -0.03</td><td class="down">绿柱·死叉</td></tr>
+          <tr><td>KDJ (K/D/J)</td><td>39.76 / 35.73 / 47.84</td><td>中性</td></tr>
+          <tr><td>BOLL / RSI6 / BIAS6</td><td>19.66 / 18.79 / 17.91 · 58.24 · 2.31</td><td>近上轨·偏强</td></tr>
+          <tr><td rowspan="2">资金面</td><td>主力净流(5日/10日)</td><td><span class="down">-4.56亿</span> / <span class="up">+7.61亿</span></td><td class="down">净流出</td></tr>
+          <tr><td>20日主力净流</td><td><span class="down">-21.6亿</span></td><td class="down">中期流出</td></tr>
+          <tr><td>基本面</td><td>估值/属性</td><td colspan="2">PE 14.68 · PB 4.66 · 总市值 4084.17亿</td></tr>
+          <tr><td>消息面</td><td>近期公告</td><td colspan="2">洛阳钼业：洛阳钼业2026年半年度权益分派实施公告；洛阳钼业：洛阳钼业H股市场公告</td></tr>
         </tbody>
       </table>
       <div class="stopbar">
-        <span class="lbl">止损/止盈监控（波段1-2月）：</span>
+        <span class="lbl">止损/止盈监控（波段1-2月）（用户给定）：</span>
         <span class="warn">止损 18.0</span>｜
         <span class="up">止盈一 20.5</span>｜
         <span class="up">止盈二 21.7</span>｜
-        现价距止损 <span class="warn">-4.96%</span>
+        现价距止损 <span class="warn"><span class="down">-5.71</span></span>
       </div>
     </div>
   </div>
 
-  <!-- ⑥ 走势图 -->
   <div class="card">
     <h2>近20日走势图（归一化对比）</h2>
     <div id="trendChart2" class="chart"></div>
-    <p style="font-size:12px;color:#888780;margin-top:8px;">首日=100，消除量纲差异看相对强弱。世纪华通近20日强势上行，洛阳钼业/有色ETF横盘偏弱。</p>
+    <p style="font-size:12px;color:#888780;margin-top:8px;">首日=100，消除量纲差异看相对强弱。世纪华通近20日先抑后扬(8/13→9/09 由100升至114.9)；洛阳钼业区间+4.2%、有色ETF基本走平(+3.1%)，均温和。</p>
   </div>
 
-  <!-- ⑦ 资金对比 -->
   <div class="card">
     <h2>主力资金 5日/10日 净流入对比（亿元）</h2>
     <div id="fundChart" class="chart"></div>
-    <p style="font-size:12px;color:#888780;margin-top:8px;">红=净流入，绿=净流出。世纪华通中期(5/10/20日)持续净流入；洛阳钼业当日强势回流+7.19亿但中期仍大幅流出；有色ETF资金整体平淡。</p>
+    <p style="font-size:12px;color:#888780;margin-top:8px;">红=净流入，绿=净流出。世纪华通中期(5/10/20日)持续净流入(+4.35/4.61/4.84亿)为组合最干净；洛阳钼业当日强回流+1.75亿但20日仍-21.60亿深套派发；有色ETF资金整体平淡。</p>
   </div>
 
-  <!-- ⑧ 板块联动 -->
   <div class="card">
     <h2>板块联动</h2>
     <p style="font-size:13px;margin-bottom:10px;">实际持仓跨 <b>游戏/传媒</b>（世纪华通）、<b>有色金属</b>（洛阳钼业+有色ETF）两条主线；跟踪的 PCB 三标的（生益/沪电/东山）中线资金仍强但已清仓。</p>
-    <table>
-      <thead><tr><th>持仓股</th><th>所属板块</th><th>近5日</th><th>近20日</th><th>近60日</th></tr></thead>
-      <tbody><tr><td>世纪华通</td><td>游戏/传媒</td>
-    <td class="up">+16.46%</td>
-    <td class="up">+13.51%</td>
-    <td class="up">+15.63%</td></tr><tr><td>有色ETF富国</td><td>有色金属</td>
-    <td class="down">-1.35%</td>
-    <td class="down">-2.12%</td>
-    <td class="down">-9.19%</td></tr><tr><td>洛阳钼业</td><td>有色金属</td>
-    <td class="down">-0.63%</td>
-    <td class="down">-0.99%</td>
-    <td class="down">-9.46%</td></tr></tbody>
-    </table>
+    <table><thead><tr><th>持仓股</th><th>所属板块</th><th>当日</th><th>近5日</th><th>近20日</th><th>近60日</th></tr></thead><tbody><tr><td>对应持仓</td><td>游戏Ⅱ <span class="tag tag-auto">对应 世纪华通</span></td>
+    <td class="down"><span class="down">-2.82</span></td>
+    <td class="up"><span class="up">+3.61</span></td>
+    <td class="down"><span class="down">-0.32</span></td>
+    <td class="up"><span class="up">+7.34</span></td></tr><tr><td>对应持仓</td><td>传媒 <span class="tag tag-auto">对应 世纪华通</span></td>
+    <td class="down"><span class="down">-2.79</span></td>
+    <td class="up"><span class="up">+2.08</span></td>
+    <td class="down"><span class="down">-2.0</span></td>
+    <td class="up"><span class="up">+2.08</span></td></tr><tr><td>对应持仓</td><td>有色金属 <span class="tag tag-metal">对应 有色ETF富国 / 洛阳钼业</span></td>
+    <td class="up"><span class="up">+1.49</span></td>
+    <td class="up"><span class="up">+1.94</span></td>
+    <td class="down"><span class="down">-1.02</span></td>
+    <td class="down"><span class="down">-6.81</span></td></tr></tbody></table>
     <div class="sec-title">跟踪标的（已清仓·仅观察，不计入持仓）</div>
-    <table>
-      <thead><tr><th>股票</th><th>当日</th><th>近5日</th><th>近20日</th><th>10日主力净流</th><th>备注</th></tr></thead>
-      <tbody><tr><td>东山精密 <span class="tag tag-pcb">跟踪</span></td>
-    <td class="down">-2.17%</td>
-    <td class="down">-1.20%</td>
-    <td class="down">-3.84%</td>
-    <td class="down">-14.60亿</td><td>已清仓仅跟踪·PE95高位回撤</td></tr><tr><td>沪电股份 <span class="tag tag-pcb">跟踪</span></td>
-    <td class="up">+1.83%</td>
-    <td class="up">+3.46%</td>
-    <td class="up">+3.22%</td>
-    <td class="up">+16.46亿</td><td>已清仓仅跟踪·中线资金仍强(10日+16亿)</td></tr><tr><td>生益科技 <span class="tag tag-pcb">跟踪</span></td>
-    <td class="down">-1.26%</td>
-    <td class="up">+1.29%</td>
-    <td class="up">+8.12%</td>
-    <td class="up">+42.62亿</td><td>已清仓仅跟踪·中线资金强(10日+43亿)</td></tr><tr><td>北特科技 <span class="tag tag-pcb">跟踪</span></td>
-    <td class="down">-0.37%</td>
-    <td class="up">+3.77%</td>
-    <td class="up">+10.59%</td>
-    <td class="up">+1.74亿</td><td>已清仓仅跟踪·机器人丝杠稀缺标的</td></tr></tbody>
-    </table>
-    <p style="font-size:12px;color:#888780;margin-top:8px;">大盘：上证 上证指数 0.2% / 深证 -0.52% / 创业板 -1.15% / 科创50 -1.52% / 恒生 -0.27% / 纳指 -0.29%。二八分化，权重稳、成长弱。</p>
+    <table><thead><tr><th>股票</th><th>当日</th><th>近5日</th><th>近20日</th><th>10日主力净流</th><th>备注</th></tr></thead><tbody><tr><td>东山精密 <span class="tag tag-pcb">跟踪</span></td>
+    <td class="up"><span class="up">+5.17</span></td>
+    <td class="up"><span class="up">+6.89</span></td>
+    <td class="down"><span class="down">-2.06</span></td>
+    <td class="down"><span class="down">-14.49亿</span></td>
+    <td>已清仓仅跟踪·今日放量突破195.45(MA20)右侧信号</td></tr><tr><td>沪电股份 <span class="tag tag-pcb">跟踪</span></td>
+    <td class="up"><span class="up">+2.12</span></td>
+    <td class="up"><span class="up">+7.74</span></td>
+    <td class="up"><span class="up">+3.69</span></td>
+    <td class="up"><span class="up">+14.37亿</span></td>
+    <td>已清仓仅跟踪·中线资金强(KDJ-J98超买)</td></tr><tr><td>生益科技 <span class="tag tag-pcb">跟踪</span></td>
+    <td class="up"><span class="up">+1.29</span></td>
+    <td class="up"><span class="up">+2.19</span></td>
+    <td class="up"><span class="up">+3.44</span></td>
+    <td class="up"><span class="up">+35.74亿</span></td>
+    <td>已清仓仅跟踪·5日主力+9.87亿量价最健康</td></tr><tr><td>北特科技 <span class="tag tag-pcb">跟踪</span></td>
+    <td class="down"><span class="down">-1.36</span></td>
+    <td class="up"><span class="up">+3.92</span></td>
+    <td class="up"><span class="up">+3.65</span></td>
+    <td class="up"><span class="up">+1.57亿</span></td>
+    <td>已清仓仅跟踪·机器人行星滚柱丝杠稀缺标的</td></tr></tbody></table>
+    <p style="font-size:12px;color:#888780;margin-top:8px;">大盘：上证 3951.51 0.28% / 深证 13723.32 0.15% / 创业板 3354.97 -0.14% / 科创50 1580.06 -0.69% / 恒生 25251.15 -0.26% / 纳指 - -%。温和分化，权重稳、成长微弱。</p>
+    <p style="font-size:12px;color:#b8431f;margin-top:6px;">💡 用户盘中表达回踩接回 PCB 意愿（生益146-147 / 沪电120-121 / 东山190-193）。三只今日均涨（生益+1.29%量价最健康、沪电+2.12%超买、东山+5.17%突破右侧），但 9/10 凌晨苹果发布会 + T+1 锁定风险，<b>不追高</b>；仅回踩至买区且明日确认可小仓(100股)试水。</p>
   </div>
 
-  <!-- ⑨ 风险预警 -->
   <div class="card">
     <h2>风险预警汇总（按距止损远近排序）</h2>
     <table>
       <thead><tr><th>股票</th><th>现价</th><th>止损价</th><th>距止损</th><th>止盈一</th><th>止盈二</th><th>风险等级</th><th>当日触发</th></tr></thead>
-      <tbody><tr class="risk-row"><td>有色ETF富国</td>
-    <td>0.879</td><td class="warn">0.85</td><td class="warn">-3.30%</td>
-    <td>0.94</td><td>1.0</td><td class="warn">中高</td>
+      <tbody><tr class="risk-row"><td>世纪华通</td>
+    <td>15.78</td><td class="warn">14.3</td><td class="warn"><span class="down">-9.38</span></td>
+    <td>18.0</td><td>22.43</td>
+    <td class="warn">中</td>
     <td>收盘未破位·当日未触发</td></tr><tr class="risk-row"><td>洛阳钼业 ⚠</td>
-    <td>18.94</td><td class="warn">18.0</td><td class="warn">-4.96%</td>
-    <td>20.5</td><td>21.7</td><td class="warn">中高·待确认</td>
-    <td>收盘未破位·当日未触发</td></tr><tr class="risk-row"><td>世纪华通</td>
-    <td>16.13</td><td class="warn">14.3</td><td class="">-11.35%</td>
-    <td>18.0</td><td>22.43</td><td class="warn">低</td>
+    <td>19.09</td><td class="warn">18.0</td><td class="warn"><span class="down">-5.71</span></td>
+    <td>20.5</td><td>21.7</td>
+    <td class="warn">中·待确认</td>
+    <td>收盘未破位·当日未触发</td></tr><tr class="risk-row"><td>有色ETF富国</td>
+    <td>0.897</td><td class="warn">0.85</td><td class="warn"><span class="down">-5.24</span></td>
+    <td>0.94</td><td>1.0</td>
+    <td class="warn">中</td>
     <td>收盘未破位·当日未触发</td></tr></tbody>
     </table>
     <div style="margin-top:14px;padding:12px;background:#fef5f3;border-radius:8px;font-size:13px;">
       <strong>波段操作建议（1-2月周期 · 按A股100股=1手约束）：</strong>
       <ul style="margin:8px 0 0 20px;line-height:1.9;">
-        <li><strong>世纪华通（100股·+38%盈利）</strong>：多头排列+MACD金叉，但RSI86超买、突破BOLL上轨。<b>持有为主</b>，不追高；冲高至18.0/前高22.43可减50股锁利，破14.30（MA20下方，派生止损）才减仓。</li>
-        <li><strong>有色ETF（5000份·-2%）</strong>：横盘偏弱、MACD绿柱，距派生止损0.850仅-4.96%。<b>持有不割</b>；反弹0.910-0.940减2000-3000份降成本，破0.850减仓不补。</li>
-        <li><strong>洛阳钼业（500股·-17.6%·⚠待确认）</strong>：当日+3.1%、主力+7.19亿(全市场第8)强势回流，但MACD绿柱、20日主力净流出-41.67亿，属超跌反弹非反转。<b>若仍持有</b>：守18.00止损（收盘破位才执行），20.50上方减100-200股锁盈，不补仓。请先确认该仓是否仍在。</li>
-        <li><strong>现金作盾</strong>：平安可用≈¥4.36万，轻仓等待确定性机会，不新开仓不摊平不接飞刀。</li>
+        <li><strong>世纪华通（1000股·浮亏-0.47%）</strong>：多头排列+MACD金叉，但当日-2.17%回落、KDJ-J85超买、主力当日净流出-2.32亿。<b>持有为主</b>，不追高；冲高18.0/前高减200-300股锁盈，破14.30（MA20下方·派生止损）才减仓（1000股可分2-3批）。</li>
+        <li><strong>有色ETF（5000份·平）</strong>：温和偏多、MACD近零轴，距派生止损0.850仅<span class="down">-5.24</span>%。<b>持有不割</b>；反弹0.940-1.0减1000-2000份降成本，破0.850减仓不补。</li>
+        <li><strong>洛阳钼业（500股·浮亏-16.96%·⚠待确认）</strong>：当日+1.27%、主力+1.75亿强回流，但MACD仍绿柱、20日主力净流出21.60亿，属超跌反弹非反转。<b>若仍持有</b>：守18.00止损（收盘破位才执行），20.50上方减100-200股锁盈，不补仓。请先确认该仓是否仍在。</li>
+        <li><strong>现金作盾</strong>：平安可用≈¥4.86万，轻仓等待确定性机会，不新开仓不摊平不接飞刀。</li>
       </ul>
     </div>
   </div>
 
-  <!-- ⑩ 事件日历 -->
   <div class="card">
     <h2>近期事件日历</h2>
     <table>
       <thead><tr><th>日期</th><th>事件</th><th>相关股票</th><th>影响</th></tr></thead>
       <tbody>
 <tr><td>2026-09-02</td><td>洛阳钼业2026年半年度权益分派实施公告</td><td>洛阳钼业</td><td>分红派息，已落地</td></tr>
-<tr><td>2026-09-08</td><td>大盘二八分化：上证+0.2%/创业板-1.15%/科创50-1.52%</td><td>全体</td><td>成长弱、权重稳，观望</td></tr>
+<tr><td>2026-09-09</td><td>大盘温和分化：上证+0.28%/创业板-0.14%/科创50-0.69%</td><td>全体</td><td>权重稳、成长微弱</td></tr>
+<tr><td>2026-09-10</td><td>苹果秋季发布会（凌晨1点·折叠屏iPhone+18Pro）</td><td>PCB/消费电子（东山芯片内嵌式PCB获人形机器人客户认可）</td><td>潜在催化，T+1风险</td></tr>
+<tr><td>2026-09-11</td><td>美国8月CPI数据</td><td>有色金属/成长</td><td>全球risk-off扰动</td></tr>
 <tr><td>待跟踪</td><td>有色金属(铜/钴)价格走势</td><td>洛阳钼业/有色ETF</td><td>直接业绩驱动</td></tr>
 <tr><td>待跟踪</td><td>游戏/传媒板块景气与版号节奏</td><td>世纪华通</td><td>题材催化</td></tr>
-<tr><td>待跟踪</td><td>PCB中报后中线资金回流（生益/沪电10日净流入强）</td><td>跟踪标的</td><td>若回踩可重新小仓建</td></tr></tbody>
+<tr><td>待跟踪</td><td>PCB中报后中线资金回流（生益/沪电10日净流入强）</td><td>跟踪标的</td><td>若回踩可重新小仓建</td></tr>
+</tbody>
     </table>
   </div>
-
   <div class="footer">
     本报告由 WorkBuddy 持仓分析器自动生成 · 数据源：腾讯自选股（westock-data）· 仅供个人盯盘参考，不构成投资建议<br>
-    持仓口径以 2026-09-08 13:19 实盘为准（prompt 内置5只清单已过期）· 涨红跌绿（A股惯例）· 止损止盈位部分为用户给定、部分为技术派生
+    持仓口径以 2026-09-09 10:09 实盘为准（prompt 内置5只清单已过期）· 涨红跌绿（A股惯例）· 止损止盈位部分为用户给定、部分为技术派生
   </div>
-
 </div>
 
 <script>
-var CD = {"portfolio": [{"name": "世纪华通", "value": 1613.0}, {"name": "有色ETF富国", "value": 4395.0}, {"name": "洛阳钼业", "value": 9470.0}], "trend_dates": ["08-12", "08-13", "08-14", "08-17", "08-18", "08-19", "08-20", "08-21", "08-24", "08-25", "08-26", "08-27", "08-28", "08-31", "09-01", "09-02", "09-03", "09-04", "09-07", "09-08"], "trend_series": [{"name": "世纪华通", "data": [100.0, 96.08, 102.17, 98.46, 99.79, 97.27, 96.85, 96.71, 96.5, 98.39, 97.62, 97.41, 97.76, 98.95, 96.92, 98.18, 101.96, 110.08, 113.09, 112.88]}, {"name": "有色ETF富国", "data": [100.0, 96.67, 98.89, 101.11, 100.0, 96.67, 96.67, 97.78, 98.89, 96.67, 98.89, 101.11, 101.11, 100.0, 98.89, 96.67, 97.78, 96.67, 96.67, 97.67]}, {"name": "洛阳钼业", "data": [100.0, 96.89, 97.05, 100.68, 99.05, 94.74, 96.16, 98.0, 99.95, 96.95, 103.11, 102.68, 102.68, 100.32, 100.32, 97.16, 97.95, 97.26, 96.68, 99.68]}], "fund_names": ["世纪华通", "有色ETF富国", "洛阳钼业"], "fund_d5": [6.85, -0.06, -12.92], "fund_d10": [8.9, -0.01, -5.16]};
+var CD = {"portfolio": [{"name": "世纪华通", "value": 15780.0}, {"name": "有色ETF富国", "value": 4485.0}, {"name": "洛阳钼业", "value": 9545.0}], "trend_dates": ["08-13", "08-14", "08-17", "08-18", "08-19", "08-20", "08-21", "08-24", "08-25", "08-26", "08-27", "08-28", "08-31", "09-01", "09-02", "09-03", "09-04", "09-07", "09-08", "09-09"], "trend_series": [{"name": "世纪华通", "data": [100.0, 106.34, 102.48, 103.86, 101.24, 100.8, 100.66, 100.44, 102.4, 101.6, 101.38, 101.75, 102.99, 100.87, 102.18, 106.12, 114.57, 117.7, 117.48, 114.93]}, {"name": "有色ETF富国", "data": [100.0, 102.3, 104.6, 103.45, 100.0, 100.0, 101.15, 102.3, 100.0, 102.3, 104.6, 104.6, 103.45, 102.3, 100.0, 101.15, 100.0, 100.0, 101.15, 103.1]}, {"name": "洛阳钼业", "data": [100.0, 100.16, 103.93, 102.24, 97.76, 99.24, 101.15, 103.17, 100.05, 106.44, 106.01, 106.01, 103.55, 103.55, 100.27, 101.09, 100.38, 99.78, 102.89, 104.23]}], "fund_names": ["世纪华通", "有色ETF富国", "洛阳钼业"], "fund_d5": [4.35, -0.03, -4.56], "fund_d10": [4.61, 0.03, 7.61]};
 var UP='#e24b4a', DOWN='#1d9e75';
 echarts.init(document.getElementById('pieChart')).setOption({
   tooltip:{trigger:'item', formatter:'{b}: ¥{c} ({d}%)'},
